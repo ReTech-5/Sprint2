@@ -24,6 +24,7 @@
 a {
 
     text-decoration: none;
+    color: inherit;
 
 }
 
@@ -64,6 +65,7 @@ li {
 
     /* cores dos textos */
     --text-padrao-color: #000000;
+    --text-navbar-color: #2D2E2E;
     --text-bg-escuro-color: #FFFFFF;
     --text-destaque-color: #10B77F;
 

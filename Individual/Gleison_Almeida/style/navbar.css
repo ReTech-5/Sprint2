@@ -1,0 +1,86 @@
+.navbar{
+
+    font-family: 'Inter', sans-serif;
+    color: var(--text-navbar-color)
+
+}
+
+.container {
+
+    display: flex;
+    flex-direction: row;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+#logoNav{
+
+    margin: 1rem 2rem;
+
+}
+
+
+#logoNav img{
+
+    width: 11%;
+
+}
+
+.nav{
+
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.ul_nav{
+
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+
+}
+
+.ul_nav li:hover {
+
+    color: var(--text-destaque-color);
+
+}
+
+#page_atual {
+
+    color: var(--text-destaque-color);
+    font-weight: bold;
+}
+
+.bt_nav{
+
+    display: flex;
+    height: 50%;
+    width: 20%;
+    justify-content: center
+    
+}
+
+.button{
+
+    background: linear-gradient(90deg, var(--bg-bt-gradiend-claro) 0%, var(--bg-bt-gradiend-escuro) 100%);
+    color: var(--bt-text-color);
+    font-weight: bold;
+    
+}
+
+#bt_login{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    width: 80%;
+    height: 100%;
+    
+
+}
