@@ -84,3 +84,26 @@
     
 
 }
+
+.user{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+
+}
+
+.user a{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.user img{
+    
+    width: 70%;
+
+}
