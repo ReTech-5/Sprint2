@@ -1,3 +1,5 @@
+
+/* Add a fonte e a cor de texto padrão da div */
 .navbar{
 
     font-family: 'Inter', sans-serif;
@@ -5,28 +7,32 @@
 
 }
 
-.container {
+
+/* Tornando o conteudo da div modular e adicionando sombra a navbar */
+.container_nav {
 
     display: flex;
     flex-direction: row;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /*Serve para determinar a camada em que a navbar se encontra*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*configura a sombra da navbar*/
 
 }
 
-#logoNav{
+/* adiciona margim a logo para ela ficar na posição correta */
+#logo_nav{
 
     margin: 1rem 2rem;
 
 }
 
-
-#logoNav img{
+/* determina o tamanho da imagem da logo*/
+#logo_nav img{
 
     width: 11%;
 
 }
 
+/* Determina o tamanho da div em relação a div pai e ajusta o conteudo dentro dela */
 .nav{
 
     display: flex;
@@ -36,6 +42,7 @@
 
 }
 
+/* determina o tamanho da div em relação a div pai e ajusta o conteudo dentro dela */
 .ul_nav{
 
     display: flex;
@@ -44,18 +51,21 @@
 
 }
 
+/* configura o hover da navbar */
 .ul_nav li:hover {
 
     color: var(--text-destaque-color);
 
 }
 
+/* deixa o button da pagina atual em destaque */
 #page_atual {
 
     color: var(--text-destaque-color);
     font-weight: bold;
 }
 
+/* ajusta o tamanho e o conteudo dos botões presentes na navbar */
 .bt_nav{
 
     display: flex;
@@ -65,14 +75,7 @@
     
 }
 
-.button{
-
-    background: linear-gradient(90deg, var(--bg-bt-gradiend-claro) 0%, var(--bg-bt-gradiend-escuro) 100%);
-    color: var(--bt-text-color);
-    font-weight: bold;
-    
-}
-
+/* ajusta o tamanho do botão de login e o texto dentro dele */
 #bt_login{
 
     display: flex;
@@ -85,6 +88,7 @@
 
 }
 
+/* configura o posicionamento do conteudo da div e determina o tamanho do texto */
 .user{
 
     display: flex;
@@ -94,6 +98,7 @@
 
 }
 
+/* configura o posicionamento do icone de usuario */
 .user a{
 
     display: flex;
@@ -102,6 +107,7 @@
 
 }
 
+/* ajusta o tamanho do icone do usuario */
 .user img{
     
     width: 70%;
