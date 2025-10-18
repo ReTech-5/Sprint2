@@ -4,6 +4,7 @@
 
     font-family: 'Inter', sans-serif;
     color: var(--text-navbar-color);
+    background-color: var(--bg-card);
 
 }
 

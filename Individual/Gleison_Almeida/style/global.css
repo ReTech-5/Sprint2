@@ -48,7 +48,7 @@ li {
     /* cores do background */
     --bg-verde-escuro: #04200D;
     --bg-verde-claro: #E1F8F2;
-    --bg-cinza: #EFEFEF;
+    --bg-cinza: #F9F9F9;
 
     /* cores dos cards */
     --bg-card: #FFFFFF;
@@ -76,6 +76,13 @@ li {
     --icon-lixeira-vermelha: #BE4A31 ;
     --icon-alerta: #FFFD54 ;
     --icon-erro: #EB3223 ;
+
+}
+
+html, body {
+
+    width: 100%;
+    height: 100%;
 
 }
 
