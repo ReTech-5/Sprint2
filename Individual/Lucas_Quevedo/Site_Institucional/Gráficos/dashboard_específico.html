@@ -173,7 +173,6 @@
         });
 
         // Validações para alterar a cor dos gráficos de rosca dinamicamente
-
         if (ultimo1 >= 0 && ultimo1 <= 25) {
             cor1 = "rgb(29, 209, 9)";
         }
@@ -209,7 +208,7 @@
                 // ctx => objeto CanvasRenderingContext2D usado para desenhar texto/formas
                 // width, height => largura/altura da área de desenho
                 const dataset = chart.data.datasets[0]; // Acessa o primeiro dataset do gráfico (assumimos que o valor principal está aqui)
-                const value = dataset.data[0]; // Pega o valor do primeiro item do dataset (ex: 80 = 80%)
+                const value = dataset.data[1]; // Pega o valor do segundo item do dataset (ex: 80 = 80%)
 
                 // Ajuste fino de proporção — define tamanhos relativos de fonte com base no tamanho do gráfico
                 const mainFontSize = Math.min(width, height) / 8; // Tamanho da fonte principal (porcentagem). Usa o menor lado para manter proporção.
@@ -244,15 +243,15 @@
             type: "doughnut", // Tipo do gráfico: "doughnut" (rosquinha).
             data: { // Objeto que contém os dados e rótulos do gráfico
                 labels: [ // "labels" define os rótulos das fatias
-                    "Ocupado",
-                    "Vazio"
+                    "Vazio",
+                    "Ocupado"
                 ],
                 datasets: [{ // Vetor de conjuntos de dados. Mesmo que seja apenas 1 dataset, precisa ser um vetor
                     label: "", // Nome do dataset — aparece na legenda e pode ser usado nos tooltips
-                    data: [ultimo1, 100 - ultimo1], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
+                    data: [100 - ultimo1, ultimo1], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
                     backgroundColor: [ // Cor de cada fatia do gráfico
-                    cor1, // Cor da fatia de ocupação da lixeira se altera dinamicamente
-                    "rgb(240, 240, 240)" // Cor da fatia de espaço vazio na lixeira sempre será branco
+                    "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
+                    cor1 // Cor da fatia de ocupação da lixeira se altera dinamicamente
                     ],
                     hoverOffset: 4 // Efeito de crescimento da fatia ao passar o mouse por cima
                 }]
@@ -295,15 +294,15 @@
             type: "doughnut", // Tipo do gráfico: "doughnut" (rosquinha).
             data: { // Objeto que contém os dados e rótulos do gráfico
                 labels: [ // "labels" define os rótulos das fatias
-                    "Ocupado",
-                    "Vazio"
+                    "Vazio",
+                    "Ocupado"
                 ],
                 datasets: [{ // Vetor de conjuntos de dados. Mesmo que seja apenas 1 dataset, precisa ser um vetor
                     label: "", // Nome do dataset — aparece na legenda e pode ser usado nos tooltips
-                    data: [ultimo2, 100 - ultimo2], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
+                    data: [100 - ultimo2, ultimo2], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
                     backgroundColor: [ // Cor de cada fatia do gráfico
-                    cor2, // Cor da fatia de ocupação da lixeira se altera dinamicamente
-                    "rgb(240, 240, 240)" // Cor da fatia de espaço vazio na lixeira sempre será branco
+                    "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
+                    cor2 // Cor da fatia de ocupação da lixeira se altera dinamicamente
                     ],
                     hoverOffset: 4 // Efeito de crescimento da fatia ao passar o mouse por cima
                 }]
@@ -332,7 +331,7 @@
                                 return " " + context.parsed + "%";
                             }
                         }
-                    }
+                    },
                 },
             },
             plugins: [centerTextPlugin] // Plugin criado para acrescentar a porcentagem de ocupação da lixeira no centro do gráfico
