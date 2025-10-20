@@ -1,0 +1,101 @@
+body {
+
+    background: linear-gradient(248deg, var(--bg-cinza) 0%, #FFF 100% );
+    background-color: black;
+
+}
+
+
+.dashboard_sensor {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.container{
+
+    background-color: var(--bg-card);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.dashboard_sensor ul{
+
+    width: 100%;
+    height: 50%;
+
+}
+
+.dashboard_sensor ul h4{
+
+    margin: 0 5%;
+    
+
+}
+
+.sensor {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#container_flex {
+
+    display: flex;
+    width: 40%;
+    height: 100%;
+
+}
+
+.rosquinha {
+
+    width: 80%;
+    margin-right: 5%;
+   
+
+}
+
+.container_kpi{
+
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+
+}
+
+.kpi {
+
+    display: flex;
+    width: 70%;
+    height: 12%;
+
+}
+
+.kpi .meio {
+
+
+    align-self: end;
+
+
+}
+
+.linha {
+
+    width: 50%;
+    height: 100%;
+
+
+}
