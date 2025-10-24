@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuração de Usuários</title>
+    <link rel="stylesheet" href="cadastro.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">ReTech</div>
+      <nav>
+        <a href="#">Landing Page</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Calculadora</a>
+        <a href="#">Configurações</a>
+        <a href="#" class="ativo">Cadastro</a>
+      </nav>
+      <div class="usuario">
+        <span>Olá Usuário 👋</span>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+      <div class="card">
+        <h2>Configuração de Usuários</h2>
+
+        <div class="acoes">
+          <button class="btn btn-novo" onclick="novoUsuario()">
+            + Novo Usuário
+          </button>
+
+          <div class="dropdown">
+            <button class="btn btn-filtro" onclick="toggleFiltro()">
+              <img src="Vector.png" alt="Filtro" class="icon" />
+              Filtros 
+              <img src="filtro.png" alt="filtro_triangulo" class="icontriangulo">
+            </button>
+
+            <div id="menuFiltro" class="menu-filtro">
+              <button onclick="filtrarUsuarios('todos')">Todos</button>
+              <button onclick="filtrarUsuarios('Administrador')">
+                Administrador
+              </button>
+              <button onclick="filtrarUsuarios('Padrão')">Padrão</button>
+            </div>
+          </div>
+ 
+          <button class="btn btn-editar" onclick="editarUsuario()">
+            <img src="editar.png" alt="Editar" class="icon" />
+            Editar
+          </button>
+        </div>
+
+        <table id="tabelaUsuarios">
+          <thead>
+            <tr>
+              <!-- checkbox para marcar/desmarcar todos -->
+              <th>
+                <input
+                  type="checkbox"
+                  id="checkAll"
+                  onclick="selecionarTodos()"
+                />
+              </th>
+              <th>Usuário</th>
+              <th>E-mail</th>
+              <th>Nível Acesso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Linhas adicionadas via JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  var tabela = document.querySelector("#tabelaUsuarios tbody");
+  var usuarios = [
+    {
+      nome: "Claudio Frizzarini",
+      email: "Claudio@prefeituraSP.com",
+      nivel: "Administrador",
+    },
+    {
+      nome: "Julia Araripe",
+      email: "Julia@prefeituraCampinas.com",
+      nivel: "Padrão",
+    },
+  ];
+  var filtroAtual = "todos";
+
+  function carregarUsuarios() {
+    tabela.innerHTML = "";
+    var usuariosFiltrados = usuarios.filter(function (u) {
+      if (filtroAtual === "todos") {
+        return true;
+      } else {
+        return u.nivel === filtroAtual;
+      }
+    });
+
+    for (var i = 0; i < usuariosFiltrados.length; i++) {
+      var u = usuariosFiltrados[i];
+      var originalIndex = usuarios.indexOf(u);
+      tabela.innerHTML += `
+            <tr>
+              <td><input type="checkbox" class="checkUsuario" data-id="${originalIndex}"></td>
+              <td>${u.nome}</td>
+              <td>${u.email}</td>
+              <td>${u.nivel}</td>
+            </tr>
+          `;
+    }
+  }
+
+  function selecionarTodos() {
+    var checkAll = document.querySelector("#checkAll");
+    var checks = document.querySelectorAll(".checkUsuario");
+    for (var i = 0; i < checks.length; i++) {
+      checks[i].checked = checkAll.checked;
+    }
+  }
+
+  function novoUsuario() {
+    var nome = prompt("Digite o nome do novo usuário:");
+    if (!nome) return alert("Operação cancelada: nome obrigatório.");
+    var email = prompt("Digite o e-mail:");
+    if (!email) return alert("Operação cancelada: e-mail obrigatório.");
+    var nivel = prompt("Informe o nível de acesso (Administrador / Padrão):");
+    if (!nivel) return alert("Operação cancelada: nível obrigatório.");
+    usuarios.push({ nome, email, nivel });
+    carregarUsuarios();
+    alert("✅ Usuário cadastrado com sucesso!");
+  }
+
+  function editarUsuario() {
+    var selecionados = document.querySelectorAll(".checkUsuario:checked");
+    if (selecionados.length != 1) {
+      alert("⚠️ Selecione exatamente 1 usuário para editar.");
+      return;
+    }
+    var id = parseInt(selecionados[0].getAttribute("data-id"));
+    var usuario = usuarios[id];
+    var novoNome = prompt("Editar nome:", usuario.nome);
+    var novoEmail = prompt("Editar e-mail:", usuario.email);
+    var novoNivel = prompt("Editar nível de acesso:", usuario.nivel);
+    if (!novoNome || !novoEmail || !novoNivel) {
+      alert("⚠️ Edição cancelada — todos os campos são obrigatórios.");
+      return;
+    }
+    usuarios[id].nome = novoNome;
+    usuarios[id].email = novoEmail;
+    usuarios[id].nivel = novoNivel;
+    carregarUsuarios();
+    alert("Dados do usuário atualizados com sucesso!");
+  }
+
+  function toggleFiltro() {
+    var menu = document.getElementById("menuFiltro");
+    menu.classList.toggle("mostrar");
+  }
+
+  function filtrarUsuarios(tipo) {
+    filtroAtual = tipo;
+    carregarUsuarios();
+  }
+
+  carregarUsuarios();
+</script>
