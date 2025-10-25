@@ -1,5 +1,5 @@
-
-/* ===== RESET ===== */
+/*
+ ===== RESET ===== 
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* ===== Navbar ===== */
+ ===== Navbar ===== 
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -40,6 +40,7 @@
   color: #1e293b;
   font-weight: 500;
 }
+*/
 
 /* ===== Conteúdo principal ===== */
 body {
@@ -80,12 +81,12 @@ body {
   padding: 1.5rem;
 }
 
-
-
-    
-
 .btn {
-  background: linear-gradient(90deg, var(--bg-bt-gradiend-claro) 0%, var(--bg-bt-gradiend-escuro) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--bg-bt-gradiend-claro) 0%,
+    var(--bg-bt-gradiend-escuro) 100%
+  );
   color: var(--bt-text-color);
   font-weight: bold;
   border: 2px solid #20604a;
@@ -146,9 +147,9 @@ body {
 }
 
 .btn-filtro:hover .icon {
-  filter: brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(356%) hue-rotate(90deg) brightness(92%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(356%)
+    hue-rotate(90deg) brightness(92%) contrast(90%);
 }
-
 
 /* ===== Menu Filtro ===== */
 .menu-filtro {
@@ -209,10 +210,9 @@ body {
 }
 
 .btn-editar:hover .icon {
-  filter: brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(356%) hue-rotate(90deg) brightness(92%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(356%)
+    hue-rotate(90deg) brightness(92%) contrast(90%);
 }
-
-
 
 /* ===== Tabela ===== */
 table {
