@@ -105,11 +105,56 @@ fkSensor INT,										-- Sensor que coletou os dados
     PRIMARY KEY (idColeta, fkSensor)				-- Estabelecendo uma entidade fraca
 );
 
+INSERT INTO Empresa (nomeEmpresa, dtInicioContrato, dtFimContrato) VALUES
+('Sustenta Lixo S.A.', '2025-01-15', '2026-01-15');	
+
+INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa) VALUES
+('SNSR-A001', 1, 1);
 	
+# Estado: Critico
+    
+SELECT C.distancia AS 'Nível do Resíduo (cm)',
+       S.codigoSensor,
+       E.nomeEmpresa,
+       CONCAT('STATUS: ', 'CRÍTICO! Esvaziamento Urgente!') AS 'Status da Lixeira'
+FROM ColetaDados AS C
+JOIN Sensor AS S ON C.fkSensor = S.idSensor
+JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
+WHERE C.distancia <= 25
+ORDER BY C.distancia ASC;    
+    
+# Estado: ALERTA
 
+SELECT C.distancia AS 'Nível do Resíduo (cm)',
+	   S.codigoSensor,
+       E.nomeEmpresa,
+       CONCAT('STATUS: ', 'ALERTA! Nível Alto de Resíduo.') AS 'Status da Lixeira'
+FROM ColetaDados AS C
+JOIN Sensor AS S ON C.fkSensor = S.idSensor
+JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
+WHERE C.distancia > 25 AND C.distancia <= 50
+ORDER BY C.distancia ASC;
+    
+# Estado: Moderado    
 
-
-
-
-
-
+SELECT C.distancia AS 'Nível do Resíduo (cm)',
+	   S.codigoSensor,
+       E.nomeEmpresa,
+       CONCAT('STATUS: ', 'MODERADO. Monitorar.') AS 'Status da Lixeira'
+FROM ColetaDados AS C
+JOIN Sensor AS S ON C.fkSensor = S.idSensor
+JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
+WHERE C.distancia > 50 AND C.distancia <= 75
+ORDER BY C.distancia ASC;
+    
+# Estado: Estavel
+    
+SELECT C.distancia AS 'Nível do Resíduo (cm)',
+       S.codigoSensor,
+       E.nomeEmpresa,
+       CONCAT('STATUS: ', 'ESTÁVEL. Nível Baixo de Resíduo.') AS 'Status da Lixeira'
+FROM ColetaDados AS C
+JOIN Sensor AS S ON C.fkSensor = S.idSensor
+JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
+WHERE C.distancia > 75
+ORDER BY C.distancia ASC;
