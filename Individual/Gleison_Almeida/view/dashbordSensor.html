@@ -53,6 +53,8 @@
         <h1>Grupo: Av. Lins de Vasconcelos</h1>
 
         <ul>
+
+            <h4>Categoria: <span>???</span></h4>
             <h4>Sensor: <span>???</span></h4>
             <li class="sensor">
                 <div id="container_flex">
@@ -64,32 +66,31 @@
 
                     <div class="container_kpi">
                         
-                        <div class="title_kpi"><span>Pico Preenchi.</span> <a href=""><img src="" alt=""></a></div>
+                        <div class="title_kpi"><span>Pico Preenchi.</span> <a href=""><img src="../asset/img/InfoIcon.png" alt=""></a></div>
                         <div class="container kpi">
                             
-                            <span>20</span>
+                            <span>20:00</span>
 
                         </div>
                         
-                        <div class="title_kpi"><span>Horário Pico</span> <a href=""><img src="" alt=""></a></div>
-                        <div class="container kpi meio">
+                        <div class="title_kpi meio"><span>Horário Pico</span> <a href=""><img src="../asset/img/InfoIcon.png" alt=""></a></div>
+                        <div class="container kpi meio conteudo_kpi">
 
-                            <span>20</span>
-
-
-                        </div>
-
-                        <div class="title_kpi"><span>Preenchi. Médio</span> <a href=""><img src="" alt=""></a></div>
-                        <div class="container kpi meio">
-
-                            <span>20</span>
+                            <span>17:00</span>
 
                         </div>
 
-                        <div class="title_kpi"><span>Temp. Médio</span> <a href=""><img src="" alt=""></a></div>
+                        <div class="title_kpi meio"><span>Preenchi. Médio</span> <a href=""><img src="../asset/img/InfoIcon.png" alt=""></a></div>
+                        <div class="container kpi meio conteudo_kpi">
+
+                            <span>38%</span>
+
+                        </div>
+
+                        <div class="title_kpi"> <span>Temp. Médio</span> <a href=""><img src="../asset/img/InfoIcon.png" alt=""></a></div>
                         <div class="container kpi">
 
-                            <span>20</span>
+                            <span>8 Horas</span>
 
                         </div>
 
@@ -104,6 +105,7 @@
                 </div>
 
             </li>
+            
         </ul>    
 
     </section>
@@ -301,7 +303,7 @@
             ctx.textAlign = "center"; // Alinha o texto horizontalmente ao centro (para usar width/2)
             ctx.textBaseline = "middle"; // Alinha o texto verticalmente ao meio (para usar height/2)
             ctx.fillStyle = "#0a1911"; // Cor do texto (hex ou nome) — define a cor usada em fillText
-            // Texto principal (porcentagem)
+            // Texto principal (porcentagem)    
             ctx.font = `bold ${mainFontSize}px Arial`; // Define a fonte: peso 'bold', tamanho calculado dinamicamente e família 'Arial'
             ctx.fillText(value + '%', width / 2, height / 2 - subFontSize * 0.8);
             // Desenha o texto principal (ex: "80%") no centro horizontal (width/2)
@@ -322,10 +324,10 @@
     new Chart(RoscaReciclavel, {
         type: "doughnut", // Tipo do gráfico: "doughnut" (rosquinha).
         data: { // Objeto que contém os dados e rótulos do gráfico
-            labels: [ // "labels" define os rótulos das fatias
-                "Vazio",
-                "Ocupado"
-            ],
+            // labels: [ // "labels" define os rótulos das fatias
+            //     "Vazio",
+            //     "Ocupado"
+            // ],
             datasets: [{ // Vetor de conjuntos de dados. Mesmo que seja apenas 1 dataset, precisa ser um vetor
                 label: "", // Nome do dataset — aparece na legenda e pode ser usado nos tooltips
                 data: [100 - ultimo1, ultimo1], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
@@ -338,21 +340,21 @@
         },
         options: { // Configurações e opções do gráfico (layout, plugins, escalas, interatividade, etc.)
             responsive: true, // Faz o gráfico redimensionar automaticamente com o container
-            cutout: "75%", // Espessura do gráfico de rosca, quanto maior mais fino o círculo
+            cutout: "80%", // Espessura do gráfico de rosca, quanto maior mais fino o círculo
             plugins: { // Configurações para plugins nativos (legend, title, tooltip, etc.) ou criados 
                 legend: { 
-                    position: "top",
+                    position: "center",
                     labels: {
                         boxWidth: 15,
                         font: { size: 12 }
                     }
                 }, // Mostra a legenda (nome do dataset)
-                title: { 
-                    display: true, 
-                    text: "Preenchimento Atual - Reciclável",
-                    color: "black",
-                    font: {size: 15, weight: "bold", family: "Arial"},
-                }, // Título do gráfico
+                // title: { 
+                //     display: true, 
+                //     text: "Preenchimento Atual - Reciclável",
+                //     color: "black",
+                //     font: {size: 15, weight: "bold", family: "Arial"},
+                // }, // Título do gráfico
                 tooltip: { // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
                     callbacks: {
                         label: function(context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
