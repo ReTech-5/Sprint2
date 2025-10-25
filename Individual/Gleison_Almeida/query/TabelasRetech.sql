@@ -26,7 +26,7 @@ CREATE TABLE Endereco(
 idEndereco INT PRIMARY KEY AUTO_INCREMENT, 	-- Identificador único do endereço
 logradouro VARCHAR(45),						-- Rua, avenida ou local
 numero INT,									-- Número do local 
-cep CHAR(9),								-- Código postal (CEP)																																						
+cep CHAR(9)								-- Código postal (CEP)																																						
 );
 
 /*
@@ -95,7 +95,7 @@ sistema de coleta de dados (Arduino) e o Banco de Dados.
 */
 CREATE TABLE ColetaDados(
 idColeta INT AUTO_INCREMENT UNIQUE NOT NULL,		-- Identificador daa coleta
-distancia DECIMAL(3,2),								-- Distância medida  (nível de resíduo)
+distancia DECIMAL(5,2),								-- Distância medida  (nível de resíduo)
 horaColeta TIME,									-- Hora da leitura
 dataColeta DATE, 									-- Data da leitura
 fkSensor INT,										-- Sensor que coletou os dados
@@ -104,5 +104,7 @@ fkSensor INT,										-- Sensor que coletou os dados
     REFERENCES sensor(idSensor),
     PRIMARY KEY (idColeta, fkSensor)				-- Estabelecendo uma entidade fraca
 );
+
+
 
 
