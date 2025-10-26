@@ -1,52 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login ReTech</title>
   <link rel="stylesheet" href="../style/global.css">
-  <link rel="stylesheet" href="../style/navbar.css">
   <link rel="stylesheet" href="../style/login.css">
-  <link rel="stylesheet" href="../style/footer.css">
+  <script src="../js/login.js"></script>
 </head>
-
 <body>
-
-  <!-- Inicio da Navbar -->
-
-  <header class="navbar">
-    <div class="container_nav">
-
-      <div id="logo_nav">
-        <a href=""><img src="../asset/img/Logo.svg" alt=""></a>
-      </div>
-
-      <nav class="nav">
-
-        <ul class="ul_nav">
-
-          <li><a href="">Inicio</a></li>
-          <li><a href="">Sobre</a></li>
-          <li><a href="">Quem Somos</a></li>
-          <li><a href="">Serviços</a></li>
-          <li><a href="">Contato</a></li>
-
-        </ul>
-
-        <ul class="bt_nav">
-
-          <li class="button" id="bt_login"><a href="">Entrar</a></li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- Fim da Navbar -->
-
   <main class="container-login">
 
     <div class="cabecalho-login">
@@ -65,14 +27,14 @@
 
         <div class="grupo-campo">
           <label for="email" class="label-campo">E-mail</label>
-          <input type="text" id="ipt_email" class="input-campo" placeholder="seu@email.com">
+          <input onkeyup="validarEmail()" type="text" id="ipt_email" class="input-campo" placeholder="seu@email.com">
           <div id="div_email" class="mensagem-erro"></div>
         </div>
 
         <div class="grupo-campo">
           <label for="senha" class="label-campo">Senha</label>
-          <input type="password" id="ipt_senha" class="input-campo" placeholder="Digite sua senha">
-          <div id="div_senha" class="mensagem-erro"></div>
+          <input onkeyup="validarSenha()" type="password" id="ipt_senha" class="input-campo" placeholder="Digite sua senha">
+          <div id="div_senha" class="mensagem-erro">- A senha deve conter ao menos 8 caracteres<br>- A senha deve conter uma letra minúscula<br>- A senha deve conter uma letra maiúscula<br>- A senha deve conter um número<br>- A senha deve conter um caracter especial</div>
         </div>
 
         <button onclick="validar()" class="button">Entrar</button>
@@ -82,110 +44,7 @@
         </p>
       </div>
     </div>
-
     </div>
   </main>
-
-  <!-- Inicio da Footer -->
-
-  <div class="footer">
-    <div class="container_footer">
-
-      <div class="ftr_slogan">
-        <img src="../asset/img/Logo_branca.svg" alt="">
-
-        <p id="slogan">Transformando a gestão de resíduos urbanos através da <br>
-          tecnologia e inovação</p>
-
-      </div>
-
-      <div class="ftr_links">
-        <ul>
-
-          <h4 class="title">Links Rápidos</h4>
-          <li><a href=""></a>Inicio</li>
-          <li><a href=""></a>Sobre</li>
-          <li><a href=""></a>Quem Somos</li>
-          <li><a href=""></a>Serviços</li>
-          <li><a href=""></a>Contato</li>
-          <li><a href=""></a>Entrar</li>
-
-        </ul>
-      </div>
-
-      <div class="ftr_contatos">
-
-        <ul>
-
-          <h4 class="title">Contatos</h4>
-          <li>
-            <img src="../asset/img/IconEmail.png" alt="">
-            contato@retech.com
-          </li>
-          <li>
-            <img src="../asset/img/IconPhone.png" alt="">
-            (11) 99999-9999
-          </li>
-          <li>
-            <img src="../asset/img/IconPlaceMarker.png" alt="">
-            São Paulo - SP
-          </li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-    <hr>
-
-    <p id="direitos">&copy; 2025 ReTech. Todos os direitos reservados.</p>
-
-  </div>
-
-  <!-- Final da Footer -->
-
-
 </body>
-
 </html>
-<script>
-  function validar() {
-    div_email.innerHTML = "";
-    var caracteresEspeciais = ["!", "@", "#", "$", "%", "¨¨", "&", "*", "(", ")", "_", "-", "+", "=", "{", "}", "ª", "[", "]", "~", "^", ":", ";", ".", ",", "?", "°", "/"];
-    var numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var email = ipt_email.value;
-    var senha = ipt_senha.value;
-    var mensagem = "";
-
-    if (email == "" || senha == "") {
-      if (email == "") {
-        div_email.innerHTML = "Preencha o campo de email<br>";
-      }
-      if (senha == "") {
-        mensagem += "Preencha o campo de senha<br>";
-      }
-    }
-    else if (senha.length < 8 || !senha.includes(caracteresEspeciais) || !senha.includes(numeros) || senha == senha.toLowerCase() || senha == senha.toUpperCase()) {
-      if (senha.length < 8) {
-        mensagem += "A senha deve ter pelo menos 8 caracteres<br>";
-      }
-      if (!senha.includes(caracteresEspeciais)) {
-        mensagem += "A senha deve incluir caracteres especiais<br>";
-      }
-      if (!senha.includes(numeros)) {
-        mensagem += "A senha deve incluir números<br>";
-      }
-      if (senha == senha.toLowerCase()) {
-        mensagem += "A senha deve conter uma letra maiúscula<br>";
-      }
-      if (senha == senha.toUpperCase()) {
-        mensagem += "A senha deve conter uma letra minúscula<br>";
-      }
-    }
-    else {
-      alert("Login válido!");
-    }
-    div_senha.innerHTML = mensagem;
-  }
-</script>
