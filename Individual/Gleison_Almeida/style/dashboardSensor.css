@@ -1,3 +1,4 @@
+/* Define o fundo do body com gradiente e também define uma cor de fallback */
 body {
 
     background: linear-gradient(248deg, var(--bg-cinza) 0%, #FFF 100% );
@@ -5,7 +6,7 @@ body {
 
 }
 
-
+/* Estrutura principal da página de sensor: coluna, centralizada e com margens */
 .dashboard_sensor {
 
     display: flex;
@@ -17,6 +18,7 @@ body {
 
 }
 
+/* Estilo genérico de container reaproveitado: cor do card e sombra para profundidade */
 .container{
 
     background-color: var(--bg-card);
@@ -24,6 +26,7 @@ body {
 
 }
 
+/* Lista no dashboard_sensor ocupando largura total e metade da altura disponível */
 .dashboard_sensor ul{
 
     width: 100%;
@@ -31,6 +34,7 @@ body {
     
 }
 
+/* Títulos dentro da lista: margem lateral para separar do conteúdo */
 .dashboard_sensor ul h4{
 
     margin: 0 5%;
@@ -38,6 +42,7 @@ body {
 
 }
 
+/* Linha que agrupa sensores em uma mesma linha: espaço uniforme entre eles */
 .sensor {
 
     display: flex;
@@ -49,6 +54,7 @@ body {
 }
 
 
+/* Container flex interno: define largura relativa para agrupamentos */
 #container_flex {
 
     display: flex;
@@ -57,6 +63,7 @@ body {
 
 }
 
+/* Bloco “rosquinha” (provável gráfico donut): centraliza conteúdo e define proporção */
 .rosquinha {
 
     display: flex;
@@ -70,6 +77,7 @@ body {
 
 }
 
+/* Área de KPIs no sensor: coluna alinhada ao início para listar métricas verticalmente */
 .container_kpi{
 
     display: flex;
@@ -81,6 +89,7 @@ body {
 
 }
 
+/* Imagens pequenas dentro do container_kpi — provavelmente ícones das métricas */
 .container_kpi img {
 
     width: 12px;
@@ -88,6 +97,7 @@ body {
 
 }
 
+/* Estilo do bloco kpi: centraliza texto, define tamanho de fonte e espaçamento inferior */
 .kpi {
 
     display: flex;
@@ -102,6 +112,7 @@ body {
 
 }
 
+/* Título de KPI: alinha ao início para que o nome da métrica fique à esquerda */
 .title_kpi {
 
     display: flex;
@@ -110,12 +121,14 @@ body {
 
 }
 
+/* Ajuste da margem entre elementos de título (por ex. ícone + texto) */
 .title_kpi span {
 
     margin-right: 3%;
 
 }
 
+/* Área central de layout para alinhar elementos à direita / meio do container */
 .meio{
 
     display: flex;
@@ -125,6 +138,7 @@ body {
     
 }
 
+/* Conteúdo interno do KPI: usa propriedades de alinhamento para centralizar o conteúdo */
 .conteudo_kpi{
 
     align-content: center;
@@ -133,6 +147,7 @@ body {
 
 }
 
+/* Linha (possível uso em legendas ou valores) — centraliza e aplica padding interno */
 .linha {
 
     display: flex;

@@ -1,9 +1,11 @@
+/* Define o fundo do body com gradiente — cria uma transição suave do cinza para branco */
 body {
 
     background: linear-gradient(248deg, var(--bg-cinza) 0%, #FFF 100% );
 
 }
 
+/* Container principal do dashboard: organiza como fila e alinha itens ao topo */
 .dashboard_geral {
 
     display: flex;
@@ -14,6 +16,7 @@ body {
 
 }
 
+/* Estilo base para containers de cards: cor do fundo e sombra para "elevar" o card */
 .container{
 
     background-color: var(--bg-card);
@@ -21,6 +24,7 @@ body {
 
 }
 
+/* Título de card centralizado, com altura fixa e cor de fundo específica para títulos */
 .card_title {
 
     width: 100%;
@@ -35,6 +39,7 @@ body {
 
 }
 
+/* Container lateral de sensores: define largura relativa e empilha itens em coluna */
 .container_sensor{
     
     width: 35%;
@@ -45,6 +50,7 @@ body {
 
 }
 
+/* Ajuste do tamanho das imagens dentro do container_sensor e espaçamento lateral */
 .container_sensor img {
 
     width: 15%;
@@ -52,6 +58,7 @@ body {
 
 }
 
+/* Lista dentro do container_sensor: organiza verticalmente e destaca com negrito */
 .container_sensor ul {
 
     display: flex;
@@ -61,6 +68,7 @@ body {
 
 }
 
+/* Itens da lista: alinham conteúdo em linha e adicionam espaçamento inferior */
 .container_sensor li {
 
     display: flex;
@@ -70,6 +78,7 @@ body {
 
 }
 
+/* Container principal do conteúdo do dashboard — coluna com margens internas */
 .container_dash {
 
     display: flex;
@@ -80,6 +89,7 @@ body {
 
 }
 
+/* Área que agrupa KPIs: centraliza verticalmente e define altura percentual */
 .container_kpi {
     
     display: flex;
@@ -89,6 +99,7 @@ body {
 
 }
 
+/* Estilo padrão para cada KPi: espaçamento, largura, borda arredondada e fonte maior */
 .kpi {
 
     display: flex;
@@ -103,18 +114,21 @@ body {
 
 }
 
+/* ID para elemento inativo dentro do KPI — cor vermelha para destaque de erro/alerta */
 .kpi #inativo {
 
     color: #BB271A;
 
 }
 
+/* ID para elemento ativo dentro do KPI — cor verde para estado positivo */
 .kpi #ativo {
 
     color: #9DC284;
 
 }
 
+/* Imagens em container_kpi: tamanho e espaçamento à direita */
 .container_kpi img {
 
     width: 15%;
@@ -122,6 +136,7 @@ body {
 
 }
 
+/* Área das barras (gráficos): distribui itens horizontalmente e define altura */
 .barras {
 
     display: flex;
@@ -133,6 +148,7 @@ body {
 
 }
 
+/* Blocos de reciclável e orgânico: centralizam conteúdo e ocupam metade do espaço cada */
 #reciclavel, #organico{
 
     display: flex;
@@ -143,6 +159,7 @@ body {
 
 }
 
+/* Container flex para alinhamentos entre elementos (por exemplo gráfico + legenda) */
 .container_flex {
 
     display: flex;
@@ -152,6 +169,7 @@ body {
 
 }
 
+/* Área do gráfico tipo “pizza”: centraliza e ajusta padding inferior */
 .pizza {
 
     display: flex;
@@ -163,7 +181,7 @@ body {
     
 }
 
-
+/* Caixa de alerta: coluna, centralizada e com largura menor para ficar como sidebar */
 .alerta {
 
     display: flex;
@@ -174,6 +192,7 @@ body {
 
 }
 
+/* Título dentro do alerta: alinha ao centro/embaixo e adiciona padding interno */
 .alerta h4{
 
     display: flex;
@@ -184,19 +203,21 @@ body {
 
 }
 
+/* Link dentro do bloco de alerta: largura reduzida (provavelmente ícone) */
 .alerta a{
 
     width: 10%;
 
 }
 
+/* Imagens dentro da área de alerta ocupam toda a largura do bloco */
 .alerta img{
 
     width: 100%;
 
 }
 
-
+/* Caixa de notificação: centraliza texto, define background neutro e padding */
 .notificacao {
 
     display: flex;
@@ -213,6 +234,7 @@ body {
 
 }
 
+/* Ícone dentro da notificação: define proporção em relação ao bloco */
 .notificacao img {
 
     width: 15%;
