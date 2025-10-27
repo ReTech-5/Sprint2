@@ -105,7 +105,7 @@ body {
 /* Formatação padrão dos botões da pagina */
 .button{
 
-    background: linear-gradient(90deg, var(--bg-bt-gradiend-claro) 0%, var(--bg-bt-gradiend-escuro) 100%);
+    background: linear-gradient(90deg, var(--bg-bt-gradiend-claro) 0%, var(--bg-bt-gradiend-medio) 100%);
     color: var(--bt-text-color);
     font-weight: bold;
     
