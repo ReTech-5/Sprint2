@@ -37,9 +37,11 @@
 
         <div class="grupo-campo">
           <label for="senha" class="label-campo">Senha</label>
-          <input onkeyup="validarSenha()" type="password" id="ipt_senha" class="input-campo"
-            placeholder="Digite sua senha...">
-          <i id="icone_olho" class="fa-solid fa-eye" onclick="verSenha()"></i>
+          <div class="visualizar_senha">
+            <input onkeyup="validarSenha()" type="password" id="ipt_senha" class="input-campo"
+              placeholder="Digite sua senha...">
+            <i id="icone_olho" class="fa-solid fa-eye" onclick="verSenha()"></i>
+          </div>
           <div id="div_senha" class="mensagem-erro">
             - A senha deve conter ao menos 8 caracteres<br>
             - A senha deve conter uma letra minúscula<br>

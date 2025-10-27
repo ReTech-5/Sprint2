@@ -1,7 +1,5 @@
-body{
-
+body {
   background-color: var(--bg-cinza);
-
 }
 
 .container-login {
@@ -86,35 +84,37 @@ body{
   cursor: not-allowed;
 }
 
-.campo-senha {
+.visualizar_senha {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
-.campo-senha .input-campo {
+.visualizar_senha .input-campo {
   width: 100%;
-  padding-right: 40px;
+  padding-right: 40px; /* espaço pro ícone */
+  box-sizing: border-box;
 }
 
 #icone_olho {
   position: absolute;
-  top: 50.9%;
-  right: 17%;
-  color: #888;
+  right: 12px;           /* distância da borda direita */
+  top: 50%;              /* centraliza verticalmente */
+  transform: translateY(-50%);
+  color: #666;
   font-size: 18px;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 #icone_olho:hover {
-  color: #333;
-  transform: scale(1.1);
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
 }
 
 #btn_entrar {
-
   padding: 5px 5px;
-
-
 }
+
+
