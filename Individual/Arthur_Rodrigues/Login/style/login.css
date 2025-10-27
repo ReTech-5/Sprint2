@@ -1,14 +1,9 @@
-
-
 .container-login {
-  display: flex;  
-   flex-direction: column;
-   align-items: flex-end; 
-  justify-content: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   min-height: 100vh;
   padding: 60px;
-  
-
 }
 
 .cabecalho-login {
@@ -16,23 +11,23 @@
   margin-bottom: 40px;
 }
 
-.container-conteudo{
+.container-conteudo {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
 }
 .formulario-login {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  border: 2px ; 
-  border-radius: 8px; 
-  border-left: 10px ;
+  border: 2px;
+  border-radius: 8px;
+  border-left: 10px;
   border-right: 10px;
   padding: 30px;
-  height: 400px;
-
+  height: 450px;
+  width: 380px;
 }
 
 .grupo-campo {
@@ -43,7 +38,6 @@
   display: flex;
   margin-bottom: 5px;
   font-weight: bold;
-  
 }
 
 .input-campo {
@@ -58,12 +52,10 @@
   margin-top: 5px;
 }
 
-
 .link-recuperar {
   text-align: center;
   margin-top: 15px;
 }
-
 
 #link_esqueci_senha {
   color: green;
@@ -78,6 +70,37 @@
   height: 400px;
   margin-right: 0px;
   width: 400px;
-   align-items: center; 
-   padding: 40px;
+  align-items: center;
+  padding: 40px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.campo-senha {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.campo-senha .input-campo {
+  width: 100%;
+  padding-right: 40px;
+}
+
+#icone_olho {
+  position: absolute;
+  top: 349px;
+  right: 235px;
+  color: #888;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#icone_olho:hover {
+  color: #333;
+  transform: scale(1.1);
 }
