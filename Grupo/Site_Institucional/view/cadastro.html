@@ -1,158 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configuração de Usuários</title>
-    <link rel="stylesheet" href="../style/cadastro.css" />
-    <link rel="stylesheet" href="../style/global.css" />
-    <link rel="stylesheet" href="../style/navbar.css" />
-    <link rel="stylesheet" href="../style/footer.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <!-- Inicio da Navbar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuração de Usuários</title>
+  <link rel="stylesheet" href="../style/cadastro.css" />
+  <link rel="stylesheet" href="../style/global.css" />
+  <link rel="stylesheet" href="../style/navbar.css" />
+  <link rel="stylesheet" href="../style/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
 
-    <header class="navbar">
-      <div class="container_nav"> 
-        <div id="logo_nav">
-          <a href=""><img src="../asset/Logo.svg" alt="" /></a>
-        </div>
+<body>
+  <!-- Inicio da Navbar -->
 
-        <nav class="nav">
-          <ul class="ul_nav">
-
-            <li><a href="dashbordGeral.html">Dashboard</a></li>
-            <li><a href="calculadora.html">Calculadora</a></li>
-            <li><a id="page_atual" href="#">Cadastro</a></li>
-            <li><a href="#">Contato</a></li>
-
-          </ul>
-
-          <div class="user">
-            <a href=""><img src="../asset/Avatar.svg" alt="" /></a>
-            <span id="msg_user"></span>
-          </div>
-        </nav>
+  <header class="navbar">
+    <div class="container_nav">
+      <div id="logo_nav">
+        <a href=""><img src="../asset/Logo.svg" alt="" /></a>
       </div>
-    </header>
 
-    <!-- Fim da Navbar -->
+      <nav class="nav">
+        <ul class="ul_nav">
 
-    <!-- Conteúdo Principal -->
-    <main class="container">
-      <div class="card">
-        <h2>Configuração de Usuários</h2>
+          <li><a href="dashbordGeral.html">Dashboard</a></li>
+          <li><a href="calculadora.html">Calculadora</a></li>
+          <li><a id="page_atual" href="#">Cadastro</a></li>
+          <li><a href="#">Contato</a></li>
 
-        <div class="acoes">
-          <button class="btn btn-novo" onclick="novoUsuario()">
-            + Novo Usuário
+        </ul>
+
+        <div class="user">
+          <a href=""><img src="../asset/Avatar.svg" alt="" /></a>
+          <span id="msg_user"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fim da Navbar -->
+
+  <!-- Conteúdo Principal -->
+  <main class="container">
+    <div class="card">
+      <h2>Configuração de Usuários</h2>
+
+      <div class="acoes">
+        <button class="btn btn-novo" onclick="novoUsuario()">
+          + Novo Usuário
+        </button>
+
+        <div class="dropdown">
+          <button class="btn btn-filtro" onclick="toggleFiltro()">
+            <img src="../asset/FiltroIcon.png" alt="Filtro" class="icon" />
+            Filtros
+            <img src="../asset/SetaIcon.png" alt="filtro_triangulo" class="icontriangulo" />
           </button>
 
-          <div class="dropdown">
-            <button class="btn btn-filtro" onclick="toggleFiltro()">
-              <img src="../asset/FiltroIcon.png" alt="Filtro" class="icon" />
-              Filtros
-              <img
-                src="../asset/SetaIcon.png"
-                alt="filtro_triangulo"
-                class="icontriangulo"
-              />
+          <div id="menuFiltro" class="menu-filtro">
+            <button onclick="filtrarUsuarios('todos')">Todos</button>
+            <button onclick="filtrarUsuarios('Administrador')">
+              Administrador
             </button>
-
-            <div id="menuFiltro" class="menu-filtro">
-              <button onclick="filtrarUsuarios('todos')">Todos</button>
-              <button onclick="filtrarUsuarios('Administrador')">
-                Administrador
-              </button>
-              <button onclick="filtrarUsuarios('Padrão')">Padrão</button>
-            </div>
+            <button onclick="filtrarUsuarios('Padrão')">Padrão</button>
           </div>
-
-          <button class="btn btn-editar" onclick="editarUsuario()">
-            <img src="../asset/EditarIcon.png" alt="Editar" class="icon" />
-            Editar
-          </button>
         </div>
 
-        <table id="tabelaUsuarios">
-          <thead>
-            <tr>
-              <!-- checkbox para marcar/desmarcar todos -->
-              <th>
-                <input
-                  type="checkbox"
-                  id="checkAll"
-                  onclick="selecionarTodos()"
-                />
-              </th>
-              <th>Usuário</th>
-              <th>E-mail</th>
-              <th>Nível Acesso</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Linhas adicionadas via JS -->
-          </tbody>
-        </table>
-      </div>
-    </main>
-
-    <!-- Inicio da Footer -->
-
-    <div class="footer">
-      <div class="container_footer">
-        <div class="ftr_slogan">
-          <img src="../asset/Logo_branca.svg" alt="" />
-
-          <p id="slogan">
-            Transformando a gestão de resíduos urbanos através da <br />
-            tecnologia e inovação
-          </p>
-        </div>
-
-        <div class="ftr_links">
-          <ul>
-            <h4 class="title">Links Rápidos</h4>
-            <li><a href=""></a>Inicio</li>
-            <li><a href=""></a>Sobre</li>
-            <li><a href=""></a>Quem Somos</li>
-            <li><a href=""></a>Serviços</li>
-            <li><a href=""></a>Contato</li>
-            <li><a href=""></a>Entrar</li>
-          </ul>
-        </div>
-
-        <div class="ftr_contatos">
-          <ul>
-            <h4 class="title">Contatos</h4>
-            <li>
-              <img src="../asset/IconEmail.png" alt="" />
-              contato@retech.com
-            </li>
-            <li>
-              <img src="../asset/IconPhone.png" alt="" />
-              (11) 99999-9999
-            </li>
-            <li>
-              <img src="../asset/IconPlaceMarker.png" alt="" />
-              São Paulo - SP
-            </li>
-          </ul>
-        </div>
+        <button class="btn btn-editar" onclick="editarUsuario()">
+          <img src="../asset/EditarIcon.png" alt="Editar" class="icon" />
+          Editar
+        </button>
       </div>
 
-      <hr />
+      <table id="tabelaUsuarios">
+        <thead>
+          <tr>
+            <!-- checkbox para marcar/desmarcar todos -->
+            <th>
+              <input type="checkbox" id="checkAll" onclick="selecionarTodos()" />
+            </th>
+            <th>Usuário</th>
+            <th>E-mail</th>
+            <th>Nível Acesso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Linhas adicionadas via JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
 
-      <p id="direitos">&copy; 2025 ReTech. Todos os direitos reservados.</p>
+  <!-- Inicio da Footer -->
+
+  <div class="footer">
+    <div class="container_footer">
+      <div class="ftr_slogan">
+        <img src="../asset/Logo_branca.svg" alt="" />
+
+        <p id="slogan">
+          Transformando a gestão de resíduos urbanos através da <br />
+          tecnologia e inovação
+        </p>
+      </div>
+
+      <div class="ftr_links">
+        <ul>
+          <h4 class="title">Links Rápidos</h4>
+          <li><a href=""></a>Inicio</li>
+          <li><a href=""></a>Sobre</li>
+          <li><a href=""></a>Quem Somos</li>
+          <li><a href=""></a>Serviços</li>
+          <li><a href=""></a>Contato</li>
+          <li><a href=""></a>Entrar</li>
+        </ul>
+      </div>
+
+      <div class="ftr_contatos">
+        <ul>
+          <h4 class="title">Contatos</h4>
+          <li>
+            <img src="../asset/IconEmail.png" alt="" />
+            contato@retech.com
+          </li>
+          <li>
+            <img src="../asset/IconPhone.png" alt="" />
+            (11) 99999-9999
+          </li>
+          <li>
+            <img src="../asset/IconPlaceMarker.png" alt="" />
+            São Paulo - SP
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Final da Footer -->
-  </body>
+    <hr />
+
+    <p id="direitos">&copy; 2025 ReTech. Todos os direitos reservados.</p>
+  </div>
+
+  <!-- Final da Footer -->
+</body>
+
 </html>
 
 <script>

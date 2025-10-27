@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <!-- Inicio da Navbar -->
 
     <header class="navbar">
         <div class="container_nav">
-            
+
             <div id="logo_nav">
                 <a href="home.html"><img src="../asset/Logo.svg" alt=""></a>
             </div>
 
             <nav class="nav">
-                
+
                 <ul class="ul_nav">
 
                     <li><a id="page_atual" href="dashbordGeral.html">Dashboard</a></li>
@@ -39,7 +41,7 @@
                 </div>
 
             </nav>
-            
+
         </div>
     </header>
 
@@ -58,35 +60,39 @@
             <li class="sensor">
                 <div id="container_flex">
                     <div class="container rosquinha">
-                        
+
                         <canvas id="cvs_roscaReciclavel"></canvas>
 
                     </div>
 
                     <div class="container_kpi">
-                        
-                        <div class="title_kpi"><span>Pico Preenchi.</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+
+                        <div class="title_kpi"><span>Pico Preenchi.</span> <a href=""><img src="../asset/InfoIcon.png"
+                                    alt=""></a></div>
                         <div class="container kpi">
-                            
+
                             <span>20:00</span>
 
                         </div>
-                        
-                        <div class="title_kpi meio"><span>Horário Pico</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+
+                        <div class="title_kpi meio"><span>Horário Pico</span> <a href=""><img
+                                    src="../asset/InfoIcon.png" alt=""></a></div>
                         <div class="container kpi meio conteudo_kpi">
 
                             <span>17:00</span>
 
                         </div>
 
-                        <div class="title_kpi meio"><span>Preenchi. Médio</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+                        <div class="title_kpi meio"><span>Preenchi. Médio</span> <a href=""><img
+                                    src="../asset/InfoIcon.png" alt=""></a></div>
                         <div class="container kpi meio conteudo_kpi">
 
                             <span>38%</span>
 
                         </div>
 
-                        <div class="title_kpi"> <span>Temp. Médio</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+                        <div class="title_kpi"> <span>Temp. Médio</span> <a href=""><img src="../asset/InfoIcon.png"
+                                    alt=""></a></div>
                         <div class="container kpi">
 
                             <span>8 Horas</span>
@@ -94,7 +100,7 @@
                         </div>
 
                     </div>
-                
+
                 </div>
 
                 <div class="container linha">
@@ -110,35 +116,39 @@
             <li class="sensor">
                 <div id="container_flex">
                     <div class="container rosquinha">
-                        
+
                         <canvas id="cvs_roscaOrganico"></canvas>
 
                     </div>
 
                     <div class="container_kpi">
-                        
-                        <div class="title_kpi"><span>Pico Preenchi.</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+
+                        <div class="title_kpi"><span>Pico Preenchi.</span> <a href=""><img src="../asset/InfoIcon.png"
+                                    alt=""></a></div>
                         <div class="container kpi">
-                            
+
                             <span>20:00</span>
 
                         </div>
-                        
-                        <div class="title_kpi meio"><span>Horário Pico</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+
+                        <div class="title_kpi meio"><span>Horário Pico</span> <a href=""><img
+                                    src="../asset/InfoIcon.png" alt=""></a></div>
                         <div class="container kpi meio conteudo_kpi">
 
                             <span>17:00</span>
 
                         </div>
 
-                        <div class="title_kpi meio"><span>Preenchi. Médio</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+                        <div class="title_kpi meio"><span>Preenchi. Médio</span> <a href=""><img
+                                    src="../asset/InfoIcon.png" alt=""></a></div>
                         <div class="container kpi meio conteudo_kpi">
 
                             <span>38%</span>
 
                         </div>
 
-                        <div class="title_kpi"> <span>Temp. Médio</span> <a href=""><img src="../asset/InfoIcon.png" alt=""></a></div>
+                        <div class="title_kpi"> <span>Temp. Médio</span> <a href=""><img src="../asset/InfoIcon.png"
+                                    alt=""></a></div>
                         <div class="container kpi">
 
                             <span>8 Horas</span>
@@ -146,7 +156,7 @@
                         </div>
 
                     </div>
-                
+
                 </div>
 
                 <div class="container linha">
@@ -156,8 +166,8 @@
                 </div>
 
             </li>
-            
-        </ul>    
+
+        </ul>
 
     </section>
 
@@ -165,6 +175,7 @@
 
 
 </body>
+
 </html>
 
 <script>
@@ -183,7 +194,7 @@
     var ultimo2 = 74;
     var cor1 = "";
     var cor2 = "";
-    
+
     // Gráfico de Linha da Curva de Preenchimento de uma Lixeira Reciclável
     /* Cria uma nova instância de Chart no canvas LinhaReciclavel
     "new Chart(elemento, config)" é a forma padrão de inicializar um gráfico com Chart.js */
@@ -204,15 +215,15 @@
             responsive: true, // Faz o gráfico redimensionar automaticamente com o container
             plugins: { // Configurações para plugins nativos (legend, title, tooltip, etc.)
                 legend: { display: true }, // Mostra a legenda (nome do dataset)
-                title: { 
-                    display: true, 
+                title: {
+                    display: true,
                     text: "Curva de Preenchimento - Reciclável",
                     color: "black",
-                    font: {size: 15, weight: "bold", family: "Arial"},
+                    font: { size: 15, weight: "bold", family: "Arial" },
                 }, // Título do gráfico
                 tooltip: { // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
                     callbacks: {
-                        label: function(context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
+                        label: function (context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
                             return context.dataset.label + ": " + context.parsed.y + "%";
                             // context.dataset.label = nome do dataset
                             // context.parsed.y = valor do ponto no eixo y (para gráfico de linha)
@@ -225,7 +236,7 @@
                     beginAtZero: true, // Faz com que o eixo comece em zero
                     max: 100, // Define o limite máximo como 100%
                     ticks: { // Personaliza os ticks (rótulos) do eixo
-                        callback: function(value) { // Função chamada para renderizar cada tick no eixo
+                        callback: function (value) { // Função chamada para renderizar cada tick no eixo
                             return value + "%"; // Adiciona o símbolo '%' aos rótulos do eixo Y
                         }
                     },
@@ -247,7 +258,7 @@
             }
         }
     });
-    
+
     // Gráfico de Linha da Curva de Preenchimento de uma Lixeira Orgânica
     /* Cria uma nova instância de Chart no canvas LinhaOrganico
     "new Chart(elemento, config)" é a forma padrão de inicializar um gráfico com Chart.js */
@@ -268,14 +279,14 @@
             responsive: true, // Faz o gráfico redimensionar automaticamente com o container
             plugins: { // Configurações para plugins nativos (legend, title, tooltip, etc.)
                 legend: { display: true }, // Mostra a legenda (nome do dataset)
-                title: { 
+                title: {
                     display: true, text: "Curva de Preenchimento - Orgânico",
                     color: "black",
-                    font: {size: 15, weight: "bold", family: "Arial"},
+                    font: { size: 15, weight: "bold", family: "Arial" },
                 }, // Título do gráfico
                 tooltip: { // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
                     callbacks: {
-                        label: function(context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
+                        label: function (context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
                             return context.dataset.label + ": " + context.parsed.y + "%";
                             // context.dataset.label = nome do dataset
                             // context.parsed.y = valor do ponto no eixo y (para gráfico de linha)
@@ -288,7 +299,7 @@
                     beginAtZero: true, // Faz com que o eixo comece em zero
                     max: 100, // Define o limite máximo como 100%
                     ticks: { // Personaliza os ticks (rótulos) do eixo
-                        callback: function(value) { // Função chamada para renderizar cada tick no eixo
+                        callback: function (value) { // Função chamada para renderizar cada tick no eixo
                             return value + "%"; // Adiciona o símbolo '%' aos rótulos do eixo Y
                         }
                     },
@@ -310,7 +321,7 @@
             }
         }
     });
-    
+
     // Validações para alterar a cor dos gráficos de rosca dinamicamente
     if (ultimo1 >= 0 && ultimo1 <= 25) {
         cor1 = "rgb(29, 209, 9)";
@@ -336,7 +347,7 @@
     else {
         cor2 = "rgb(209, 9, 9)";
     }
-    
+
     // Plugin para exibir texto central dentro da rosca
     const centerTextPlugin = { // Declara um objeto que será o plugin
         id: "centerText",  // Identificador único do plugin (usado internamente pelo Chart.js)
@@ -368,7 +379,7 @@
             // Isso evita que alterações de fonte/alinhamento/cor afetem outros desenhos no canvas
         }
     };
-    
+
     // Gráfico de Rosca do Preenchimento Atual de uma Lixeira Recicável
     /* Cria uma nova instância de Chart no canvas RoscaReciclavel.
     "new Chart(elemento, config)" é a forma padrão de inicializar um gráfico com Chart.js. */
@@ -383,8 +394,8 @@
                 label: "", // Nome do dataset — aparece na legenda e pode ser usado nos tooltips
                 data: [100 - ultimo1, ultimo1], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
                 backgroundColor: [ // Cor de cada fatia do gráfico
-                "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
-                cor1 // Cor da fatia de ocupação da lixeira se altera dinamicamente
+                    "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
+                    cor1 // Cor da fatia de ocupação da lixeira se altera dinamicamente
                 ],
                 hoverOffset: 4 // Efeito de crescimento da fatia ao passar o mouse por cima
             }]
@@ -393,7 +404,7 @@
             responsive: true, // Faz o gráfico redimensionar automaticamente com o container
             cutout: "80%", // Espessura do gráfico de rosca, quanto maior mais fino o círculo
             plugins: { // Configurações para plugins nativos (legend, title, tooltip, etc.) ou criados 
-                legend: { 
+                legend: {
                     position: "center",
                     labels: {
                         boxWidth: 15,
@@ -408,7 +419,7 @@
                 // }, // Título do gráfico
                 tooltip: { // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
                     callbacks: {
-                        label: function(context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
+                        label: function (context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
                             // context.parsed = valor do dataset
                             return " " + context.parsed + "%";
                         }
@@ -418,7 +429,7 @@
         },
         plugins: [centerTextPlugin] // Plugin criado para acrescentar a porcentagem de ocupação da lixeira no centro do gráfico
     });
-    
+
     // Gráfico de Rosca do Preenchimento Atual de uma Lixeira Orgânica
     /* Cria uma nova instância de Chart no canvas RoscaOrganico.
     "new Chart(elemento, config)"" é a forma padrão de inicializar um gráfico com Chart.js */
@@ -433,8 +444,8 @@
                 label: "", // Nome do dataset — aparece na legenda e pode ser usado nos tooltips
                 data: [100 - ultimo2, ultimo2], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
                 backgroundColor: [ // Cor de cada fatia do gráfico
-                "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
-                cor2 // Cor da fatia de ocupação da lixeira se altera dinamicamente
+                    "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
+                    cor2 // Cor da fatia de ocupação da lixeira se altera dinamicamente
                 ],
                 hoverOffset: 4 // Efeito de crescimento da fatia ao passar o mouse por cima
             }]
@@ -458,7 +469,7 @@
                 // }, // Título do gráfico
                 tooltip: { // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
                     callbacks: {
-                        label: function(context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
+                        label: function (context) { // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
                             // context.parsed = valor do dataset
                             return " " + context.parsed + "%";
                         }
@@ -470,4 +481,3 @@
     });
 
 </script>
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="../js/login.js"></script>
 </head>
+
 <body>
   <main class="container-login">
 
@@ -35,7 +37,8 @@
 
         <div class="grupo-campo">
           <label for="senha" class="label-campo">Senha</label>
-          <input onkeyup="validarSenha()" type="password" id="ipt_senha" class="input-campo" placeholder="Digite sua senha..."> 
+          <input onkeyup="validarSenha()" type="password" id="ipt_senha" class="input-campo"
+            placeholder="Digite sua senha...">
           <i id="icone_olho" class="fa-solid fa-eye" onclick="verSenha()"></i>
           <div id="div_senha" class="mensagem-erro">
             - A senha deve conter ao menos 8 caracteres<br>
@@ -46,7 +49,7 @@
           </div>
         </div>
 
-        <button id="btn_entrar"  onclick="validar()"  class="button" disabled>Entrar</button>
+        <button id="btn_entrar" onclick="validar()" class="button" disabled>Entrar</button>
 
         <p class="link-recuperar">
           <a href="#" id="link_esqueci_senha">Esqueci minha senha</a>
@@ -56,4 +59,5 @@
     </div>
   </main>
 </body>
+
 </html>

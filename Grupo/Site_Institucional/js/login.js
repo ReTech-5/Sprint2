@@ -116,7 +116,7 @@ function validarEmail() {
   if (email.includes("@")) {
     emailValido = true;
     div_email.innerHTML = "<span style='color: green;'>- O email deve conter o símbolo de @</span><br>";
-  } 
+  }
   else {
     emailValido = false;
     div_email.innerHTML = "- O email deve conter o símbolo de @";
@@ -137,9 +137,9 @@ function validarCampos() {
   }
 }
 
- function validar() {
-   window.location.href = "file:///C:/Users/gleis/OneDrive%20-%20SPTech%20School/PI/Repositorios/Sprint2/Grupo/Site_Institucional/view/dashbordGeral.html";
- }
+function validar() {
+  window.location.href = "file:///C:/Users/gleis/OneDrive%20-%20SPTech%20School/PI/Repositorios/Sprint2/Grupo/Site_Institucional/view/dashbordGeral.html";
+}
 
 function verSenha() {
   if (ipt_senha.type == "password") {
