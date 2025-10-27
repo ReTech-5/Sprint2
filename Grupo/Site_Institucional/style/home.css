@@ -1,668 +1,659 @@
-/* ================================
-   🎨 VARIÁVEIS (facilitam manutenção)
-================================ */
 :root {
-  --bg-dark: #0b0f0a;         /* Fundo escuro global */
-  --bg-hero: #1c1c1c;         /* Fundo da área principal (banner) */
-  --bg-deep: #04200D;         /* Fundo seções escuras */
-  --primary: #1e8449;         /* Verde principal ReTech */
-  --primary-2: #27ae60;       /* Verde para hover/destaques */
-  --text-light: #ffffff;      /* Texto claro */
-  --text-muted: #e0e0e0;      /* Texto claro secundário */
-  --text-dark: #333333;       /* Texto escuro padrão */
-  --gray-1: #cccccc;          /* Cinza claro para textos */
-  --gray-2: #dddddd;          /* Cinza claro para bordas */
-  --white: #ffffff;           /* Branco */
+  --bg-dark: #0b0f0a;
+  --bg-hero: #1c1c1c;
+  --bg-deep: #04200D;
+  --primary: #1e8449;
+  --primary-2: #27ae60;
+  --text-light: #ffffff;
+  --text-muted: #e0e0e0;
+  --text-dark: #333333;
+  --gray-1: #cccccc;
+  --gray-2: #dddddd;
+  --white: #ffffff;
 }
 
-/* ================================
-   🌐 BASE GLOBAL
-================================ */
 body {
-  font-family: Arial, sans-serif;      /* Fonte padrão */
-  margin: 0;                            /* Remove margens padrão */
-  padding: 0;                           /* Remove paddings padrão */
-  background-color: var(--bg-dark);     /* Fundo global escuro */
-  color: var(--text-light);             /* Texto claro padrão */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
 }
 
 .site {
-  width: 100%;                          /* Estrutura ocupa toda a largura */
+  width: 100%;
 }
 
-/* ================================
-   🏠 SEÇÃO PRINCIPAL (BANNER)
-================================ */
 .partePrincipal {
-  position: relative;                   /* Necessário para posicionar ::before */
-  text-align: center;                   /* Centraliza textos/botões */
-  padding: 100px 20px;                  /* Respiro interno */
-  background-color: var(--bg-hero);     /* Cor fallback do banner */
-  background-image: url(../asset/capa.jpeg); /* Imagem do banner */
-  background-size: cover;               /* Cobre toda a área */
-  background-position: center;          /* Centraliza foco da imagem */
-  color: var(--text-light);             /* Garante contraste */
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: var(--bg-hero);
+  background-image: url(../asset/capa.jpeg);
+  background-size: cover;
+  background-position: center;
+  color: var(--text-light);
 }
 
 .partePrincipal::before {
-  content: "";                          /* Cria a camada */
-  position: absolute;                   /* Posicionamento absoluto dentro do banner */
-  inset: 0;                             /* top/right/bottom/left = 0 (atalho) */
-  background-color: rgba(28, 84, 29, 0.5); /* Camada escura/verde translúcida */
-  z-index: 1;                           /* Fica atrás do conteúdo e à frente da imagem */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 84, 29, 0.5);
+  z-index: 1;
 }
 
 .partePrincipal * {
-  position: relative;                   /* Para controlar a pilha sobre ::before */
-  z-index: 2;                           /* Conteúdo acima da camada escura */
+  position: relative;
+  z-index: 2;
 }
 
-/* Título do banner */
 .principalTexto h1 {
-  font-size: 48px;                      /* Título grande */
-  margin-bottom: 10px;                  /* Espaço inferior */
-  color: var(--text-light);             /* Texto branco */
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--text-light);
 }
 
-/* Subtítulo do banner */
 .principalTexto p {
-  font-size: 18px;                      /* Tamanho intermediário */
-  color: var(--text-muted);             /* Cinza claro legível */
+  font-size: 18px;
+  color: var(--text-muted);
 }
 
-/* Área dos botões do banner */
 .principalBotoes {
-  margin-top: 30px;                     /* Distância do texto */
+  margin-top: 30px;
 }
 
-/* Botões principais do banner */
 .principalBotoes a {
-  color: var(--text-light);             /* Texto branco */
-  text-decoration: none;                /* Sem sublinhado */
-  padding: 12px 25px;                   /* Área clicável confortável */
-  border-radius: 5px;                   /* Bordas suaves */
-  margin: 0 10px;                       /* Espaço entre botões */
-  background-color: var(--primary);     /* Fundo verde padrão */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Feedback */
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: var(--primary);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Segundo botão mantém o mesmo verde (como você definiu) */
 .principalBotoes a:last-child {
-  background-color: var(--primary);     /* Consistência visual */
+  background-color: var(--primary);
 }
 
-/* Hover dos botões */
 .principalBotoes a:hover {
-  background-color: var(--primary-2);   /* Verde mais vivo ao passar o mouse */
-  transform: translateY(-2px);          /* Leve movimento para feedback */
+  background-color: var(--primary-2);
+  transform: translateY(-2px);
 }
 
-/* ================================
-   ♻️ SEÇÃO PROBLEMAS
-================================ */
 .problemas {
-  text-align: center;                   /* Centralização de conteúdo */
-  padding: 80px 20px;                   /* Respiro interno */
-  background-color: var(--bg-deep);     /* Fundo verde escuro */
+  text-align: center;
+  padding: 80px 20px;
+  background-color: var(--bg-deep);
 }
 
 .problemas h2 {
-  font-size: 36px;                      /* Título destacado */
-  margin-bottom: 10px;                  /* Espaçamento inferior */
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.problemas > p {
-  color: var(--white);                  /* Texto claro principal */
-  margin-bottom: 40px;                  /* Espaço para as caixas */
+.problemas>p {
+  color: var(--white);
+  margin-bottom: 40px;
 }
 
 .problemasContainer {
-  display: flex;                        /* Layout horizontal */
-  justify-content: center;              /* Centraliza as caixas */
-  flex-wrap: wrap;                      /* Permite quebrar em telas menores */
-  gap: 24px;                            /* Espaço uniforme entre caixas */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .problemasContainer .caixa {
-  background-color: var(--white);       /* Cartão branco */
-  color: var(--text-dark);              /* Texto escuro legível */
-  padding: 30px;                         /* Respiro interno */
-  width: 220px;                          /* Largura do cartão */
-  border-radius: 8px;                    /* Bordas suaves */
-  text-align: center;                    /* Alinhamento do texto */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra leve */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Feedback */
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: 30px;
+  width: 220px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .problemasContainer .caixa:hover {
-  transform: translateY(-5px);          /* Eleva no hover (corrigido com px) */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra mais forte no hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .problemasContainer .caixa h3 {
-  margin-top: 0;                        /* Remove margem superior nativa */
+  margin-top: 0;
 }
 
-/* ================================
-   🏢 SEÇÃO SOBRE
-================================ */
 .sobre {
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%); /* Gradiente suave */
-  color: var(--text-dark);              /* Texto escuro */
-  padding: 80px 60px;                   /* Respiro */
-  font-family: 'Segoe UI', Arial, sans-serif; /* Tipografia consistente */
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  color: var(--text-dark);
+  padding: 80px 60px;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Título da seção sobre */
 .sobre h2 {
-  text-align: center;                   /* Centralizado */
-  font-size: 36px;                      /* Destaque */
-  margin-bottom: 60px;                  /* Espaço para o conteúdo */
-  font-weight: 700;                     /* Peso forte */
-  color: #000;                          /* Preto conforme seu CSS anterior */
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: 700;
+  color: #000;
 }
 
-/* Container em 3 colunas com gaps */
 .sobreContainer {
-  display: flex;                        /* Layout em linha */
-  justify-content: space-between;       /* Espaço uniforme entre colunas */
-  align-items: flex-start;              /* Alinha pelo topo */
-  flex-wrap: wrap;                      /* Quebra em telas menores */
-  gap: 40px;                            /* Espaços entre colunas */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-/* Coluna: Empresa */
 .empresa {
-  flex: 1;                              /* Cresce igualmente */
-  min-width: 280px;                     /* Largura mínima para responsivo */
-  max-width: 320px;                     /* Limite de largura */
-  text-align: left;                     /* Alinhamento do texto */
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+  text-align: left;
 }
 
 .empresa h3 {
-  text-align: center;                   /* Título centralizado */
-  color: var(--primary);                /* Verde ReTech */
-  font-size: 22px;                      /* Tamanho de subtítulo */
-  margin-bottom: 20px;                  /* Espaço inferior */
+  text-align: center;
+  color: var(--primary);
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
 .empresa p {
-  font-size: 15px;                      /* Leitura confortável */
-  line-height: 1.6;                     /* Altura de linha */
-  color: #444;                          /* Tom de texto */
-  text-align: justify;                  /* Bloco justificado */
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
 }
 
-/* Coluna: Missão/Visão */
 .info {
-  flex: 1;                              /* Cresce igualmente */
-  min-width: 300px;                     /* Largura mínima */
-  max-width: 400px;                     /* Limite de largura */
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
 }
 
 .info h3 {
-  font-size: 20px;                      /* Subtítulo */
-  color: var(--primary);                /* Verde ReTech */
-  margin-bottom: 5px;                   /* Espaço inferior */
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 5px;
 }
 
 .info p {
-  font-size: 15px;                      /* Texto padrão */
-  color: var(--text-dark);              /* Texto escuro */
-  line-height: 1.6;                     /* Altura de linha */
-  margin-bottom: 25px;                  /* Espaço entre blocos */
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-/* Coluna: Valores */
 .colunaValores {
-  flex: 1;                              /* Cresce igualmente */
-  min-width: 280px;                     /* Mínimo responsivo */
-  max-width: 350px;                     /* Limite */
-  text-align: center;                   /* Título centralizado */
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  text-align: center;
 }
 
 .colunaValores h3 {
-  color: var(--primary);                /* Verde ReTech */
-  font-size: 22px;                      /* Tamanho subtítulo */
-  margin-bottom: 20px;                  /* Espaço inferior */
+  color: var(--primary);
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-/* Grid de valores (2 colunas) */
 .valoresCaixas {
-  display: grid;                        /* Layout em grid */
-  grid-template-columns: repeat(2, 1fr);/* Duas colunas iguais */
-  gap: 15px;                            /* Espaço entre cartões */
-  justify-items: center;                /* Centraliza cartões na célula */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
 }
 
-/* Cartões de valor */
 .caixaValor {
-  background-color: var(--white);       /* Cartão branco */
-  border: 1px solid var(--gray-2);      /* Borda sutil */
-  border-radius: 10px;                  /* Bordas suaves */
-  padding: 20px;                         /* Respiro interno */
-  width: 140px;                          /* Largura do cartão */
-  height: 120px;                         /* Altura do cartão */
-  display: flex;                         /* Centro via flex */
-  align-items: center;                   /* Alinha verticalmente */
-  justify-content: center;               /* Alinha horizontalmente */
-  font-weight: 600;                      /* Peso do texto */
-  color: var(--text-dark);               /* Cor do texto */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra leve */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Feedback */
+  background-color: var(--white);
+  border: 1px solid var(--gray-2);
+  border-radius: 10px;
+  padding: 20px;
+  width: 140px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .caixaValor:hover {
-  transform: translateY(-5px);          /* Eleva no hover (px corrigido) */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra mais forte */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* ================================
-   🌱 SEÇÃO BENEFÍCIOS
-================================ */
 .beneficios {
-  padding: 80px 20px;                   /* Respiro interno */
-  text-align: center;                   /* Centraliza textos */
-  background-color: var(--bg-deep);     /* Fundo escuro */
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--bg-deep);
 }
 
 .beneficios h2 {
-  font-size: 36px;                      /* Título grande */
+  font-size: 36px;
 }
 
-.beneficios > p {
-  color: var(--gray-1);                 /* Cinza claro para subtítulo */
-  margin-bottom: 40px;                  /* Espaço inferior */
+.beneficios>p {
+  color: var(--gray-1);
+  margin-bottom: 40px;
 }
 
-/* Cards de benefícios */
 .beneficiosContainer {
-  display: flex;                        /* Layout horizontal */
-  justify-content: center;              /* Centraliza conjunto */
-  flex-wrap: wrap;                      /* Quebra em telas menores */
-  gap: 24px;                            /* Espaçamento uniforme */
-  margin-bottom: 40px;                  /* Espaço com o banner de impacto */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 .beneficiosContainer .caixa {
-  background-color: var(--white);       /* Cartão branco */
-  color: var(--text-dark);              /* Texto escuro */
-  padding: 35px;                        /* Respiro interno */
-  width: 220px;                         /* Largura do cartão */
-  border-radius: 8px;                    /* Bordas suaves */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra leve */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Feedback */
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: 35px;
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .beneficiosContainer .caixa:hover {
-  transform: translateY(-5px);          /* Eleva no hover */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra mais forte */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Banner de impacto (estatísticas) */
 .impactoBanner {
-  background-color: var(--white);       /* Fundo branco */
-  color: var(--text-dark);              /* Texto escuro */
-  padding: 40px 20px;                   /* Respiro */
-  margin: 0 auto;                       /* Centraliza bloco */
-  border-radius: 8px;                   /* Bordas suaves */
-  max-width: 900px;                     /* Largura máxima */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra leve */
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: 40px 20px;
+  margin: 0 auto;
+  border-radius: 8px;
+  max-width: 900px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Estatísticas em linha */
 .stats {
-  display: flex;                        /* Layout horizontal */
-  justify-content: space-around;        /* Espaçamento uniforme */
-  gap: 12px;                            /* Gap adicional para telas menores */
-  margin-top: 20px;                     /* Espaço acima */
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-/* Valor principal da estatística */
 .stats div {
-  font-size: 40px;                      /* Números grandes */
-  font-weight: bold;                    /* Negrito */
-  text-align: center;                   /* Centraliza cada item */
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
 }
 
-/* Descrição abaixo do número */
 .stats p {
-  font-size: 16px;                      /* Texto padrão */
-  font-weight: normal;                  /* Peso normal */
-  margin-top: 5px;                      /* Espaço superior */
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 5px;
 }
 
-/* Cores das estatísticas */
-.statReducao { color: var(--primary-2); }  /* Verde vivo */
-.statMenor   { color: #909090; }            /* Cinza médio */
-.statEficiencia { color: var(--primary-2);}/* Verde vivo */
+.statReducao {
+  color: var(--primary-2);
+}
 
-/* ================================
-   ⚙️ SEÇÃO SERVIÇOS
-================================ */
+.statMenor {
+  color: #909090;
+}
+
+.statEficiencia {
+  color: var(--primary-2);
+}
+
 .servicos {
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%); /* Fundo suave */
-  color: var(--text-dark);              /* Texto escuro */
-  padding: 80px 60px;                   /* Respiro */
-  text-align: center;                   /* Centraliza títulos */
-  font-family: 'Segoe UI', Arial, sans-serif; /* Tipografia */
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  color: var(--text-dark);
+  padding: 80px 60px;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .servicos h2 {
-  font-size: 36px;                      /* Título grande */
-  font-weight: 700;                     /* Peso forte */
-  margin-bottom: 15px;                  /* Espaço inferior */
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .servicos h2 span {
-  color: var(--primary);                /* Destaque verde */
+  color: var(--primary);
 }
 
-.servicos > p {
-  font-size: 16px;                      /* Subtítulo */
-  color: #444;                          /* Tom suave */
-  margin-bottom: 60px;                  /* Espaço para os cards */
+.servicos>p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 60px;
 }
 
-/* Grid dos serviços (duas colunas) */
 .servicosContainer {
-  display: grid;                        /* Grid layout */
-  grid-template-columns: repeat(2, 1fr);/* 2 colunas iguais */
-  gap: 25px 30px;                       /* Espaço entre cards */
-  justify-items: center;                /* Centraliza cada card */
-  max-width: 1000px;                    /* CORRIGIDO: faltava "px" */
-  margin: 0 auto 60px auto;             /* Centraliza e dá espaço inferior */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 30px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
 }
 
-/* Card individual de serviço */
 .servicoCaixa {
-  background-color: var(--white);       /* Cartão branco */
-  border: 1px solid var(--primary);     /* Borda verde */
-  border-radius: 10px;                  /* Bordas suaves */
-  padding: 25px 20px;                   /* Respiro interno */
-  width: 100%;                           /* Ocupa a coluna inteira */
-  max-width: 450px;                      /* Limite visual */
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);/* Sombra leve */
-  text-align: left;                      /* Texto à esquerda */
-  transition: all 0.3s ease;             /* Feedback */
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: all 0.3s ease;
 }
 
 .servicoCaixa:hover {
-  transform: translateY(-5px);          /* Eleva no hover (px corrigido) */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra mais forte */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .servicoCaixa h3 {
-  font-size: 18px;                      /* Título do card */
-  color: #252525;                       /* Tom escuro */
-  margin-bottom: 10px;                  /* Espaço inferior */
+  font-size: 18px;
+  color: #252525;
+  margin-bottom: 10px;
 }
 
 .servicoCaixa p {
-  font-size: 15px;                      /* Texto padrão */
-  color: #000000;                       /* Preto (como definido por você) */
-  line-height: 1.5;                     /* Altura de linha */
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.5;
 }
 
-/* Faixa "Tecnologia Integrada" */
 .tecnologiaBanner {
-  border-radius: 16px;                  /* Bordas mais arredondadas */
-  background: linear-gradient(90deg, #10B77F 0%, #04200D 100%); /* Gradiente */
-  color: var(--white);                  /* Texto branco */
-  padding: 25px 30px;                   /* Respiro */
-  max-width: 1000px;                    /* Largura máxima */
-  margin: 0 auto;                       /* Centraliza faixa */
-  text-align: center;                   /* Centraliza textos */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra (corrigida cor) */
+  border-radius: 16px;
+  background: linear-gradient(90deg, #10B77F 0%, #04200D 100%);
+  color: var(--white);
+  padding: 25px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .tecnologiaBanner h3 {
-  font-size: 20px;                      /* Título */
-  font-weight: 700;                     /* Peso forte */
-  margin-bottom: 10px;                  /* Espaço inferior */
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .tecnologiaBanner p {
-  font-size: 15px;                      /* Texto */
-  color: #e8f8f2;                       /* Verde-claro suave */
-  line-height: 1.6;                     /* Altura de linha */
+  font-size: 15px;
+  color: #e8f8f2;
+  line-height: 1.6;
 }
 
-/* ================================
-   👥 SEÇÃO QUEM SOMOS
-================================ */
 .quemSomos {
-  background-color: var(--bg-dark);     /* Fundo escuro consistente */
-  color: var(--text-light);             /* Texto claro */
-  padding: 80px 60px;                   /* Respiro */
-  font-family: 'Segoe UI', Arial, sans-serif; /* Tipografia */
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 80px 60px;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .quemSomos h2 {
-  text-align: center;                   /* Centralizado */
-  font-size: 36px;                      /* Destaque */
-  margin-bottom: 15px;                  /* Espaço inferior */
-  font-weight: 700;                     /* Peso forte */
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-/* Grade centralizada de membros (versão centrada estável) */
 .equipeContainer {
-  display: flex;                        /* Flexbox para centralizar */
-  flex-wrap: wrap;                      /* Quebra em múltiplas linhas */
-  justify-content: center;              /* Centraliza os cards */
-  gap: 40px;                            /* Espaço entre cards */
-  max-width: 1000px;                    /* Limita a largura total */
-  margin: 0 auto;                       /* Centraliza container */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .membro {
-  width: 380px;                         /* Largura consistente dos cards */
-  display: flex;                        /* Layout interno em linha */
-  align-items: center;                  /* Alinha verticalmente */
-  background-color: #11271f;            /* Tom mais claro que o fundo */
-  border-radius: 10px;                  /* Bordas suaves */
-  padding: 15px 20px;                   /* Respiro interno */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Feedback */
+  width: 380px;
+  display: flex;
+  align-items: center;
+  background-color: #11271f;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .membro:hover {
-  transform: translateY(-5px);          /* CORRIGIDO: adiciona "px" */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Sombra mais forte */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .membro img {
-  width: 70px;                          /* Tamanho do avatar */
-  height: 70px;                         /* Altura do avatar */
-  border-radius: 50%;                   /* Foto circular */
-  margin-right: 20px;                   /* Espaço do texto */
-  object-fit: cover;                    /* Corta sem distorcer */
-  border: 2px solid var(--primary);     /* Borda verde */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid var(--primary);
 }
 
 .membro p {
-  margin: 0;                            /* Remove margens padrão */
-  line-height: 1.4;                     /* Altura de linha */
+  margin: 0;
+  line-height: 1.4;
 }
 
 .membro p:first-child {
-  font-weight: 700;                     /* Nome em negrito */
-  font-size: 16px;                      /* Tamanho do nome */
-  color: var(--text-light);             /* Branco */
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-light);
 }
 
 .membro p:last-child {
-  color: var(--primary);                /* Curso em verde */
-  font-size: 14px;                      /* Tamanho do curso */
+  color: var(--primary);
+  font-size: 14px;
 }
 
-/* ================================
-   💬 SEÇÃO CONTATO
-================================ */
 .contato {
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%); /* Fundo suave */
-  color: var(--text-dark);              /* Texto escuro */
-  padding: 80px 60px;                   /* Respiro */
-  font-family: 'Segoe UI', Arial, sans-serif; /* Tipografia */
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  color: var(--text-dark);
+  padding: 80px 60px;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Título contato */
 .contato h2 {
-  text-align: center;                   /* Centralizado */
-  font-size: 36px;                      /* Destaque */
-  font-weight: 700;                     /* Peso forte */
-  margin-bottom: 10px;                  /* Espaço inferior */
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .contato h2 span {
-  color: var(--primary);                /* Destaque verde */
+  color: var(--primary);
 }
 
-/* Subtítulo contato */
-.contato > p {
-  text-align: center;                   /* Centralizado */
-  color: #444;                          /* Tom suave */
-  font-size: 16px;                      /* Tamanho */
-  margin-bottom: 60px;                  /* Espaço para o grid */
+.contato>p {
+  text-align: center;
+  color: #444;
+  font-size: 16px;
+  margin-bottom: 60px;
 }
 
-/* Grid do contato (info + formulário) */
 .contatoContainer {
-  display: grid;                        /* Grid layout */
-  grid-template-columns: 1fr 1fr;       /* Duas colunas iguais */
-  gap: 40px;                            /* Espaço entre colunas */
-  max-width: 1100px;                    /* Largura máxima */
-  margin: 0 auto;                       /* Centraliza */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
 }
 
-/* Bloco de informações (lado esquerdo) */
 .infoContato {
-  text-align: left;                     /* Texto alinhado à esquerda */
-  color: var(--text-dark);              /* Texto escuro */
+  text-align: left;
+  color: var(--text-dark);
 }
 
 .infoContato h3 {
-  color: var(--primary);                /* Verde ReTech */
-  font-size: 20px;                      /* Tamanho */
-  margin-bottom: 20px;                  /* Espaço inferior */
+  color: var(--primary);
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
 .infoContato p {
-  margin: 8px 0;                        /* Espaçamento vertical */
-  font-size: 15px;                      /* Tamanho */
-  color: var(--text-dark);              /* Texto escuro */
+  margin: 10px 0;
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 .infoContato a {
-  color: var(--primary);                /* Links em verde */
-  text-decoration: none;                /* Sem sublinhado */
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .infoContato a:hover {
-  text-decoration: underline;           /* Feedback de link */
+  text-decoration: underline;
 }
 
-/* Caixa escura "Vamos Conversar?" */
 .conversaBox {
-  background-color: var(--bg-dark);     /* Fundo escuro */
-  color: var(--text-light);             /* Texto branco */
-  border-radius: 10px;                  /* Bordas suaves */
-  padding: 25px 30px;                   /* Respiro */
-  margin-top: 40px;                     /* Espaço do bloco acima */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra */
+  border-radius: 16px;
+  background: linear-gradient(105deg, #20604A -12.94%, rgba(4, 32, 13, 0.90) 112.79%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-top: 40px;
 }
 
 .conversaBox h3 {
-  color: var(--text-light);             /* Título branco */
-  font-size: 18px;                      /* Tamanho */
-  margin-bottom: 10px;                  /* Espaço inferior */
+  color: var(--text-light);
+  font-size: 18px;
+  margin-bottom: 12px;
 }
 
 .conversaBox p {
-  color: var(--gray-1);                 /* Texto cinza claro */
-  font-size: 14px;                      /* Tamanho */
-  line-height: 1.6;                     /* Altura de linha */
+  color: var(--gray-1);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-/* Formulário (lado direito) */
 .formContato {
-  background-color: var(--white);       /* Fundo branco */
-  border-radius: 10px;                  /* Bordas suaves */
-  padding: 30px 40px;                   /* Respiro */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra leve */
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 40px 45px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .formContato h3 {
-  font-size: 20px;                      /* Título do formulário */
-  color: var(--primary);                /* Verde ReTech */
-  margin-bottom: 25px;                  /* Espaço inferior */
-  text-align: center;                   /* Centralizado */
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .formContato form {
-  display: flex;                        /* Empilha campos */
-  flex-direction: column;               /* Coluna */
-  gap: 15px;                            /* Espaço entre campos */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-/* Campos de entrada */
 .formContato input,
 .formContato textarea {
-  width: 100%;                          /* Ocupa toda a largura */
-  padding: 12px;                        /* Respiro interno */
-  border: 1px solid var(--primary);     /* Borda verde */
-  border-radius: 6px;                   /* Bordas suaves */
-  font-size: 15px;                      /* Tamanho do texto */
-  color: var(--text-dark);              /* Texto escuro */
-  background-color: #f9f9f9;            /* Fundo claro */
-  outline: none;                        /* Remove contorno padrão */
-  transition: all 0.3s ease;            /* Feedback ao focar */
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--primary);
+  border-radius: 6px;
+  font-size: 15px;
+  color: var(--text-dark);
+  background-color: #f9f9f9;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .formContato input:focus,
 .formContato textarea:focus {
-  border-color: var(--primary-2);       /* Borda verde viva */
-  box-shadow: 0 0 5px rgba(30,132,73,0.4); /* Brilho verde suave */
-  background-color: var(--white);       /* Fundo branco ao foco */
+  border-color: var(--primary-2);
+  box-shadow: 0 0 6px rgba(30, 132, 73, 0.4);
+  background-color: var(--white);
 }
 
 .formContato textarea {
-  resize: none;                         /* Impede redimensionamento */
-  height: 120px;                        /* Altura padrão */
+  resize: none;
+  height: 120px;
 }
 
-/* Botão do formulário */
 .formContato button {
-  background-color: var(--primary);     /* Verde padrão */
-  color: var(--text-light);             /* Texto branco */
-  border: none;                         /* Sem borda extra */
-  padding: 14px;                        /* Área clicável */
-  border-radius: 6px;                   /* Bordas suaves */
-  font-size: 16px;                      /* Tamanho do texto */
-  cursor: pointer;                      /* Cursor de clique */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Feedback */
+  background-color: var(--primary);
+  color: var(--text-light);
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .formContato button:hover {
-  background-color: var(--primary-2);   /* Verde vivo no hover */
-  transform: translateY(-2px);          /* Leve movimento */
+  background-color: var(--primary-2);
+  transform: translateY(-2px);
 }
 
-/* ================================
-   📱 RESPONSIVIDADE GLOBAL
-================================ */
+@media (max-width: 900px) {
+  .contatoContainer {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .infoContato,
+  .formContato {
+    text-align: center;
+  }
+
+  .conversaBox {
+    margin-top: 25px;
+  }
+}
+
 @media (max-width: 960px) {
-  .principalTexto h1 { font-size: 32px; }       /* Título menor no mobile */
-  .principalTexto p { font-size: 16px; }        /* Subtítulo menor */
+  .principalTexto h1 {
+    font-size: 32px;
+  }
 
-  .sobreContainer { flex-direction: column; }   /* Colunas viram blocos */
-  .colunaValores { text-align: center; }        /* Centraliza título */
+  .principalTexto p {
+    font-size: 16px;
+  }
 
-  .servicosContainer { grid-template-columns: 1fr; } /* Cards em 1 coluna */
+  .sobreContainer {
+    flex-direction: column;
+  }
 
-  .contatoContainer { grid-template-columns: 1fr; }  /* Info + form empilhados */
-  .formContato, .infoContato { width: 100%; }        /* Ocupam toda a largura */
+  .colunaValores {
+    text-align: center;
+  }
 
-  .equipeContainer { gap: 24px; }             /* Menos espaço entre cards */
-  .membro { width: 100%; max-width: 420px; }  /* Cards responsivos */
+  .servicosContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .contatoContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .formContato,
+  .infoContato {
+    width: 100%;
+  }
+
+  .equipeContainer {
+    gap: 24px;
+  }
+
+  .membro {
+    width: 100%;
+    max-width: 420px;
+  }
 }
