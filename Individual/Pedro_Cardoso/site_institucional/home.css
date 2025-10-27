@@ -1,0 +1,243 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-cinza); /* Cor de fundo escura principal */
+  color: #ffffff; /* Cor do texto principal (branco) */
+}
+
+.site {
+  width: 100%;
+}
+
+.siteHeader {
+  background-color: #0b0f0a;
+  padding: 10px 40px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navegar ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navegar li {
+  margin: 0 15px;
+}
+
+.navegar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.usuarioAcao a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 1px solid #1e8449;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.usuarioAcao .login {
+  background-color: #1e8449;
+}
+
+.partePrincipal {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #1c1c1c; 
+}
+
+.principalTexto h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.principalTexto p {
+  font-size: 18px;
+  color: #cccccc;
+}
+
+.principalBotoes {
+  margin-top: 30px;
+}
+
+.principalBotoes a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: #1e8449;
+}
+
+.principalBotoes a:last-child {
+  background-color: transparent;
+  border: 1px solid #1e8449;
+}
+
+.problemas {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #0b0f0a;
+}
+
+.problemas h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.problemas > p {
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+.problemasContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.problemasContainer .caixa {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+  margin: 0 15px;
+  width: 200px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.problemasContainer .caixa h3 {
+  margin-top: 0;
+}
+
+/* Seção Sobre */
+.sobre {
+  background-color: #f0f5f3;
+  color: #333333;
+  padding: 80px 40px;
+}
+
+.sobre h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.sobreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobreContainer .empresa {
+  width: 30%;
+  padding-right: 40px;
+}
+
+.sobreContainer .info {
+  width: 30%;
+  padding-right: 40px;
+}
+
+.colunaValores {
+  width: 30%;
+}
+
+.valoresCaixas {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.valoresCaixas .caixaValor {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 8px;
+    width: 120px; 
+    text-align: center;
+}
+
+.beneficios {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #0b0f0a;
+}
+
+.beneficios h2 {
+  font-size: 36px;
+}
+
+.beneficios > p {
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+.beneficiosContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.beneficiosContainer .caixa {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+  margin: 0 15px;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.impactoBanner {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 40px 20px;
+  margin: 0 auto;
+  border-radius: 8px;
+  max-width: 900px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around; 
+  margin-top: 20px;
+}
+
+.stats div {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.stats p {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.statReducao {
+  color: #27ae60;
+}
+.statMenor {
+  color: #2980b9;
+}
+.statEficiencia {
+  color: #27ae60;
+}

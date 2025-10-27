@@ -24,7 +24,8 @@ body{
   width: 100%;
 }
 .formulario-login {
-  background-color: #ffffff;
+  background-color: var(--bg-card);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   border: 2px;
@@ -64,7 +65,7 @@ body{
 }
 
 #link_esqueci_senha {
-  color: green;
+  color: var(--text-destaque-color);
   text-decoration: none;
 }
 
@@ -98,8 +99,8 @@ body{
 
 #icone_olho {
   position: absolute;
-  top: 349px;
-  right: 235px;
+  top: 50.9%;
+  right: 17%;
   color: #888;
   font-size: 18px;
   cursor: pointer;
