@@ -107,11 +107,6 @@ function TelaCadastro(){
                     Cadastro de Usuario
                 </div>
 
-                <p>
-                    A senhas devem conter Letras Maiusculas, Minusculas, Caracteres Especiais,
-                    Numeros e 8 ou mais caracteres
-                </p>
-
                 <div class="div_cadastro">
                     <label for="ipt_nome">Informe seu nome</label>
                     <input placeholder="Nome" type="text" name="" id="ipt_nome" class="ipt">
@@ -119,12 +114,12 @@ function TelaCadastro(){
                 <div class="div_cadastro">
                     <label for="ipt_email">Informe seu email</label>
                     <input placeholder="Email" type="text" name="" id="ipt_email" class="ipt">
-                    <div id="erro_email" class="div_erro">email invalido</div>
+                    <div id="erro_email" class="div_erro"></div>
                 </div>
                 <div class="div_cadastro">
                     <label for="ipt_senha">Informe sua senha</label>
                     <input placeholder="Senha" type="password" name="" id="ipt_senha" class="ipt">
-                    <div id="erro_senha" class="div_erro">senha errada</div>
+                    <div id="erro_senha" class="div_erro"></div>
                 </div>
                 <div class="div_cadastro">
                     <label for="slc_acesso">Nivel de acesso</label>
