@@ -138,7 +138,7 @@ function validarCampos() {
 }
 
 function entrar() {
-  window.location.href = "file:///C:/Users/gleis/OneDrive%20-%20SPTech%20School/PI/Repositorios/Sprint2/Grupo/Site_Institucional/view/dashbordGeral.html";
+  window.location.href = "dashboardGeral.html";
 }
 
 function verSenha() {
