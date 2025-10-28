@@ -36,11 +36,13 @@ var listaUsuarios = [];
 listaUsuarios.push({
   nome: "Claudio Frizzarini",
   email: "Claudio@prefeituraSP.com",
+  senha: "Frizza123",
   nivel: "Administrador",
 });
 listaUsuarios.push({
   nome: "Julia Araripe",
   email: "Julia@prefeituraCampinas.com",
+  senha: "Julia123",
   nivel: "Padrão",
 });
 
@@ -53,7 +55,7 @@ var tabelaDivConteudo = ""; // Variável que vai armazenar o HTML da tabela
 // Função para "renderizar" tabela dentro da div
 function mostrarTabela() {
   tabelaDivConteudo =
-    "<table class='tabela'><tr><th>Nome</th><th>E-mail</th><th>Nível</th></tr>";
+    "<table class='tabela'><tr><th>Nome</th><th>E-mail</th><th>Senha</th><th>Nível</th></tr>";
 
   var i = 0;
   var tamanhoListaUsuario = listaUsuarios.length;
@@ -76,6 +78,9 @@ function mostrarTabela() {
         "</td>" +
         "<td>" +
         usuario.email +
+        "</td>" +
+        "<td>" +
+        usuario.senha +
         "</td>" +
         "<td>" +
         usuario.nivel +
@@ -129,7 +134,7 @@ function novoUsuario() {
       } else if (nivel != "Administrador" && nivel != "Padrão") {
         alert("Nível diferente das opções disponíveis: Administrador/Padrão!");
       } else {
-        usuarios.push({ nome: nome, email: email, nivel: nivel });
+        usuarios.push({ nome: nome, email: email, senha: senha, nivel: nivel });
         mostrarTabela();
       }
     }
