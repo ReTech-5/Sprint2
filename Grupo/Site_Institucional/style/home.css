@@ -33,7 +33,7 @@ body {
 .partePrincipal {
   position: relative;
   text-align: center;
-  padding: 100px 20px;
+  padding: 18%;
   background-color: var(--bg-hero);
   background-image: url(../asset/capa.jpeg);
   background-size: cover;
