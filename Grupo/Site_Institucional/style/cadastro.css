@@ -1,0 +1,142 @@
+/* ===== Conteúdo principal ===== */
+body {
+  background-color: #f5f6f8;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  padding-bottom: 2rem;
+  overflow-x: auto;
+}
+
+/* ===== Cabeçalho do card ===== */
+.card h2 {
+  background-color: #20604a;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px 10px 0 0;
+  font-size: 1.3rem;
+}
+
+/* ===== Botões ===== */
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.btn {
+  background: linear-gradient(
+    90deg,
+    var(--bg-bt-gradiend-claro) 0%,
+    var(--bg-bt-gradiend-escuro) 100%
+  );
+  color: var(--bt-text-color);
+  font-weight: bold;
+  border: 2px solid #20604a;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-novo {
+  background: linear-gradient(90deg, #28be83, #20614b);
+  border-radius: 6px;
+  color: white;
+  border: none;
+  padding: 0.5rem 3rem;
+}
+
+.btn-novo:hover {
+  background-color: #20604a;
+}
+
+/* ===== Botão Filtro ===== */
+.btn-filtro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  color: #000000;
+  padding: 0.4rem 1.2rem;
+  border: 2px solid #20614b;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-filtro:hover {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border-color: #15803d;
+}
+
+/* ===== Botão Editar ===== */
+.btn-criar {
+  background: linear-gradient(
+    90deg,
+    var(--bg-bt-gradiend-claro) 0%,
+    var(--bg-bt-gradiend-escuro) 100%
+  );
+  color: var(--bt-text-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid #20614b;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-criar:hover {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border-color: #15803d;
+}
+
+/* ===== Tabela ===== */
+table {
+  width: 95%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #14532d;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: #f0fdf4;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
