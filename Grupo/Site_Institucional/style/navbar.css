@@ -1,4 +1,3 @@
-
 /* Add a fonte e a cor de texto padrão da div */
 .navbar{
 
@@ -82,7 +81,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
     width: 80%;
     height: 100%;
     
