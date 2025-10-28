@@ -1,3 +1,4 @@
+
 var listaCaracteresEspeciais = [
   "!",
   "@",
@@ -97,8 +98,53 @@ function mostrarTabela() {
   tabelaDiv.innerHTML = tabelaDivConteudo;
 }
 
+// Função para renderizar o card de cadastro
+function TelaCadastro(){
+
+  main_container.innerHTML += `
+  <div class="card_cadastro">
+                <div class="card_title">
+                    Cadastro de Usuario
+                </div>
+
+                <p>
+                    A senhas devem conter Letras Maiusculas, Minusculas, Caracteres Especiais,
+                    Numeros e 8 ou mais caracteres
+                </p>
+
+                <div class="div_cadastro">
+                    <label for="ipt_nome">Informe seu nome</label>
+                    <input placeholder="Nome" type="text" name="" id="ipt_nome" class="ipt">
+                </div>
+                <div class="div_cadastro">
+                    <label for="ipt_email">Informe seu email</label>
+                    <input placeholder="Email" type="text" name="" id="ipt_email" class="ipt">
+                    <div id="erro_email" class="div_erro">email invalido</div>
+                </div>
+                <div class="div_cadastro">
+                    <label for="ipt_senha">Informe sua senha</label>
+                    <input placeholder="Senha" type="password" name="" id="ipt_senha" class="ipt">
+                    <div id="erro_senha" class="div_erro">senha errada</div>
+                </div>
+                <div class="div_cadastro">
+                    <label for="slc_acesso">Nivel de acesso</label>
+                    <select name="" id="slc_acesso" class="ipt">
+                        <option>Padrão</option>
+                        <option>Administrador</option>
+                    </select>
+                </div>
+
+                <button onclick="Conexao" class="button">Cadastrar</button>
+
+            </div>
+  `
+
+}
+
 // Função para cadastrar novo usuário
 function novoUsuario() {
+  TelaCadastro()
+
   var nome = prompt("Digite o nome do novo usuário:");
   if (nome == "") {
     alert("Nome obrigatório!");

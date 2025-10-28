@@ -76,7 +76,8 @@ body {
 
 .card_cadastro p {
 
-  text-align: start;
+  width: 90%;
+  text-align: center;
 
 }
 
@@ -103,20 +104,22 @@ body {
 
 }
 
-.card_cadastro p {
-
-    margin-bottom: 4%;
-
-}
-
 .div_cadastro {
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 1%;
     width: 80%;
     height: 15%;
+
+}
+
+.div_erro{
+
+  color: #D0312D;
+  font-size: small;
 
 }
 
