@@ -2,20 +2,15 @@
 <html>
 
 <head>
-    <title>Graphics</title>
+    <title>Graficos</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Graphics</h1>
-    <div style="display: flex;">
-        <div style="width: 50%;">
-            <canvas id="sensorAnalogico"></canvas>
-        </div>
-        <div style="width: 50%;">
-            <canvas id="sensorDigital"></canvas>
-        </div>
+    <div class="container">
+        <canvas id="sensorAnalogico"></canvas>
     </div>
 
     <script>
@@ -29,16 +24,34 @@
                 }]
             },
             options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true },
+                    title: {
+                        display: true,
+                        text: "Curva de Preenchimento da Lixeira",
+                        color: "black",
+                        font: { size: 20, weight: "bold", family: "Arial" },
+                    },
+                },
                 scales: {
                     x: {
                         beginAtZero: true
                     },
                     y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function (value) {
+                                return value + "%";
+                            },
+                        },
                         title: {
                             display: true,
-                            text: '(%)'
+                            text: "Ocupação (%)",
+                            color: "rgb(4, 32, 13)",
+                            font: { size: 15, weight: "bold" },
                         },
-                        beginAtZero: true,
                     },
                 },
             }

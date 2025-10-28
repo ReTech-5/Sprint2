@@ -61,7 +61,7 @@ const serial = async (
         const dadoDistancia = parseFloat(valores[0]); // Converte o primeiro valor para número racional (parseFloat)
 
         // armazena os valores dos sensores nos arrays correspondentes
-        valoresSensorHcsr04.push(dadoDistancia); // Armazena no array valoresSensorHcsr04
+        valoresSensorHcsr04.push((300 - dadoDistancia) / 300 * 100); // Armazena no array valoresSensorHcsr04
 
         // insere os dados no banco de dados (se habilitado)
         if (HABILITAR_OPERACAO_INSERIR) {
