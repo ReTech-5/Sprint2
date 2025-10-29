@@ -30,19 +30,37 @@ var listaCaracteresEspeciais = [
 ];
 
 // Lista de usuários
-var listaUsuarios = [];
-listaUsuarios.push({
+var listaUsuarios = [{
   nome: "Lucas Quevedo",
   email: "lucas.castro@sptech.gov",
   senha: "Polenta7?",
   nivel: "Administrador",
-});
-listaUsuarios.push({
+}, {
   nome: "Samara Freitas",
   email: "samara.farias@sptech.gov",
   senha: "Chocolate9.",
   nivel: "Administrador",
-});
+}, {
+  nome: "Gleison Almeida",
+  email: "gleison.almeida@sptech.gov",
+  senha: "OrdemParanormal20!",
+  nivel: "Padrão",
+}, {
+  nome: "Pedro Cardoso",
+  email: "pedro.cardoso@sptech.gov",
+  senha: "Formula1)",
+  nivel: "Padrão",
+}, {
+  nome: "Gabriel Pereira",
+  email: "gabriel.pereira@sptech.gov",
+  senha: "Espanhol12$",
+  nivel: "Padrão",
+}, {
+  nome: "Arthur Rodrigues",
+  email: "arthur.rodrigues@sptech.gov",
+  senha: "Minecraft33#",
+  nivel: "Administrador",
+}];
 
 var nome = "";
 var email = "";

@@ -1,144 +1,67 @@
-var senhaValida = false;
-var emailValido = false;
+// Lista de usuários
+var listaUsuarios = [{
+  nome: "Lucas Quevedo",
+  email: "lucas.castro@sptech.gov",
+  senha: "Polenta7?",
+  nivel: "Administrador",
+}, {
+  nome: "Samara Freitas",
+  email: "samara.farias@sptech.gov",
+  senha: "Chocolate9.",
+  nivel: "Administrador",
+}, {
+  nome: "Gleison Almeida",
+  email: "gleison.almeida@sptech.gov",
+  senha: "OrdemParanormal20!",
+  nivel: "Padrão",
+}, {
+  nome: "Pedro Cardoso",
+  email: "pedro.cardoso@sptech.gov",
+  senha: "Formula1)",
+  nivel: "Padrão",
+}, {
+  nome: "Gabriel Pereira",
+  email: "gabriel.pereira@sptech.gov",
+  senha: "Espanhol12$",
+  nivel: "Padrão",
+}, {
+  nome: "Arthur Rodrigues",
+  email: "arthur.rodrigues@sptech.gov",
+  senha: "Minecraft33#",
+  nivel: "Administrador",
+}];
 
-function validarSenha() {
-  div_senha.innerHTML = "";
-  var listaCaracteresEspeciais = [
-    "!",
-    "@",
-    "#",
-    "$",
-    "%",
-    "¨¨",
-    "&",
-    "*",
-    "(",
-    ")",
-    "_",
-    "-",
-    "+",
-    "=",
-    "{",
-    "}",
-    "ª",
-    "[",
-    "]",
-    "~",
-    "^",
-    ":",
-    ";",
-    ".",
-    ",",
-    "?",
-    "°",
-    "/",
-  ];
-  // var listaNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var temCaracteresEspeciais = 0;
-  var temNumeros = 0;
-
-  var senha = ipt_senha.value;
-  var tamanhoSenha = senha.length;
-  var senhaMaiuscula = senha.toUpperCase();
-  var senhaMinuscula = senha.toLowerCase();
-
-  var cont = 0;
-  var criterios = 0;
-
-  while (cont < tamanhoSenha) {
-    if (listaCaracteresEspeciais.includes(senha[cont]) == true) {
-      temCaracteresEspeciais++;
-    }
-    if (!isNaN(senha[cont])) {
-      temNumeros++;
-    }
-    cont++;
-  }
-
-  // Validar se a senha possui mais que 8 caracteres
-  if (tamanhoSenha >= 8) {
-    criterios++;
-    div_senha.innerHTML +=
-      "<span style='color: green;'>- A senha deve conter ao menos 8 caracteres</span><br>";
-  } else {
-    div_senha.innerHTML += "- A senha deve conter ao menos 8 caracteres<br>";
-  }
-
-  // Validar se a senha possui uma letra minúscula
-  if (senha != senhaMaiuscula) {
-    criterios++;
-    div_senha.innerHTML +=
-      "<span style='color: green;'>- A senha deve conter uma letra minúscula</span><br>";
-  } else {
-    div_senha.innerHTML += "- A senha deve conter uma letra minúscula<br>";
-  }
-
-  // Validar se a senha possui uma letra maiúscula
-  if (senha != senhaMinuscula) {
-    criterios++;
-    div_senha.innerHTML +=
-      "<span style='color: green;'>- A senha deve conter uma letra maiúscula</span><br>";
-  } else {
-    div_senha.innerHTML += "- A senha deve conter uma letra maiúscula<br>";
-  }
-
-  // Validar se a senha possui um número
-  if (temNumeros != 0) {
-    criterios++;
-    div_senha.innerHTML +=
-      "<span style='color: green;'>- A senha deve conter um número</span><br>";
-  } else {
-    div_senha.innerHTML += "- A senha deve conter um número<br>";
-  }
-
-  // Validar se a senha possui um caracter especial
-  if (temCaracteresEspeciais != 0) {
-    criterios++;
-    div_senha.innerHTML +=
-      "<span style='color: green;'>- A senha deve conter um caracter especial</span><br>";
-  } else {
-    div_senha.innerHTML += "- A senha deve conter um caracter especial<br>";
-  }
-
-  if (criterios == 5) {
-    senhaValida = true;
-  }
-  else {
-    senhaValida = false;
-  }
-
-  validarCampos();
-}
-
-function validarEmail() {
-  var email = ipt_email.value;
-
-  if (email.includes("@")) {
-    emailValido = true;
-    div_email.innerHTML = "<span style='color: green;'>- O email deve conter o símbolo de @</span><br>";
-  }
-  else {
-    emailValido = false;
-    div_email.innerHTML = "- O email deve conter o símbolo de @";
-  }
-
-  validarCampos();
-}
-
-function validarCampos() {
-  if (emailValido && senhaValida) {
-    btn_entrar.disabled = false;
-    btn_entrar.style.opacity = "1";
-    btn_entrar.style.cursor = "pointer";
-  } else {
-    btn_entrar.disabled = true;
-    btn_entrar.style.opacity = "0.5";
-    btn_entrar.style.cursor = "not-allowed";
-  }
-}
+var validado = false
+var tamanhoListaUsuarios = listaUsuarios.length;
 
 function entrar() {
-  window.location.href = "dashboardGeral.html";
+  var email = ipt_email.value.trim().toLowerCase();
+  var senha = ipt_senha.value.trim();
+  var certo = 0;
+  var errado = 0;
+
+  for (var i = 0; i < tamanhoListaUsuarios; i++) {
+    var usuario = listaUsuarios[i];
+    if (email == usuario.email && senha == usuario.senha) {
+      certo++;
+    }
+    else {
+      errado++;
+    }
+  }
+
+  console.log(certo);
+  console.log(errado);
+
+  if (email == "" || senha == "") {
+    div_erro.innerHTML = "Todos os campos devem estar preenchidos antes de prosseguir!";
+  }
+  else if (certo == 0) {
+    div_erro.innerHTML = "Este usuário não existe!";
+  }
+  else {
+    window.location.href = "dashboardGeral.html";
+  }
 }
 
 function verSenha() {
