@@ -25,14 +25,12 @@
       </header>
 
       <div class="formulario-login" id="tela_login">
-        <h2 class="titulo-formulario">Entrar na sua conta</h2><br>
+        <h2>Entrar na sua conta</h2><br>
 
         <div class="grupo-campo">
           <label for="email" class="label-campo">E-mail</label>
           <input onkeyup="validarEmail()" type="text" id="ipt_email" class="input-campo" placeholder="seu@email.com">
-          <div id="div_email" class="mensagem-erro">
-            - O email deve conter o símbolo de @
-          </div>
+          <div id="div_email" class="mensagem-erro"></div>
         </div>
 
         <div class="grupo-campo">
@@ -42,13 +40,7 @@
               placeholder="Digite sua senha...">
             <i id="icone_olho" class="fa-solid fa-eye" onclick="verSenha()"></i>
           </div>
-          <div id="div_senha" class="mensagem-erro">
-            - A senha deve conter ao menos 8 caracteres<br>
-            - A senha deve conter uma letra minúscula<br>
-            - A senha deve conter uma letra maiúscula<br>
-            - A senha deve conter um número<br>
-            - A senha deve conter um caracter especial
-          </div>
+          <div id="div_senha" class="mensagem-erro"></div>
         </div>
 
         <button id="btn_entrar" onclick="entrar()" class="button" disabled>Entrar</button>

@@ -1,4 +1,3 @@
-
 var listaCaracteresEspeciais = [
   "!",
   "@",
@@ -29,8 +28,6 @@ var listaCaracteresEspeciais = [
   "°",
   "/",
 ];
-var temCaracteresEspeciais = 0;
-var temNumeros = 0;
 
 // Lista de usuários
 var listaUsuarios = [];
@@ -58,10 +55,10 @@ function mostrarTabela() {
   tabelaDivConteudo =
     "<table class='tabela'><tr><th>Nome</th><th>E-mail</th><th>Senha</th><th>Nível</th></tr>";
 
-  var i = 0;
+  var cont = 0;
   var tamanhoListaUsuario = listaUsuarios.length;
-  while (i < tamanhoListaUsuario) {
-    var usuario = listaUsuarios[i];
+  while (cont < tamanhoListaUsuario) {
+    var usuario = listaUsuarios[cont];
     var mostrar = false;
 
     if (filtro == "todos") {
@@ -71,8 +68,7 @@ function mostrarTabela() {
     }
 
     if (mostrar == true) {
-      tabelaDivConteudo =
-        tabelaDivConteudo +
+      tabelaDivConteudo +=
         "<tr>" +
         "<td>" +
         usuario.nome +
@@ -89,7 +85,7 @@ function mostrarTabela() {
         "</tr>";
     }
 
-    i++;
+    cont++;
   }
 
   tabelaDivConteudo = tabelaDivConteudo + "</table>";
@@ -99,87 +95,94 @@ function mostrarTabela() {
 }
 
 // Função para renderizar o card de cadastro
-function TelaCadastro(){
-
+function novoUsuario() {
   main_container.innerHTML += `
   <div class="card_cadastro">
-                <div class="card_title">
-                    Cadastro de Usuario
-                </div>
 
-                <div class="div_cadastro">
-                    <label for="ipt_nome">Informe seu nome</label>
-                    <input placeholder="Nome" type="text" name="" id="ipt_nome" class="ipt">
-                </div>
-                <div class="div_cadastro">
-                    <label for="ipt_email">Informe seu email</label>
-                    <input placeholder="Email" type="text" name="" id="ipt_email" class="ipt">
-                    <div id="erro_email" class="div_erro"></div>
-                </div>
-                <div class="div_cadastro">
-                    <label for="ipt_senha">Informe sua senha</label>
-                    <input placeholder="Senha" type="password" name="" id="ipt_senha" class="ipt">
-                    <div id="erro_senha" class="div_erro"></div>
-                </div>
-                <div class="div_cadastro">
-                    <label for="slc_acesso">Nivel de acesso</label>
-                    <select name="" id="slc_acesso" class="ipt">
-                        <option>Padrão</option>
-                        <option>Administrador</option>
-                    </select>
-                </div>
+    <div class="card_cadastro_header">
+      Cadastro de Usuario
+    </div>
 
-                <button onclick="Conexao" class="button">Cadastrar</button>
+    <div class="card_cadastro_body">
+      <div class="campo_cadastro">
+        <label for="ipt_nome" class="lbl_cadastro">Nome</label>
+        <input placeholder="Insira um nome..." type="text" id="ipt_nome" class="ipt_cadastro">
+      </div>
 
-            </div>
-  `
+      <div class="campo_cadastro">
+        <label for="ipt_email" class="lbl_cadastro">E-mail</label>
+        <input placeholder="Insira um e-mail..." type="text" id="ipt_email" class="ipt_cadastro">
+      </div>
 
+      <div class="campo_cadastro">
+        <label for="ipt_senha" class="lbl_cadastro">Senha</label>
+        <input placeholder="Insira uma senha..." type="password" id="ipt_senha" class="ipt_cadastro">
+      </div>
+
+      <div class="campo_cadastro">
+        <label for="slc_nivel" class="lbl_cadastro">Nível de Acesso</label>
+        <select name="" id="slc_nivel" class="ipt_cadastro">
+          <option>Padrão</option>
+          <option>Administrador</option>
+          <option selected disabled value>Selecione um nível</option>
+        </select>
+      </div>
+      <br>
+      <button onclick="cadastrar()" id="btn_cadastrar" class="button">Cadastrar</button>
+      <br>
+      <div id='div_erro'></div>
+    </div>
+  </div>
+  `;
 }
 
 // Função para cadastrar novo usuário
-function novoUsuario() {
-  TelaCadastro()
+function cadastrar() {
+  var nome = ipt_nome.value;
+  var email = ipt_email.value;
+  var senha = ipt_senha.value;
+  var nivel = slc_nivel.value;
 
-  var nome = prompt("Digite o nome do novo usuário:");
-  if (nome == "") {
-    alert("Nome obrigatório!");
-  } else {
-    var email = prompt("Digite o e-mail:");
+  var tamanhoSenha = senha.length;
+  var senhaMaiuscula = senha.toUpperCase();
+  var senhaMinuscula = senha.toLowerCase();
+  var temCaracteresEspeciais = 0;
+  var temNumeros = 0;
+  var mensagem = "";
+  var cont = 0;
 
-    if (email == "") {
-      alert("E-mail obrigatório!");
-    } else if (!email.includes("@")) {
-      alert("E-mail deve conter @!");
-    } else {
-      var senha = prompt("Digite a senha:");
-
-      while (cont < tamanhoSenha) {
-        if (listaCaracteresEspeciais.includes(senha[cont]) == true) {
-          temCaracteresEspeciais++;
-        }
-        if (!isNaN(senha[cont])) {
-          temNumeros++;
-        }
-        cont++;
-      }
-
-      if (senha == "") {
-        alert("E-mail obrigatório!");
-      } else if (senha) {
-      }
-
-      var nivel = prompt("Informe o nível de acesso (Administrador/Padrão):");
-
-      if (!nivel) {
-        alert("Nível obrigatório!");
-      } else if (nivel != "Administrador" && nivel != "Padrão") {
-        alert("Nível diferente das opções disponíveis: Administrador/Padrão!");
-      } else {
-        usuarios.push({ nome: nome, email: email, senha: senha, nivel: nivel });
-        mostrarTabela();
-      }
+  while (cont < tamanhoSenha) {
+    if (listaCaracteresEspeciais.includes(senha[cont]) == true) {
+      temCaracteresEspeciais++;
     }
+    if (!isNaN(senha[cont])) {
+      temNumeros++;
+    }
+    cont++;
   }
+
+  if (nome == "" || email == "" || senha == "" || nivel == "") {
+    mensagem = "Todos os campos devem estar preenchidos antes de prosseguir!";
+  } else if (
+    !email.includes("@") ||
+    tamanhoSenha < 8 ||
+    senha == senhaMaiuscula ||
+    senha == senhaMinuscula ||
+    temNumeros == 0 ||
+    temCaracteresEspeciais == 0
+  ) {
+    if (!email.includes("@")) {
+      mensagem = "- E-mail deve conter @<br>";
+    }
+    if (temNumeros == 0) {
+      mensagem += "- Senha deve conter número<br>";
+    }
+  } else {
+    usuarios.push({ nome: nome, email: email, senha: senha, nivel: nivel });
+    mostrarTabela();
+  }
+
+  div_erro.innerHTML = mensagem;
 }
 
 // Função para editar usuário
