@@ -50,6 +50,9 @@ var filtro = "todos";
 // Div da tabela
 var tabelaDivConteudo = ""; // Variável que vai armazenar o HTML da tabela
 
+// Card Cadastro Ativo
+var cardCadastro = false
+
 // Função para "renderizar" tabela dentro da div
 function mostrarTabela() {
   tabelaDivConteudo =
@@ -96,44 +99,49 @@ function mostrarTabela() {
 
 // Função para renderizar o card de cadastro
 function novoUsuario() {
-  main_container.innerHTML += `
-  <div class="card_cadastro">
 
-    <div class="card_cadastro_header">
-      Cadastro de Usuario
+  if(cardCadastro == false){
+    main_container.innerHTML += `
+    <div class="card_cadastro">
+
+      <div class="card_cadastro_header">
+        Cadastro de Usuario
+      </div>
+
+      <div class="card_cadastro_body">
+        <div class="campo_cadastro">
+          <label for="ipt_nome" class="lbl_cadastro">Nome</label>
+          <input placeholder="Insira um nome..." type="text" id="ipt_nome" class="ipt_cadastro">
+        </div>
+
+        <div class="campo_cadastro">
+          <label for="ipt_email" class="lbl_cadastro">E-mail</label>
+          <input placeholder="Insira um e-mail..." type="text" id="ipt_email" class="ipt_cadastro">
+        </div>
+
+        <div class="campo_cadastro">
+          <label for="ipt_senha" class="lbl_cadastro">Senha</label>
+          <input placeholder="Insira uma senha..." type="text" id="ipt_senha" class="ipt_cadastro">
+        </div>
+
+        <div class="campo_cadastro">
+          <label for="slc_nivel" class="lbl_cadastro">Nível de Acesso</label>
+          <select name="" id="slc_nivel" class="ipt_cadastro">
+            <option>Padrão</option>
+            <option>Administrador</option>
+            <option selected disabled value>Selecione um nível</option>
+          </select>
+        </div>
+        <br>
+        <button onclick="cadastrar()" id="btn_cadastrar" class="button">Cadastrar</button>
+        <br>
+        <div id='div_erro'></div>
+      </div>
     </div>
+    `;
 
-    <div class="card_cadastro_body">
-      <div class="campo_cadastro">
-        <label for="ipt_nome" class="lbl_cadastro">Nome</label>
-        <input placeholder="Insira um nome..." type="text" id="ipt_nome" class="ipt_cadastro">
-      </div>
-
-      <div class="campo_cadastro">
-        <label for="ipt_email" class="lbl_cadastro">E-mail</label>
-        <input placeholder="Insira um e-mail..." type="text" id="ipt_email" class="ipt_cadastro">
-      </div>
-
-      <div class="campo_cadastro">
-        <label for="ipt_senha" class="lbl_cadastro">Senha</label>
-        <input placeholder="Insira uma senha..." type="password" id="ipt_senha" class="ipt_cadastro">
-      </div>
-
-      <div class="campo_cadastro">
-        <label for="slc_nivel" class="lbl_cadastro">Nível de Acesso</label>
-        <select name="" id="slc_nivel" class="ipt_cadastro">
-          <option>Padrão</option>
-          <option>Administrador</option>
-          <option selected disabled value>Selecione um nível</option>
-        </select>
-      </div>
-      <br>
-      <button onclick="cadastrar()" id="btn_cadastrar" class="button">Cadastrar</button>
-      <br>
-      <div id='div_erro'></div>
-    </div>
-  </div>
-  `;
+    cardCadastro = true
+  }  
 }
 
 // Função para cadastrar novo usuário
@@ -163,7 +171,8 @@ function cadastrar() {
 
   if (nome == "" || email == "" || senha == "" || nivel == "") {
     mensagem = "Todos os campos devem estar preenchidos antes de prosseguir!";
-  } else if (
+  } 
+  else if (
     !email.includes("@") ||
     tamanhoSenha < 8 ||
     senha == senhaMaiuscula ||
@@ -177,7 +186,8 @@ function cadastrar() {
     if (temNumeros == 0) {
       mensagem += "- Senha deve conter número<br>";
     }
-  } else {
+  } 
+  else {
     usuarios.push({ nome: nome, email: email, senha: senha, nivel: nivel });
     mostrarTabela();
   }

@@ -32,7 +32,7 @@ body {
   border-left: 10px;
   border-right: 10px;
   padding: 30px;
-  height: 450px;
+  height: 330px;
   width: 380px;
 }
 
@@ -116,6 +116,6 @@ body {
 
 #btn_entrar {
   width: 50%;
-  height: 7%;
+  height: 10%;
   align-self: center;
 }
