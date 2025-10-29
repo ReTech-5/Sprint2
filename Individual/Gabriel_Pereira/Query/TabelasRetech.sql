@@ -26,7 +26,7 @@ CREATE TABLE Endereco(
 idEndereco INT PRIMARY KEY AUTO_INCREMENT, 	-- Identificador único do endereço
 logradouro VARCHAR(45),						-- Rua, avenida ou local
 numero INT,									-- Número do local 
-cep CHAR(9)								-- Código postal (CEP)																																						
+cep CHAR(9)									-- Código postal (CEP)
 );
 
 /*
@@ -43,11 +43,11 @@ codigoSensor VARCHAR(45),					-- Código/Identificador do sensor
 fkEmpresa INT,								-- Empresa responsável
 	CONSTRAINT fkSensorEmpresa
     FOREIGN KEY (fkEmpresa)
-    REFERENCES empresa(idEmpresa),
+    REFERENCES Empresa(idEmpresa),
 fkEndereco INT,								-- Local onde o sensor está instalado
 	CONSTRAINT fkSensorEndereco 
     FOREIGN KEY (fkEndereco)
-    REFERENCES endereco(idEndereco)
+    REFERENCES Endereco(idEndereco)
 );
 
 /*
@@ -56,34 +56,34 @@ Tabela Contato
 - Representa os contatos da ReTech(clientes)
 */
 CREATE TABLE Contato(
-idContato INT AUTO_INCREMENT NOT NULL, 	-- Identificador único do contato
-email VARCHAR(45),								-- E-mail do contato
-telefone VARCHAR(12),  							-- Telefone celular
-telefoneFixo VARCHAR(11), 						-- Telefone Fixo
-fkEmpresa INT,           						-- Chave estrangeira
-	CONSTRAINT fkContatoEmpresa					-- Nome da Constrant
+idContato INT AUTO_INCREMENT NOT NULL, 		-- Identificador único do contato
+email VARCHAR(45),							-- E-mail do contato
+telefone VARCHAR(12),  						-- Telefone celular
+telefoneFixo VARCHAR(11), 					-- Telefone Fixo
+fkEmpresa INT,           					-- Chave estrangeira
+	CONSTRAINT fkContatoEmpresa				-- Nome da Constrant
     FOREIGN KEY (fkEmpresa)
-    REFERENCES empresa(idEmpresa),				-- Empresa à qual o contato pertence
-PRIMARY KEY (idContato, fkEmpresa)		    	-- Estabelecendo uma entidade fraca
+    REFERENCES Empresa(idEmpresa),			-- Empresa à qual o contato pertence
+PRIMARY KEY (idContato, fkEmpresa)		    -- Estabelecendo uma entidade fraca
 );
 
 /*
-Tabela Usúario
+Tabela Usuário
 Representam os operadores das empresas ou o administrador 
 */
 CREATE TABLE Usuario(
-idUsuario INT PRIMARY KEY AUTO_INCREMENT, 		-- Identificador do usúario
-nome VARCHAR(100),								-- Nome do usuário
-email VARCHAR(100),								-- E-mail de login
-senha VARCHAR(100),								-- Senha do acesso
-fkAdministrador INT,							-- Auto-relacionamento (usuário administrador)
+idUsuario INT PRIMARY KEY AUTO_INCREMENT, 	-- Identificador do usúario
+nome VARCHAR(100),							-- Nome do usuário
+email VARCHAR(100),							-- E-mail de login
+senha VARCHAR(100),							-- Senha do acesso
+fkAdministrador INT,						-- Auto-relacionamento (usuário administrador)
 	CONSTRAINT fkUsuarioAdministrador 			
 	FOREIGN KEY (fkAdministrador)
-	REFERENCES usuario(idUsuario),
-fkEmpresa INT,									-- Empresa a que o usuário pertence
-	CONSTRAINT fkusuarioEmpresa
+	REFERENCES Usuario(idUsuario),
+fkEmpresa INT,								-- Empresa a que o usuário pertence
+	CONSTRAINT fkUsuarioEmpresa
     FOREIGN KEY (fkEmpresa)
-    REFERENCES empresa(idEmpresa)
+    REFERENCES Empresa(idEmpresa)
 );
 
 /*
@@ -94,24 +94,47 @@ No diagrama, corresponde à comunicação entre
 sistema de coleta de dados (Arduino) e o Banco de Dados.
 */
 CREATE TABLE ColetaDados(
-idColeta INT AUTO_INCREMENT UNIQUE NOT NULL,		-- Identificador daa coleta
-distancia DECIMAL(5,2),								-- Distância medida  (nível de resíduo)
-horaColeta TIME,									-- Hora da leitura
-dataColeta DATE, 									-- Data da leitura
-fkSensor INT,										-- Sensor que coletou os dados
+idColeta INT AUTO_INCREMENT UNIQUE NOT NULL,	-- Identificador da coleta
+distancia DECIMAL(5,2),							-- Distância medida  (nível de resíduo)
+horaColeta TIME,								-- Hora da leitura
+dataColeta DATE, 								-- Data da leitura
+fkSensor INT,									-- Sensor que coletou os dados
 	CONSTRAINT fkColetaDadosSensor
     FOREIGN KEY (fkSensor)
-    REFERENCES sensor(idSensor),
-    PRIMARY KEY (idColeta, fkSensor)				-- Estabelecendo uma entidade fraca
+    REFERENCES Sensor(idSensor),
+PRIMARY KEY (idColeta, fkSensor)				-- Estabelecendo uma entidade fraca
 );
 
-INSERT INTO Empresa (nomeEmpresa, dtInicioContrato, dtFimContrato) VALUES
-('Sustenta Lixo S.A.', '2025-01-15', '2026-01-15');	
+-- Inserções de dados
 
-INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa) VALUES
-('SNSR-A001', 1, 1);
-	
-# Estado: Critico
+INSERT INTO Empresa (nomeEmpresa, dtInicioContrato, dtFimContrato) VALUES
+('EcoLog Transportes', '2024-11-01', '2025-11-01');
+
+INSERT INTO Endereco (logradouro, numero, cep) VALUES
+('Avenida Paulista', 1578, '01310-200'),
+('Parque Ibirapuera', 0, '04094-010');
+
+INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa, fkEndereco) VALUES
+('SNSR-B002', 1, 1, 1),
+('SNSR-C001', 1, 1, 2), 
+('SNSR-C002', 0, 1, 2);
+
+INSERT INTO Contato (email, telefone, fkEmpresa) VALUES
+('financeiro@ecolog.com', '11912345678', 1);
+
+INSERT INTO Usuario (nome, email, senha, fkEmpresa) VALUES
+('Gestor EcoLog', 'gestor@ecolog.com', 'eco123', 1);
+
+INSERT INTO Usuario (nome, email, senha, fkAdministrador, fkEmpresa) VALUES
+('Fiscal Parque', 'fiscal@ecolog.com', 'eco456', 1, 1);
+
+INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa, fkEndereco) VALUES
+('A2315', 0, 1, 1);
+
+INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa, fkEndereco) VALUES
+('B4915', 1, 1, 1);
+
+# Estado: Crítico
     
 SELECT C.distancia AS 'Nível do Resíduo (cm)',
        S.codigoSensor,
@@ -123,7 +146,7 @@ JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
 WHERE C.distancia <= 25
 ORDER BY C.distancia ASC;    
     
-# Estado: ALERTA
+# Estado: Alerta
 
 SELECT C.distancia AS 'Nível do Resíduo (cm)',
 	   S.codigoSensor,
@@ -147,7 +170,7 @@ JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
 WHERE C.distancia > 50 AND C.distancia <= 75
 ORDER BY C.distancia ASC;
     
-# Estado: Estavel
+# Estado: Estável
     
 SELECT C.distancia AS 'Nível do Resíduo (cm)',
        S.codigoSensor,
@@ -158,3 +181,32 @@ JOIN Sensor AS S ON C.fkSensor = S.idSensor
 JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
 WHERE C.distancia > 75
 ORDER BY C.distancia ASC;
+
+
+SELECT CONCAT('Erro 404 - sensor ', S.codigoSensor, ' se encontra inativo') AS Mensagem_Alerta
+FROM Sensor AS S
+WHERE S.status = 0 
+AND S.codigoSensor = 'A2315';
+
+    
+SELECT CONCAT('Alerta - Lixeira ', S.codigoSensor, ' se encontra em estado crítico') AS Mensagem_Alerta
+FROM ColetaDados AS C
+JOIN Sensor AS S ON C.fkSensor = S.idSensor
+WHERE C.distancia <= 25
+AND S.codigoSensor = 'SNSR-A001' 
+GROUP BY S.codigoSensor;
+
+-- Usuários e administradores
+
+SELECT U.nome AS 'Nome do Usuário Operador',
+       U.email AS 'Login do Operador',
+       E.nomeEmpresa,
+       ADM.nome AS 'Administrador Responsável',
+       CONCAT('Operador da empresa ', E.nomeEmpresa) AS 'Descrição'
+FROM Usuario AS U
+JOIN Empresa AS E ON U.fkEmpresa = E.idEmpresa
+JOIN Usuario AS ADM ON U.fkAdministrador = ADM.idUsuario
+ORDER BY E.nomeEmpresa, U.nome;
+
+
+
