@@ -60,7 +60,7 @@ function entrar() {
     div_erro.innerHTML = "Este usuário não existe!";
   }
   else {
-    window.location.href = "dashboardGeral.html";
+    window.location.href = "perfil.html";
   }
 }
 

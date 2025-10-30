@@ -8,7 +8,8 @@
 }
 body {
     font-family: 'inter', sans-serif;
-    font-weight: bold;    
+    font-weight: bold;
+    background-color: #f4f8f5;   
 }
 /* PERFIL CARD */
 .perfilContainer {
@@ -16,7 +17,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #f4f8f5;
 }
 
 .perfilCard {
@@ -99,15 +99,13 @@ body {
   transition: all 0.3s ease;
 }
 
-
 .atalhos a:hover {
   color: var(--primary);
   text-decoration-color: var(--primary);
 }
 
-
 /* 
-   .decoracao {
+.decoracao {
   position: absolute;
   right: 50px;
   bottom: 40px;
@@ -119,8 +117,7 @@ body {
   transform: rotate(4deg);
   opacity: 0.8;
 }
- */
-
+*/
 
 /* RESPONSIVO*/
 @media (max-width: 700px) {
