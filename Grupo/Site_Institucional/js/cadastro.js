@@ -228,6 +228,11 @@ function cadastrar() {
   if (campoValidado && usuarioValidado) {
     listaUsuarios.push({ nome: nome, email: email, senha: senha, nivel: nivel });
     mostrarTabela();
+    ipt_nome.value = "";
+    ipt_email.value = "";
+    ipt_senha.value = "";
+    slc_nivel.value = "#";
+    div_erro.innerHTML = "";
   }
 
   div_erro.innerHTML = mensagem;

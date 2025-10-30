@@ -257,18 +257,18 @@
       <h3>Envie sua Mensagem</h3>
       <form>
         <label for="nome">👤 Nome*</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        <input type="text" id="ipt_nome" name="nome" placeholder="Seu nome completo" required>
 
         <label for="email">📧 E-mail*</label>
-        <input type="email" id="email" name="email" placeholder="Seu@email.com" required>
+        <input type="email" id="ipt_email" name="email" placeholder="Seu@email.com" required>
 
         <label for="empresa">🏢 Empresa/Organização</label>
-        <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+        <input type="text" id="ipt_empresa" name="empresa" placeholder="Nome da empresa">
 
         <label for="mensagem">💬 Mensagem*</label>
-        <textarea style="font-family: 'Roboto', sans-serif;" id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu interesse na ReTech" required></textarea>
+        <textarea style="font-family: 'Roboto', sans-serif;" id="ipt_mensagem" name="mensagem" placeholder="Conte-nos sobre seu interesse na ReTech" required></textarea>
 
-        <button type="submit">Enviar Mensagem</button>
+        <button type="submit" onclick="enviar()">Enviar Mensagem</button>
       </form>
     </div>
   </div>
@@ -334,8 +334,14 @@
 
   <!-- Final da Footer -->
   </div>
+  <script>
+    function enviar() {
+      ipt_nome.value = "";
+      ipt_email.value = "";
+      ipt_empresa.value = "";
+      ipt_mensagem.value = "";
+    }
+  </script>
 </body>
-
 </html>
 
-<script>

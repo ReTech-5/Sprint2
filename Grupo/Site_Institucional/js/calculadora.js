@@ -58,11 +58,12 @@ function calcular() {
     var economiaAno = valorAnoAntes - valorAnoDepois;
 
     div_mensagem.innerHTML =
+      "<h3>Dados</h3><br>" +
       "<i><u>Total de Lixeiras:</u></i> " +
       lixeiras +
       "<br><i><u>Capacidade Máxima das Lixeiras:</u></i> " +
       capacidadeLixeira +
-      "<br><i><u>Capacidade Máxima dos Caminhões de Coleta:</u></i> " +
+      "<br><i><u>Capacidade Máxima dos Caminhões:</u></i> " +
       capacidadeCaminhao +
       "<br>" +
       "<br>Com essas informações é possível calcular a quantidade mínima recomendável de rotas de coleta que devem ser realizadas diariamente para evitar a superlotação de suas lixeiras.<br>" +
@@ -72,7 +73,7 @@ function calcular() {
       "<br>" +
       "<br>De acordo com dados da AMLURB e da ISWA, cerca de 30% das coletas realizadas são desnecessárias, gerando custos extras significativos. Com base na isso podemos calcular seu prejúizo financeiro pela falta de monitoramento." +
       "<br><br>" +
-      "<h4>Prejuízo</h4>" +
+      "<h3>Prejuízo</h3><br>" +
       "<i><u>Diário:</u></i> " +
       valorDiaAntes.toLocaleString("pt-BR", {
         style: "currency",
@@ -91,7 +92,7 @@ function calcular() {
       "<br>" +
       "<br>Com base em relatórios técnicos de cidades que já fazem uso de monitoramento inteligente, prevemos reduzir essas rotas desnecessárias para apenas 10%." +
       "<br><br>" +
-      "<h4>Economia</h4>" +
+      "<h3>Economia</h3><br>" +
       "<i><u>Diário:</u></i> " +
       economiaDia.toLocaleString("pt-BR", {
         style: "currency",
@@ -106,6 +107,8 @@ function calcular() {
       economiaAno.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
-      });
+      }) +
+      "<br>" +
+      "<br>Gerando assim uma economia de despesas do dinheiro público com o setor de limpeza urbana.";
   }
 }
