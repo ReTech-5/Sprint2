@@ -62,8 +62,7 @@ function entrar() {
 }
 
 function sair(){
-
-  statusLogin = false
+  
   window.location.href = "login.html"
 
 }

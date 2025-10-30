@@ -14,16 +14,18 @@ body {
 /* PERFIL CARD */
 .perfilContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center; 
   height: 90vh;
 }
 
 .perfilCard {
   background-color: var(--bg-light);
-  width: 650px;
+  width: 40%;
+  height: 80%;
   border-radius: 14px;
-  padding: 40px;
+  padding-left: 3%;
+  padding-top: 3%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.12);
   position: relative;
 }
@@ -104,20 +106,20 @@ body {
   text-decoration-color: var(--primary);
 }
 
-/* 
+
 .decoracao {
-  position: absolute;
-  right: 50px;
-  bottom: 40px;
-  width: 120px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
-  clip-path: polygon(0 0, 100% 30%, 100% 70%, 0 100%);
-  border-radius: 5px;
-  transform: rotate(4deg);
-  opacity: 0.8;
+  height: 43.8%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  
 }
-*/
+
+.decoracao img {
+
+  width: 200px;
+
+}
 
 /* RESPONSIVO*/
 @media (max-width: 700px) {
