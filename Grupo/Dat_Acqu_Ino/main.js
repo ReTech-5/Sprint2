@@ -27,7 +27,7 @@ const serial = async (
             host: 'localhost',
             user: 'retech_arduino',
             password: 'Techlixo123!',
-            database: 'Retech',
+            database: 'ReTech',
             port: 3307
         }
     ).promise(); // O .promise() permite usar 'await' para operações assíncronas
@@ -47,7 +47,7 @@ const serial = async (
         }
     ); // Abre a porta serial encontrada e define o baud rate
 
-    // evento quando a porta serial é aberta
+    // evento quando a porta serial é abertan
     arduino.on('open', () => {
         console.log(`A leitura do arduino foi iniciada na porta ${portaArduino.path} utilizando Baud Rate de ${SERIAL_BAUD_RATE}`);
     }); // É disparado quando a conexão serial é aberta com sucesso
