@@ -31,6 +31,8 @@ var listaUsuarios = [{
   nivel: "Administrador",
 }];
 
+
+
 var validado = false
 var tamanhoListaUsuarios = listaUsuarios.length;
 
@@ -38,30 +40,32 @@ function entrar() {
   var email = ipt_email.value.trim().toLowerCase();
   var senha = ipt_senha.value.trim();
   var certo = 0;
-  var errado = 0;
 
   for (var i = 0; i < tamanhoListaUsuarios; i++) {
     var usuario = listaUsuarios[i];
     if (email == usuario.email && senha == usuario.senha) {
       certo++;
     }
-    else {
-      errado++;
-    }
-  }
 
-  console.log(certo);
-  console.log(errado);
+  }
 
   if (email == "" || senha == "") {
     div_erro.innerHTML = "Todos os campos devem estar preenchidos antes de prosseguir!";
   }
   else if (certo == 0) {
-    div_erro.innerHTML = "Este usuário não existe!";
+    div_erro.innerHTML = "Login ou senha errado!";
   }
   else {
     window.location.href = "perfil.html";
+
   }
+}
+
+function sair(){
+
+  statusLogin = false
+  window.location.href = "login.html"
+
 }
 
 function verSenha() {
