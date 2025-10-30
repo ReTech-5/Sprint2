@@ -26,16 +26,17 @@
 /* Determina o tamanho da div em relação a div pai e ajusta o conteudo dentro dela */
 .nav {
   display: flex;
-  width: 65%;
+  width: 40%;
   align-items: center;
-  justify-content: space-around;
+  gap: 5%;
 }
 
 /* determina o tamanho da div em relação a div pai e ajusta o conteudo dentro dela */
 .ul_nav {
   display: flex;
   width: 70%;
-  justify-content: space-between;
+  justify-content: end;
+  gap: 5%;
 }
 
 /* configura o hover da navbar */
