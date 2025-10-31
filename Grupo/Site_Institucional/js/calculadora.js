@@ -24,11 +24,11 @@ function calcular() {
     // Validação para valores negativos
     if (lixeiras < 0) {
       div_mensagem.innerHTML +=
-        "A quantidade de lixeiras não pode ser negativa!<br>";
+        "A quantidade de lixeiras não pode ser negativa!<br><br>";
     }
     if (capacidadeLixeira < 0) {
       div_mensagem.innerHTML +=
-        "A capacidade máxima das lixeiras não pode ser negativa!<br>";
+        "A capacidade máxima das lixeiras não pode ser negativa!<br><br>";
     }
     if (capacidadeCaminhao < 0) {
       div_mensagem.innerHTML +=
@@ -71,7 +71,7 @@ function calcular() {
       "<i><u>Rotas:</u></i> " +
       rotas.toFixed(0) +
       "<br>" +
-      "<br>De acordo com dados da AMLURB e da ISWA, cerca de 30% das coletas realizadas são desnecessárias, gerando custos extras significativos. Com base na isso podemos calcular seu prejúizo financeiro pela falta de monitoramento." +
+      "<br>De acordo com dados da AMLURB e da ISWA, cerca de 30% das coletas realizadas são desnecessárias, gerando custos extras significativos. Com base nisso podemos calcular seu prejúizo financeiro pela falta de monitoramento." +
       "<br><br>" +
       "<h3>Prejuízo</h3><br>" +
       "<i><u>Diário:</u></i> " +

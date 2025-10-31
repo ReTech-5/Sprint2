@@ -116,7 +116,7 @@ INSERT INTO Endereco (logradouro, numero, cep) VALUES
 
 INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa, fkEndereco) VALUES
 ('SNSR-B002', 1, 1, 1),
-('SNSR-C001', 1, 1, 2), 
+('SNSR-C001', 1, 1, 2), 
 ('SNSR-C002', 0, 1, 2);
 
 INSERT INTO Contato (email, telefone, fkEmpresa) VALUES
@@ -192,8 +192,7 @@ AND S.codigoSensor = 'A2315';
 SELECT CONCAT('Alerta - Lixeira ', S.codigoSensor, ' se encontra em estado crítico') AS Mensagem_Alerta
 FROM ColetaDados AS C
 JOIN Sensor AS S ON C.fkSensor = S.idSensor
-WHERE C.distancia <= 25
-AND S.codigoSensor = 'SNSR-A001' 
+WHERE C.distancia <= 25 
 GROUP BY S.codigoSensor;
 
 -- Usuários e administradores
@@ -207,6 +206,3 @@ FROM Usuario AS U
 JOIN Empresa AS E ON U.fkEmpresa = E.idEmpresa
 JOIN Usuario AS ADM ON U.fkAdministrador = ADM.idUsuario
 ORDER BY E.nomeEmpresa, U.nome;
-
-
-
