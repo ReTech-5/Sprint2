@@ -26,7 +26,8 @@ CREATE TABLE Endereco(
 idEndereco INT PRIMARY KEY AUTO_INCREMENT, 	-- Identificador único do endereço
 logradouro VARCHAR(45),						-- Rua, avenida ou local
 numero INT,									-- Número do local 
-cep CHAR(9)								-- Código postal (CEP)																																						
+cep CHAR(9),								-- Código postal (CEP)	
+lixeira VARCHAR(45)																																					
 );
 
 /*
@@ -43,28 +44,11 @@ codigoSensor VARCHAR(45),					-- Código/Identificador do sensor
 fkEmpresa INT,								-- Empresa responsável
 	CONSTRAINT fkSensorEmpresa
     FOREIGN KEY (fkEmpresa)
-    REFERENCES empresa(idEmpresa),
+    REFERENCES Empresa(idEmpresa),
 fkEndereco INT,								-- Local onde o sensor está instalado
 	CONSTRAINT fkSensorEndereco 
     FOREIGN KEY (fkEndereco)
-    REFERENCES endereco(idEndereco)
-);
-
-/*
-Tabela Contato
-
-- Representa os contatos da ReTech(clientes)
-*/
-CREATE TABLE Contato(
-idContato INT AUTO_INCREMENT NOT NULL, 	-- Identificador único do contato
-email VARCHAR(45),								-- E-mail do contato
-telefone VARCHAR(12),  							-- Telefone celular
-telefoneFixo VARCHAR(11), 						-- Telefone Fixo
-fkEmpresa INT,           						-- Chave estrangeira
-	CONSTRAINT fkContatoEmpresa					-- Nome da Constrant
-    FOREIGN KEY (fkEmpresa)
-    REFERENCES empresa(idEmpresa),				-- Empresa à qual o contato pertence
-PRIMARY KEY (idContato, fkEmpresa)		    	-- Estabelecendo uma entidade fraca
+    REFERENCES Endereco(idEndereco)
 );
 
 /*
@@ -79,11 +63,11 @@ senha VARCHAR(100),								-- Senha do acesso
 fkAdministrador INT,							-- Auto-relacionamento (usuário administrador)
 	CONSTRAINT fkUsuarioAdministrador 			
 	FOREIGN KEY (fkAdministrador)
-	REFERENCES usuario(idUsuario),
+	REFERENCES Usuario(idUsuario),
 fkEmpresa INT,									-- Empresa a que o usuário pertence
 	CONSTRAINT fkusuarioEmpresa
     FOREIGN KEY (fkEmpresa)
-    REFERENCES empresa(idEmpresa)
+    REFERENCES Empresa(idEmpresa)
 );
 
 /*
@@ -96,12 +80,12 @@ sistema de coleta de dados (Arduino) e o Banco de Dados.
 CREATE TABLE ColetaDados(
 idColeta INT AUTO_INCREMENT UNIQUE NOT NULL,		-- Identificador daa coleta
 distancia DECIMAL(5,2),								-- Distância medida  (nível de resíduo)
-horaColeta TIME,									-- Hora da leitura
-dataColeta DATE, 									-- Data da leitura
+horaColeta TIME DEFAULT (CURRENT_TIME),				-- Hora da leitura
+dataColeta DATE DEFAULT (CURRENT_DATE), 			-- Data da leitura
 fkSensor INT,										-- Sensor que coletou os dados
 	CONSTRAINT fkColetaDadosSensor
     FOREIGN KEY (fkSensor)
-    REFERENCES sensor(idSensor),
+    REFERENCES Sensor(idSensor),
     PRIMARY KEY (idColeta, fkSensor)				-- Estabelecendo uma entidade fraca
 );
 

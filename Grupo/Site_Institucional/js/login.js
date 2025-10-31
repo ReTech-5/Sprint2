@@ -50,10 +50,10 @@ function entrar() {
   }
 
   if (email == "" || senha == "") {
-    div_erro.innerHTML = "Todos os campos devem estar preenchidos antes de prosseguir!";
+    div_erro.innerHTML = "Todos os campos devem ser preenchidos!";
   }
   else if (certo == 0) {
-    div_erro.innerHTML = "Login ou senha errado!";
+    div_erro.innerHTML = "E-mail ou senha incorreto!";
   }
   else {
     window.location.href = "perfil.html";
