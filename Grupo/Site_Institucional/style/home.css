@@ -100,16 +100,17 @@ body {
 .problemas {
   text-align: center;
   padding: 80px 20px;
-  background-color: var(--bg-deep);
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
 }
 
 .problemas h2 {
+  color: #000;
   font-size: 36px;
   margin-bottom: 10px;
 }
 
 .problemas>p {
-  color: var(--white);
+  color: var(--bg-dark);
   margin-bottom: 40px;
 }
 
@@ -144,8 +145,8 @@ body {
 
 
 .sobre {
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
-  color: var(--text-dark);
+  background-color: var(--bg-deep);
+  color: var(--text-light);
   padding: 80px 60px;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
@@ -156,7 +157,7 @@ body {
   font-size: 36px;
   margin-bottom: 60px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
 }
 
 
@@ -186,7 +187,7 @@ body {
 .empresa p {
   font-size: 15px;
   line-height: 1.6;
-  color: #444;
+  color: #ffffff;
   text-align: justify;
 }
 
@@ -205,7 +206,7 @@ body {
 
 .info p {
   font-size: 15px;
-  color: var(--text-dark);
+  color: var(--text-light);
   line-height: 1.6;
   margin-bottom: 25px;
 }
@@ -260,15 +261,16 @@ body {
 .beneficios {
   padding: 80px 20px;
   text-align: center;
-  background-color: var(--bg-deep);
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
 }
 
 .beneficios h2 {
+  color: #000;
   font-size: 36px;
 }
 
 .beneficios>p {
-  color: var(--gray-1);
+  color: var(--bg-dark);
   margin-bottom: 40px;
 }
 
@@ -345,7 +347,7 @@ body {
 
 
 .servicos {
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  background-color: var(--bg-deep);
   color: var(--text-dark);
   padding: 80px 60px;
   text-align: center;
@@ -353,6 +355,7 @@ body {
 }
 
 .servicos h2 {
+  color: #ffffff;
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -362,9 +365,9 @@ body {
   color: var(--primary);
 }
 
-.servicos>p {
+.servicos > p {
   font-size: 16px;
-  color: #444;
+  color: #ffffff;
   margin-bottom: 60px;
 }
 
@@ -408,6 +411,80 @@ body {
   line-height: 1.5;
 }
 
+.metricas {
+   background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  padding: 80px 20px;
+}
+
+.containerMetricas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 40px;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.caixaMetricas {
+  background-color: var(--white);
+  color: var(--text-dark);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.caixaMetricas:hover {
+  transform: translateY(-4px);
+}
+
+.iconeTitulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconeMetricas {
+  width: 45px;
+  height: 45px;
+}
+
+.caixaMetricas h3 {
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.caixaMetricas p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 5px 0 0;
+}
+
+.metricas h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.metricas h2 span {
+  color: var(--primary-2);
+  font-size: 1.3em;
+}
+
+.metricas h2 span1 {
+  color: #000;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.metricas .subtitulo {
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--bg-dark);
+}
 
 .tecnologiaBanner {
   border-radius: 16px;
@@ -433,7 +510,7 @@ body {
 }
 
 .quemSomos {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-deep);
   color: var(--text-light);
   padding: 80px 60px;
   font-family: 'Segoe UI', Arial, sans-serif;
