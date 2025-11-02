@@ -159,3 +159,43 @@ body {
 
 
 }
+
+.info_icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  /* Tooltip escondido */
+  .info_icon .tooltip {
+    visibility: hidden;
+    width: 130px;
+    background-color: var(--bg-verde-escuro);
+    color: var(--text-bg-escuro-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    font-size: 12px;
+  }
+
+  .info_icon .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--bg-verde-escuro) transparent transparent transparent;
+  }
+
+  .info_icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
