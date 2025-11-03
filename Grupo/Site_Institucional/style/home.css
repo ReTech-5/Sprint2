@@ -79,18 +79,18 @@ body {
   padding: 12px 25px;
   border-radius: 5px;
   margin: 0 10px;
-  background-color: var(--primary);
+  background-color: #10B77F;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 
 .principalBotoes a:last-child {
-  background-color: var(--primary);
+  background-color: #10B77F;
 }
 
 
 .principalBotoes a:hover {
-  background-color: var(--primary-2);
+  background-color: #10B77F;
   transform: translateY(-2px);
 }
 
@@ -179,7 +179,7 @@ body {
 
 .empresa h3 {
   text-align: center;
-  color: var(--primary);
+  color: #10B77F;
   font-size: 22px;
   margin-bottom: 20px;
 }
@@ -200,7 +200,7 @@ body {
 
 .info h3 {
   font-size: 20px;
-  color: var(--primary);
+  color: #10B77F;
   margin-bottom: 5px;
 }
 
@@ -220,7 +220,7 @@ body {
 }
 
 .colunaValores h3 {
-  color: var(--primary);
+  color: #10B77F;
   font-size: 22px;
   margin-bottom: 20px;
 }
@@ -254,9 +254,6 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
-
-
-
 
 .beneficios {
   padding: 80px 20px;
@@ -343,9 +340,6 @@ body {
   color: var(--primary-2);
 }
 
-
-
-
 .servicos {
   background-color: var(--bg-deep);
   color: var(--text-dark);
@@ -430,6 +424,7 @@ body {
   background-color: var(--white);
   color: var(--text-dark);
   border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 380px;
   padding: 20px;
@@ -511,12 +506,14 @@ body {
 
 .quemSomos {
   background-color: var(--bg-deep);
-  color: var(--text-light);
   padding: 80px 60px;
+  margin: auto;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+
 .quemSomos h2 {
+  color: #ffffff;
   text-align: center;
   font-size: 36px;
   margin-bottom: 15px;
@@ -527,8 +524,8 @@ body {
 .equipeContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 30px 0;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -537,9 +534,9 @@ body {
   width: 380px;
   display: flex;
   align-items: center;
-  background-color: #11271f;
+  background-color: #ffffff;
   border-radius: 10px;
-  padding: 15px 20px;
+  padding: 25px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -561,6 +558,7 @@ body {
 .membro p {
   margin: 0;
   line-height: 1.4;
+  color: #000;
 }
 
 .membro p:first-child {
@@ -573,9 +571,6 @@ body {
   color: var(--primary);
   font-size: 14px;
 }
-
-
-
 
 .contato {
   background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
@@ -644,8 +639,8 @@ body {
 
 
 .conversaBox {
-  border-radius: 16px;
-  background: linear-gradient(105deg, #20604A -12.94%, rgba(4, 32, 13, 0.90) 112.79%);
+  border-radius: 26px;
+  background: linear-gradient(90deg, #068158 0%, #04200D 100%);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -715,7 +710,7 @@ body {
 
 
 .formContato button {
-  background-color: var(--primary);
+ background: linear-gradient(90deg, #10B77F 0%, #04200D 100%);
   color: var(--text-light);
   border: none;
   padding: 14px;

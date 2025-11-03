@@ -21,7 +21,7 @@ body {
 
 .perfilCard {
   background-color: var(--bg-light);
-  width: 40%;
+  width: 50%;
   height: 80%;
   border-radius: 14px;
   padding-left: 3%;
@@ -115,7 +115,7 @@ body {
 
 .decoracao img {
 
-  width: 30%;
+  width: 26%;
 
 }
 
