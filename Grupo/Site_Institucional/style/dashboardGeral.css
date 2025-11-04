@@ -50,7 +50,7 @@ body {
 .container_sensor{
     
     width: 35%;
-    height: 113%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,8 +150,8 @@ body {
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 40%;
-    margin: 3% 0;
+    height: 35%;
+    margin-bottom: 1%;
 
 }
 
@@ -182,9 +182,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 1%;
-    width: 70%;
-    height: 100%;
+    padding-bottom: 2%;
+    width: 68%;
+    height: 90%;
     
 }
 
@@ -194,8 +194,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%;
-    height: 100%;
+    width: 30%;
+    height: 90%;
 
 }
 
