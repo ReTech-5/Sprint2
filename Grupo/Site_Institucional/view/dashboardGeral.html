@@ -48,23 +48,46 @@
     <!-- Inicio da Tela de Dashboard Geral -->
     <div class="dashboard_geral">
 
-        <div class="container container_sensor">
+        <div class="flexBox_kpi">
 
-            <div class="title card_title">
-                <h4>Lista de Sensores</h4>
+            <div class="container_kpi">
+                <div class="container kpi">
+                    <img src="../assets/img/InativoIcon.svg" alt="">
+                    <span>Inativos: <span id="inativo">7</span></span>
+            
+                </div>
+
+                <div class="container kpi">
+                    <img src="../assets/img/AtivoIcon.svg" alt="">
+                    <span>Ativos: <span id="ativo">63</span></span>
+
+                </div>
             </div>
+        
+            <div class="container container_sensor">
 
-            <select onchange="filtrar(value)">
-                <option selected value="1">Crítico</option>
-                <option value="2">Alerta</option>
-                <option value="3">Moderado</option>
-                <option value="4">Estável</option>
-                <option value="5">Todos</option>
-            </select>
+                <div class="title card_title">
+                    <h4>Lista de Sensores</h4>
+                </div>
 
-            <div id="div_ListaSensores"></div>
+                <div class="div_button">
+
+                    <button class="btn_filtro" onclick="filtrar">Todos</button>
+                    <button class="btn_filtro" onclick="filtrar">Crítico</button>
+                    <button class="btn_filtro" onclick="filtrar">Alerta</button>
+                    <button class="btn_filtro" onclick="filtrar">Moderado</button>
+                    <button class="btn_filtro" onclick="filtrar">Estavel</button>
+
+                </div>
+
+                <div id="div_ListaSensores"></div>
+
+            </div>
+            
 
         </div>
+
+        
 
         <div class="container_dash">
 
