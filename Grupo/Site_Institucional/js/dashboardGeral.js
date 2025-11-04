@@ -219,3 +219,128 @@ new Chart(PizzaLixeiras, {
     },
   },
 });
+
+var listaEndereco = [{
+  nome: "Av. Lins de Vasconcelos",
+  status: "Crítico",
+}, {
+  nome: "Rua Haddock Lobo",
+  status: "Crítico",
+}, {
+  nome: "Av. Francisco Matarazzo",
+  status: "Crítico",
+}, {
+  nome: "Rua Lomas Valentinas",
+  status: "Crítico",
+}, {
+  nome: "Av. Paulista",
+  status: "Alerta",
+}, {
+  nome: "Rua Arnaldo Cintra",
+  status: "Alerta",
+}, {
+  nome: "Av. Brigadeiro Faria Lima",
+  status: "Alerta",
+}, {
+  nome: "Rua Oscar Freire",
+  status: "Alerta",
+}, {
+  nome: "Av. 23 de Maio",
+  status: "Moderado",
+}, {
+  nome: "Rua Vergueiro",
+  status: "Moderado",
+}, {
+  nome: "Av. Ipiranga",
+  status: "Moderado",
+}, {
+  nome: "Rua Heitor Penteado",
+  status: "Moderado",
+}, {
+  nome: "Av. 23 de Maio",
+  status: "Estável",
+}, {
+  nome: "Av. Santo Amaro",
+  status: "Estável",
+}, {
+  nome: "Av. dos Bandeirantes",
+  status: "Estável",
+}, {
+  nome: "Rua da Consolação",
+  status: "Estável",
+}];
+
+var filtro = "Crítico"; 
+
+function mostrarLista() {
+  listaDivConteudo = "<ul>";
+
+  var cont = 0;
+  var tamanhoListaEndereco = listaEndereco.length;
+  while (cont < tamanhoListaEndereco) {
+    var endereco = listaEndereco[cont];
+    var mostrar = false;
+
+    if (filtro == "Todos") {
+      mostrar = true;
+      listaEndereco += "<li>";
+    } 
+    else if (endereco.status == filtro) {
+      mostrar = true;
+      listaEndereco += "<li>";
+    }
+
+    if (endereco.status == "Crítico") {
+      listaEndereco += "<img src='../asset/LixeiraCriticaIcon.svg'>";
+    }
+    else if (endereco.status == "Alerta") {
+      listaEndereco += "<img src='../asset/LixeiraAlertaIcon.svg'>";
+    }
+    else if (endereco.status == "Moderado") {
+      listaEndereco += "<img src='../asset/LixeiraModeradoIcon.svg'>";
+    }
+    else if (endereco.status == "Estável") {
+      listaEndereco += "<img src='../asset/LixeiraEstavelIcon.svg'>";
+    }
+
+    if (mostrar == true) {
+      listaDivConteudo += "<a href='dashboardSensor.html'>" + endereco.nome; + "</a></li>";
+    }
+
+    cont++;
+  }
+
+  listaDivConteudo += "</ul>";
+
+  // Atualiza o conteúdo da div
+  div_ListaSensores.innerHTML = listaDivConteudo;
+}
+
+function filtrar(){
+
+}
+
+function filtrarTodos() {
+  filtro = "Todos";
+  mostrarTabela();
+}
+
+function filtrarCritico() {
+  filtro = "Crítico";
+  mostrarTabela();
+}
+
+function filtrarAlerta() {
+  filtro = "Alerta";
+  mostrarTabela();
+}
+
+function filtrarModerado() {
+  filtro = "Moderado";
+  mostrarTabela();
+}
+
+function filtrarEstavel() {
+  filtro = "Estável";
+  mostrarTabela();
+}
