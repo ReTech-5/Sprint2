@@ -257,7 +257,7 @@ var listaEndereco = [{
   nome: "Rua Heitor Penteado",
   status: "Moderado",
 }, {
-  nome: "Av. 23 de Maio",
+  nome: "Av. Avenida Sapopemba",
   status: "Estável",
 }, {
   nome: "Av. Santo Amaro",
@@ -270,41 +270,39 @@ var listaEndereco = [{
   status: "Estável",
 }];
 
-var filtro = "Crítico"; 
+var filtro = "Todos"; 
 
 function mostrarLista() {
-  listaDivConteudo = "<ul>";
+  var listaDivConteudo = "<ul>";
 
   var cont = 0;
   var tamanhoListaEndereco = listaEndereco.length;
+
   while (cont < tamanhoListaEndereco) {
     var endereco = listaEndereco[cont];
     var mostrar = false;
 
-    if (filtro == "Todos") {
+    if (filtro == "Todos" || endereco.status == filtro) {
       mostrar = true;
-      listaEndereco += "<li>";
-    } 
-    else if (endereco.status == filtro) {
-      mostrar = true;
-      listaEndereco += "<li>";
     }
 
-    if (endereco.status == "Crítico") {
-      listaEndereco += "<img src='../asset/LixeiraCriticaIcon.svg'>";
-    }
-    else if (endereco.status == "Alerta") {
-      listaEndereco += "<img src='../asset/LixeiraAlertaIcon.svg'>";
-    }
-    else if (endereco.status == "Moderado") {
-      listaEndereco += "<img src='../asset/LixeiraModeradoIcon.svg'>";
-    }
-    else if (endereco.status == "Estável") {
-      listaEndereco += "<img src='../asset/LixeiraEstavelIcon.svg'>";
-    }
+    if (mostrar) {
+      listaDivConteudo += "<li>";
 
-    if (mostrar == true) {
-      listaDivConteudo += "<a href='dashboardSensor.html'>" + endereco.nome; + "</a></li>";
+      if (endereco.status == "Crítico") {
+        listaDivConteudo += "<img src='../asset/LixeiraCriticaIcon.svg'>";
+      }
+      else if (endereco.status == "Alerta") {
+        listaDivConteudo += "<img src='../asset/LixeiraAlertaIcon.svg'>";
+      }
+      else if (endereco.status == "Moderado") {
+        listaDivConteudo += "<img src='../asset/LixeiraModeradaIcon.svg'>";
+      }
+      else if (endereco.status == "Estável") {
+        listaDivConteudo += "<img src='../asset/LixeiraEstavelIcon.svg'>";
+      }
+
+      listaDivConteudo += "<a href='dashboardSensor.html'>" + endereco.nome + "</a></li>";
     }
 
     cont++;
@@ -315,24 +313,28 @@ function mostrarLista() {
   div_ListaSensores.innerHTML = listaDivConteudo;
 }
 
-function filtrar(valor){
+function filtrarTodos() {
+  filtro = "Todos";
+  mostrarLista();
+}
 
-  if (valor == 1) {
-    filtro = "Crítico";
-  }
-  else if (valor == 2) {
-    filtro = "Alerta";
-  }
-  else if (valor == 3) {
-    filtro = "Moderado";
-  }
-  else if (valor == 4) {
-    filtro = "Moderado";
-  }
-  else if (valor == 5) {
-    filtro = "Todos";
-  }
+function filtrarCritico() {
+  filtro = "Crítico";
+  mostrarLista();
+}
 
+function filtrarAlerta() {
+  filtro = "Alerta";
+  mostrarLista();
+}
+
+function filtrarModerado() {
+  filtro = "Moderado";
+  mostrarLista();
+}
+
+function filtrarEstavel() {
+  filtro = "Estável";
   mostrarLista();
 }
 

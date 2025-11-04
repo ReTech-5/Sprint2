@@ -67,18 +67,28 @@
             <div class="container container_sensor">
 
                 <div class="title card_title">
+
                     <h4>Lista de Sensores</h4>
-                </div>
-
-                <div class="div_button">
-
-                    <button class="btn_filtro" onclick="filtrar">Todos</button>
-                    <button class="btn_filtro" onclick="filtrar">Crítico</button>
-                    <button class="btn_filtro" onclick="filtrar">Alerta</button>
-                    <button class="btn_filtro" onclick="filtrar">Moderado</button>
-                    <button class="btn_filtro" onclick="filtrar">Estavel</button>
 
                 </div>
+
+                <div class="botoes">
+
+                    <div class="div_button">
+
+                        <button class="btn_filtro" onclick="filtrarTodos()">Todos</button>
+                        <button class="btn_filtro" onclick="filtrarCritico()">Crítico</button>
+                        <button class="btn_filtro" onclick="filtrarAlerta()">Alerta</button>
+                        <button class="btn_filtro" onclick="filtrarModerado()">Moderado</button>
+                        <button class="btn_filtro" onclick="filtrarEstavel()">Estavel</button>
+
+                    </div>
+
+                </div>
+
+                    
+
+                <br>
 
                 <div id="div_ListaSensores"></div>
 

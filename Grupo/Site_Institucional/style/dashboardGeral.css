@@ -73,7 +73,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18%;
+  width: 19%;
   height: 100%;
   background-color: var(--bt-text-color);
   color: var(--text-padrao-color);
@@ -93,12 +93,13 @@ body {
 /* Container lateral de sensores: define largura relativa e empilha itens em coluna */
 .container_sensor{
     
-    width: 95%;
+    width: 99%;
     height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
+    overflow-y: auto;
 
 }
 
@@ -138,7 +139,7 @@ body {
     margin: 2%;
     width: 100%;
     height: 100%;
-    gap: 2%;
+    gap: 4%;
 
 }
 
@@ -230,7 +231,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 2%;
-    width: 68%;
+    width: 60%;
     height: 105%;
     
 }
