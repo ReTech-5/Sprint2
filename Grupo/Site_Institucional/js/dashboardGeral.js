@@ -312,35 +312,28 @@ function mostrarLista() {
 
   listaDivConteudo += "</ul>";
 
-  // Atualiza o conteúdo da div
   div_ListaSensores.innerHTML = listaDivConteudo;
 }
 
-function filtrar(){
+function filtrar(valor){
 
+  if (valor == 1) {
+    filtro = "Crítico";
+  }
+  else if (valor == 2) {
+    filtro = "Alerta";
+  }
+  else if (valor == 3) {
+    filtro = "Moderado";
+  }
+  else if (valor == 4) {
+    filtro = "Moderado";
+  }
+  else if (valor == 5) {
+    filtro = "Todos";
+  }
+
+  mostrarLista();
 }
 
-function filtrarTodos() {
-  filtro = "Todos";
-  mostrarTabela();
-}
-
-function filtrarCritico() {
-  filtro = "Crítico";
-  mostrarTabela();
-}
-
-function filtrarAlerta() {
-  filtro = "Alerta";
-  mostrarTabela();
-}
-
-function filtrarModerado() {
-  filtro = "Moderado";
-  mostrarTabela();
-}
-
-function filtrarEstavel() {
-  filtro = "Estável";
-  mostrarTabela();
-}
+mostrarLista();

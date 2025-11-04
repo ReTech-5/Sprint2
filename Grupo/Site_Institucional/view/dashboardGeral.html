@@ -54,17 +54,15 @@
                 <h4>Lista de Sensores</h4>
             </div>
 
+            <select onchange="filtrar(value)">
+                <option selected value="1">Crítico</option>
+                <option value="2">Alerta</option>
+                <option value="3">Moderado</option>
+                <option value="4">Estável</option>
+                <option value="5">Todos</option>
+            </select>
+
             <div id="div_ListaSensores"></div>
-
-            <ul>
-
-                <li><img src="../asset/LixeiraCriticaIcon.svg"> <a href="dashboardSensor.html">Av. Lins de Vasconcelos</a></li>
-                <li><img src="../asset/LixeiraEstavelIcon.svg"> <a href="">Rua Haddock Lobo, 595</a></li>
-                <li><img src="../asset/LixeiraAlertaIcon.svg"> <a href="">Av. Francisco Matarazzo</a></li>
-                <li><img src="../asset/LixeiraModeradaIcon.svg"> <a href="">Rua Lomas Valentinas, 44</a></li>
-
-            </ul>
-
 
         </div>
 
