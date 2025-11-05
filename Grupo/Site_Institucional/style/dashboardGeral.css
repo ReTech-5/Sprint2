@@ -56,12 +56,14 @@ body {
     color: var(--text-bg-escuro-color);
     margin-bottom: 5%;
     height: 45px;
+    min-height: 45px;
 
 }
 
 .div_button {
 
     width: 100%;
+    min-height: 6%;
     height: 6%;
     display: flex;
     align-items: center;
@@ -147,7 +149,6 @@ body {
 .container_kpi {
     
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     width: 95%;
     height: 8%;
@@ -160,7 +161,8 @@ body {
 
     display: flex;
     align-items: center;
-    padding: 1%;
+    justify-content: center;
+    padding-right: 2%;
     width: 45%;
     height: 100%;
     border-radius: 3px;
@@ -242,7 +244,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 37%;
     height: 105%;
 
 }
