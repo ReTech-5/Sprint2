@@ -249,3 +249,184 @@ new Chart(RoscaReciclavel, {
     },
     plugins: [centerTextPlugin], // Plugin criado para acrescentar a porcentagem de ocupação da lixeira no centro do gráfico
 });
+
+// Gráfico de Linha da Curva de Preenchimento de uma Lixeira Orgânica
+/* Cria uma nova instância de Chart no canvas LinhaOrganico
+      "new Chart(elemento, config)" é a forma padrão de inicializar um gráfico com Chart.js */
+new Chart(LinhaOrganico, {
+  type: "line", // Tipo do gráfico: "line" (linha)
+  data: {
+    // Objeto que contém os dados e rótulos do gráfico
+    labels: [
+      "10:00",
+      "10:30",
+      "11:00",
+      "11:30",
+      "12:00",
+      "12:30",
+      "13:00",
+      "13:30",
+      "14:00",
+      "14:30",
+      "15:00",
+      "15:30",
+      "16:00",
+      "16:30",
+      "17:00",
+      "17:30",
+      "18:00",
+      "18:30",
+      "19:00",
+      "19:30",
+      "20:00",
+    ],
+    // "labels" define os rótulos do eixo X (cada valor do dataset corresponde a um label na mesma posição)
+    datasets: [
+      {
+        // Vetor de conjuntos de dados. Mesmo que seja apenas 1 dataset, precisa ser um vetor
+        label: "Nível de Preenchimento", // Nome do dataset — aparece na legenda
+        data: [
+          2,
+          5,
+          5,
+          6,
+          15,
+          17,
+          20,
+          24,
+          28,
+          33,
+          39,
+          42,
+          43,
+          50,
+          56,
+          60,
+          64,
+          69,
+          70,
+          71,
+          ultimo2,
+        ], // Valores numéricos do dataset (nesta ordem correspondem aos labels acima)
+        fill: false, // Indica se a área abaixo da linha deve ser preenchida
+        borderColor: "rgb(16, 183, 127)", // Cor da linha
+        tension: 0.2, // Curvatura da linha: 0 = reta entre pontos, valores maiores = curvas mais suaves
+      },
+    ],
+  },
+  options: {
+    // Configurações e opções do gráfico (layout, plugins, escalas, interatividade, etc.)
+    responsive: true, // Faz o gráfico redimensionar automaticamente com o container
+    plugins: {
+      // Configurações para plugins nativos (legend, title, tooltip, etc.)
+      legend: { display: true }, // Mostra a legenda (nome do dataset)
+      title: {
+        display: true,
+        text: "Curva de Preenchimento - Orgânico",
+        color: "black",
+        font: { size: 15, weight: "bold", family: "Arial" },
+      }, // Título do gráfico
+      tooltip: {
+        // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
+        callbacks: {
+          label: function (context) {
+            // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
+            return context.dataset.label + ": " + context.parsed.y + "%";
+            // context.dataset.label = nome do dataset
+            // context.parsed.y = valor do ponto no eixo y (para gráfico de linha)
+          },
+        },
+      },
+    },
+    scales: {
+      // Configuração das escalas (eixos x e y)
+      y: {
+        // Configuração do eixo Y
+        beginAtZero: true, // Faz com que o eixo comece em zero
+        max: 100, // Define o limite máximo como 100%
+        ticks: {
+          // Personaliza os ticks (rótulos) do eixo
+          callback: function (value) {
+            // Função chamada para renderizar cada tick no eixo
+            return value + "%"; // Adiciona o símbolo '%' aos rótulos do eixo Y
+          },
+        },
+        title: {
+          // Título do eixo Y
+          display: true,
+          text: "Ocupação (%)",
+          color: "rgb(4, 32, 13)",
+          font: { size: 15, weight: "bold" },
+        },
+      },
+      x: {
+        title: {
+          // Título do eixo X
+          display: true,
+          text: "Horário",
+          color: "rgb(4, 32, 13)",
+          font: { size: 15, weight: "bold" },
+        },
+      },
+    },
+  },
+});
+
+// Gráfico de Rosca do Preenchimento Atual de uma Lixeira Orgânica
+/* Cria uma nova instância de Chart no canvas RoscaOrganico.
+      "new Chart(elemento, config)"" é a forma padrão de inicializar um gráfico com Chart.js */
+new Chart(RoscaOrganico, {
+  type: "doughnut", // Tipo do gráfico: "doughnut" (rosquinha).
+  data: {
+    // Objeto que contém os dados e rótulos do gráfico
+    // labels: [ // "labels" define os rótulos das fatias
+    //     "Vazio",
+    //     "Ocupado"
+    // ],
+    datasets: [
+      {
+        // Vetor de conjuntos de dados. Mesmo que seja apenas 1 dataset, precisa ser um vetor
+        label: "", // Nome do dataset — aparece na legenda e pode ser usado nos tooltips
+        data: [100 - ultimo2, ultimo2], // Valores numéricos do dataset (ultimo1 = ultimo dado coletado do sensor, 100 - ultimo1 = porcentagem da lixeira vazia)
+        backgroundColor: [
+          // Cor de cada fatia do gráfico
+          "rgb(240, 240, 240)", // Cor da fatia de espaço vazio na lixeira sempre será branco
+          cor2, // Cor da fatia de ocupação da lixeira se altera dinamicamente
+        ],
+        hoverOffset: 4, // Efeito de crescimento da fatia ao passar o mouse por cima
+      },
+    ],
+  },
+  options: {
+    // Configurações e opções do gráfico (layout, plugins, escalas, interatividade, etc.)
+    responsive: true, // Faz o gráfico redimensionar automaticamente com o container
+    cutout: "80%", // Espessura do gráfico de rosca, quanto maior mais fino o círculo
+    plugins: {
+      // Configurações para plugins nativos (legend, title, tooltip, etc.) ou criados
+      legend: {
+        position: "center",
+        labels: {
+          boxWidth: 15,
+          font: { size: 12 },
+        },
+      }, // Mostra a legenda (nome do dataset)
+      // title: {
+      //     display: true,
+      //     text: "Preenchimento Atual - Orgânico",
+      //     color: "black",
+      //     font: {size: 15, weight: "bold", family: "Arial"},
+      // }, // Título do gráfico
+      tooltip: {
+        // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
+        callbacks: {
+          label: function (context) {
+            // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
+            // context.parsed = valor do dataset
+            return " " + context.parsed + "%";
+          },
+        },
+      },
+    },
+  },
+  plugins: [centerTextPlugin], // Plugin criado para acrescentar a porcentagem de ocupação da lixeira no centro do gráfico
+});
