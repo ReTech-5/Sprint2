@@ -10,28 +10,28 @@ new Chart(BarrasReciclavel, {
     datasets: [
       {
         label: "Estável",
-        data: [3],
+        data: [4],
         borderColor: ["rgb(0, 128, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(186, 255, 201)"],
       },
       {
         label: "Moderado",
-        data: [18],
+        data: [10],
         borderColor: ["rgb(204, 204, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(255, 255, 186)"],
       },
       {
         label: "Alerta",
-        data: [7],
+        data: [2],
         borderColor: ["rgb(255, 140, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(255, 223, 186)"],
       },
       {
         label: "Crítico",
-        data: [3],
+        data: [6],
         borderColor: ["rgb(255, 0, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(255, 179, 186)"],
@@ -93,14 +93,14 @@ new Chart(BarrasOrganico, {
     datasets: [
       {
         label: "Estável",
-        data: [8],
+        data: [6],
         borderColor: ["rgb(0, 128, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(186, 255, 201)"],
       },
       {
         label: "Moderado",
-        data: [13],
+        data: [10],
         borderColor: ["rgb(204, 204, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(255, 255, 186)"],
@@ -114,7 +114,7 @@ new Chart(BarrasOrganico, {
       },
       {
         label: "Crítico",
-        data: [6],
+        data: [2],
         borderColor: ["rgb(255, 0, 0)"],
         borderWidth: 0.5,
         backgroundColor: ["rgb(255, 179, 186)"],
@@ -176,7 +176,7 @@ new Chart(PizzaLixeiras, {
     datasets: [
       {
         label: "Lixeiras",
-        data: [14, 34, 7, 7],
+        data: [10, 20, 6, 8],
         borderColor: [
           "rgb(0, 128, 0)",
           "rgb(204, 204, 0)",
@@ -233,6 +233,12 @@ var listaEndereco = [{
   nome: "Rua Lomas Valentinas",
   status: "Crítico",
 }, {
+  nome: "Av. Cruzeiro do Sul",
+  status: "Crítico",
+}, {
+  nome: "Rua Cardeal Arcoverde",
+  status: "Crítico",
+},{
   nome: "Av. Paulista",
   status: "Alerta",
 }, {
@@ -243,6 +249,12 @@ var listaEndereco = [{
   status: "Alerta",
 }, {
   nome: "Rua Oscar Freire",
+  status: "Alerta",
+}, {
+  nome: "Av. João Dias",
+  status: "Alerta",
+}, {
+  nome: "Rua José Paulino",
   status: "Alerta",
 }, {
   nome: "Av. 23 de Maio",
@@ -257,6 +269,12 @@ var listaEndereco = [{
   nome: "Rua Heitor Penteado",
   status: "Moderado",
 }, {
+  nome: "Av. Ricardo Jafet",
+  status: "Moderado",
+}, {
+  nome: "Rua Palestra Itália",
+  status: "Moderado",
+}, {
   nome: "Av. Avenida Sapopemba",
   status: "Estável",
 }, {
@@ -267,6 +285,12 @@ var listaEndereco = [{
   status: "Estável",
 }, {
   nome: "Rua da Consolação",
+  status: "Estável",
+}, {
+  nome: "Av. Washington Luís",
+  status: "Estável",
+}, {
+  nome: "Rua dos Três Irmãos",
   status: "Estável",
 }];
 
@@ -345,4 +369,4 @@ function filtrarEstavel() {
   mostrarLista();
 }
 
-mostrarLista();
+filtrarCritico();
