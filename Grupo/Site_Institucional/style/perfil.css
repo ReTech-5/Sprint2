@@ -37,8 +37,8 @@ body {
 }
 
 .avatar {
-  width: 90px;
-  height: 90px;
+  width: 150px;
+  height: 150px;
   border: 3px solid var(--primary);
   border-radius: 50%;
   display: flex;
@@ -57,7 +57,7 @@ body {
 
 .dados h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 25px;
   color: var(--text-dark);
 }
 
@@ -84,6 +84,7 @@ body {
 
 /*  LINKS (ATALHOS)*/
 .atalhos {
+  width: 45%;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -93,7 +94,7 @@ body {
 .atalhos a {
   color: #000;
   text-align: start;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 24px;
   text-decoration: underline transparent 1.5px;
@@ -111,13 +112,21 @@ body {
   display: flex;
   justify-content: end;
   
+  
 }
 
 .decoracao img {
 
-  width: 26%;
+  width: 50%;
 
 }
+
+.flexBox {
+
+  display: flex;
+
+}
+
 
 /* RESPONSIVO*/
 @media (max-width: 700px) {
