@@ -531,7 +531,7 @@ body {
 }
 
 .membro {
-  width: 380px;
+  width: 45%;
   display: flex;
   align-items: center;
   background-color: #ffffff;
@@ -555,6 +555,13 @@ body {
   border: 2px solid var(--primary);
 }
 
+
+.membro .info {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
 .membro p {
   margin: 0;
   line-height: 1.4;
@@ -564,13 +571,16 @@ body {
 .membro p:first-child {
   font-weight: 700;
   font-size: 16px;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
-.membro p:last-child {
+.membro .cargo {
   color: var(--primary);
   font-size: 14px;
+  margin-top: 4px; 
 }
+
+
 
 .contato {
   background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
