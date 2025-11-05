@@ -57,6 +57,9 @@ body {
     margin-bottom: 5%;
     height: 45px;
     min-height: 45px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
 }
 

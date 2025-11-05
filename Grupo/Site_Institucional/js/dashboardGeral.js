@@ -224,10 +224,10 @@ var listaEndereco = [{
   nome: "Av. Lins de Vasconcelos",
   status: "Crítico",
 }, {
-  nome: "Rua Haddock Lobo",
+  nome: "Av. Francisco Matarazzo",
   status: "Crítico",
 }, {
-  nome: "Av. Francisco Matarazzo",
+  nome: "Rua Haddock Lobo",
   status: "Crítico",
 }, {
   nome: "Rua Lomas Valentinas",
@@ -302,7 +302,14 @@ function mostrarLista() {
         listaDivConteudo += "<img src='../asset/LixeiraEstavelIcon.svg'>";
       }
 
-      listaDivConteudo += "<a href='dashboardSensor.html'>" + endereco.nome + "</a></li>";
+      if (endereco.nome == "Av. Francisco Matarazzo"){
+        listaDivConteudo += "<a href='dashboardSensorInativo.html'>" + endereco.nome + "</a></li>";
+
+      }else{
+        listaDivConteudo += "<a href='dashboardSensor.html'>" + endereco.nome + "</a></li>";
+
+      }
+
     }
 
     cont++;
