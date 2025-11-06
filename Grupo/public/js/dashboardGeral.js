@@ -42,7 +42,15 @@ new Chart(BarrasReciclavel, {
     responsive: true, // Faz o gráfico redimensionar automaticamente com o container
     plugins: {
       // Configurações para plugins nativos (legend, title, tooltip, etc.)
-      legend: { display: true }, // Mostra a legenda (nome do dataset)
+      legend: { display: true , // Mostra a legenda (nome do dataset)
+        labels: {
+          font: {
+            weight: "semi-bold",
+            size: 11,
+          },
+          color: "black",
+        },
+      },
       title: {
         display: true,
         text: "Lixeiras Recicláveis por Status de Preenchimento",
@@ -125,7 +133,15 @@ new Chart(BarrasOrganico, {
     responsive: true, // Faz o gráfico redimensionar automaticamente com o container
     plugins: {
       // Configurações para plugins nativos (legend, title, tooltip, etc.)
-      legend: { display: true }, // Mostra a legenda (nome do dataset)
+      legend: { display: true , // Mostra a legenda (nome do dataset)
+        labels: {
+          font: {
+            weight: "semi-bold",
+            size: 11,
+          },
+          color: "black",
+        },
+      },
       title: {
         display: true,
         text: "Lixeiras Orgânicas por Status de Preenchimento",
@@ -198,7 +214,14 @@ new Chart(PizzaLixeiras, {
     responsive: true, // Faz o gráfico redimensionar automaticamente com o container
     plugins: {
       // Configurações para plugins nativos (legend, title, tooltip, etc.)
-      legend: { display: true }, // Mostra a legenda (nome do dataset)
+      legend: { display: true , // Mostra a legenda (nome do dataset)
+        labels: {
+          font: {
+            weight: "semi-bold",
+          },
+          color: "black",
+        },
+      },
       title: {
         display: true,
         text: "Lixeiras por Status de Preenchimento",
@@ -220,81 +243,106 @@ new Chart(PizzaLixeiras, {
   },
 });
 
-var listaEndereco = [{
-  nome: "Av. Lins de Vasconcelos",
-  status: "Crítico",
-}, {
-  nome: "Av. Francisco Matarazzo",
-  status: "Crítico",
-}, {
-  nome: "Rua Haddock Lobo",
-  status: "Crítico",
-}, {
-  nome: "Rua Lomas Valentinas",
-  status: "Crítico",
-}, {
-  nome: "Av. Cruzeiro do Sul",
-  status: "Crítico",
-}, {
-  nome: "Rua Cardeal Arcoverde",
-  status: "Crítico",
-},{
-  nome: "Av. Paulista",
-  status: "Alerta",
-}, {
-  nome: "Rua Arnaldo Cintra",
-  status: "Alerta",
-}, {
-  nome: "Av. Brigadeiro Faria Lima",
-  status: "Alerta",
-}, {
-  nome: "Rua Oscar Freire",
-  status: "Alerta",
-}, {
-  nome: "Av. João Dias",
-  status: "Alerta",
-}, {
-  nome: "Rua José Paulino",
-  status: "Alerta",
-}, {
-  nome: "Av. 23 de Maio",
-  status: "Moderado",
-}, {
-  nome: "Rua Vergueiro",
-  status: "Moderado",
-}, {
-  nome: "Av. Ipiranga",
-  status: "Moderado",
-}, {
-  nome: "Rua Heitor Penteado",
-  status: "Moderado",
-}, {
-  nome: "Av. Ricardo Jafet",
-  status: "Moderado",
-}, {
-  nome: "Rua Palestra Itália",
-  status: "Moderado",
-}, {
-  nome: "Av. Avenida Sapopemba",
-  status: "Estável",
-}, {
-  nome: "Av. Santo Amaro",
-  status: "Estável",
-}, {
-  nome: "Av. dos Bandeirantes",
-  status: "Estável",
-}, {
-  nome: "Rua da Consolação",
-  status: "Estável",
-}, {
-  nome: "Av. Washington Luís",
-  status: "Estável",
-}, {
-  nome: "Rua dos Três Irmãos",
-  status: "Estável",
-}];
+var listaEndereco = [
+  {
+    nome: "Av. Lins de Vasconcelos",
+    status: "Crítico",
+  },
+  {
+    nome: "Av. Francisco Matarazzo",
+    status: "Crítico",
+  },
+  {
+    nome: "Rua Haddock Lobo",
+    status: "Crítico",
+  },
+  {
+    nome: "Rua Lomas Valentinas",
+    status: "Crítico",
+  },
+  {
+    nome: "Av. Cruzeiro do Sul",
+    status: "Crítico",
+  },
+  {
+    nome: "Rua Vergueiro",
+    status: "Crítico",
+  },
+  {
+    nome: "Av. Paulista",
+    status: "Alerta",
+  },
+  {
+    nome: "Rua Arnaldo Cintra",
+    status: "Alerta",
+  },
+  {
+    nome: "Av. Brigadeiro Faria Lima",
+    status: "Alerta",
+  },
+  {
+    nome: "Rua Oscar Freire",
+    status: "Alerta",
+  },
+  {
+    nome: "Av. João Dias",
+    status: "Alerta",
+  },
+  {
+    nome: "Rua José Paulino",
+    status: "Alerta",
+  },
+  {
+    nome: "Av. 23 de Maio",
+    status: "Moderado",
+  },
+  {
+    nome: "Rua Cardeal Arcoverde",
+    status: "Moderado",
+  },
+  {
+    nome: "Av. Ipiranga",
+    status: "Moderado",
+  },
+  {
+    nome: "Rua Heitor Penteado",
+    status: "Moderado",
+  },
+  {
+    nome: "Av. Ricardo Jafet",
+    status: "Moderado",
+  },
+  {
+    nome: "Rua Palestra Itália",
+    status: "Moderado",
+  },
+  {
+    nome: "Av. Avenida Sapopemba",
+    status: "Estável",
+  },
+  {
+    nome: "Av. Santo Amaro",
+    status: "Estável",
+  },
+  {
+    nome: "Av. dos Bandeirantes",
+    status: "Estável",
+  },
+  {
+    nome: "Rua da Consolação",
+    status: "Estável",
+  },
+  {
+    nome: "Av. Washington Luís",
+    status: "Estável",
+  },
+  {
+    nome: "Rua dos Três Irmãos",
+    status: "Estável",
+  },
+];
 
-var filtro = "Todos"; 
+var filtro = "Todos";
 
 function mostrarLista() {
   var listaDivConteudo = "<ul>";
@@ -315,25 +363,23 @@ function mostrarLista() {
 
       if (endereco.status == "Crítico") {
         listaDivConteudo += "<img src='../asset/LixeiraCriticaIcon.svg'>";
-      }
-      else if (endereco.status == "Alerta") {
+      } else if (endereco.status == "Alerta") {
         listaDivConteudo += "<img src='../asset/LixeiraAlertaIcon.svg'>";
-      }
-      else if (endereco.status == "Moderado") {
+      } else if (endereco.status == "Moderado") {
         listaDivConteudo += "<img src='../asset/LixeiraModeradaIcon.svg'>";
-      }
-      else if (endereco.status == "Estável") {
+      } else if (endereco.status == "Estável") {
         listaDivConteudo += "<img src='../asset/LixeiraEstavelIcon.svg'>";
       }
 
-      if (endereco.nome == "Av. Francisco Matarazzo"){
-        listaDivConteudo += "<a href='dashboardSensorInativo.html'>" + endereco.nome + "</a></li>";
-
-      }else{
-        listaDivConteudo += "<a href='dashboardSensor.html'>" + endereco.nome + "</a></li>";
-
+      if (endereco.nome == "Av. Francisco Matarazzo") {
+        listaDivConteudo +=
+          "<a href='dashboardSensorInativo.html'>" +
+          endereco.nome +
+          "</a></li>";
+      } else {
+        listaDivConteudo +=
+          "<a href='dashboardSensor.html'>" + endereco.nome + "</a></li>";
       }
-
     }
 
     cont++;
