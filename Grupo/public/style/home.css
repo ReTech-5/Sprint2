@@ -231,32 +231,33 @@ body {
 .valoresCaixas {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  justify-items: center;
+  gap: 25px;
+  margin-top: 15px;
 }
 
-
 .caixaValor {
-  background-color: var(--white);
-  border: 1px solid var(--gray-2);
-  border-radius: 10px;
-  padding: 20px;
-  width: 140px;
-  height: 120px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  color: var(--text-dark);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 25px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px;
 }
 
 .caixaValor:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
+.caixaValor .emoji {
+  font-size: 30px; 
+  margin-bottom: 0; 
+}
 .beneficios {
   padding: 80px 20px;
   text-align: center;
