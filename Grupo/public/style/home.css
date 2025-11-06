@@ -30,6 +30,7 @@ body {
 
 
 
+
 .partePrincipal {
   position: relative;
   text-align: center;
@@ -110,6 +111,7 @@ body {
 }
 
 .problemas>p {
+  font-size: 17px;
   color: var(--text-light);
   margin-bottom: 40px;
 }
@@ -269,6 +271,7 @@ body {
 .beneficios>p {
   color: var(--text-light);
   margin-bottom: 40px;
+  font-size: 17px;
 }
 
 
@@ -360,7 +363,7 @@ body {
 }
 
 .servicos > p {
-  font-size: 16px;
+  font-size: 17px;
   color: #000000;
   margin-bottom: 60px;
 }
@@ -454,7 +457,7 @@ body {
 }
 
 .caixaMetricas p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.4;
   margin: 5px 0 0;
 }
@@ -568,6 +571,7 @@ body {
   margin: 0;
   line-height: 1.4;
   color: #000;
+  font-size: 17px;
 }
 
 .membro p:first-child {
