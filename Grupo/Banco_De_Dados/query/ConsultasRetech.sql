@@ -9,7 +9,7 @@ INSERT INTO Endereco (logradouro, numero, cep) VALUES
 
 INSERT INTO Sensor (codigoSensor, `status`, fkEmpresa, fkEndereco) VALUES
 ('SNSR-B002', 1, 1, 1),
-('SNSR-C001', 1, 1, 2), 
+('SNSR-C001', 1, 1, 2),
 ('SNSR-C002', 0, 1, 2);
 
 INSERT INTO Contato (email, telefone, fkEmpresa) VALUES
@@ -38,8 +38,8 @@ SELECT C.distancia AS 'Nível do Resíduo (cm)',
 FROM ColetaDados AS C
 JOIN Sensor AS S ON C.fkSensor = S.idSensor
 JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
-WHERE C.distancia <= 25
-ORDER BY C.distancia ASC;    
+WHERE C.distancia <= 75
+ORDER BY C.distancia ASC;
     
 -- Estado: Alerta
 
@@ -50,7 +50,7 @@ SELECT C.distancia AS 'Nível do Resíduo (cm)',
 FROM ColetaDados AS C
 JOIN Sensor AS S ON C.fkSensor = S.idSensor
 JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
-WHERE C.distancia > 25 AND C.distancia <= 50
+WHERE C.distancia > 75 AND C.distancia <= 150
 ORDER BY C.distancia ASC;
     
 -- Estado: Moderado    
@@ -62,7 +62,7 @@ SELECT C.distancia AS 'Nível do Resíduo (cm)',
 FROM ColetaDados AS C
 JOIN Sensor AS S ON C.fkSensor = S.idSensor
 JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
-WHERE C.distancia > 50 AND C.distancia <= 75
+WHERE C.distancia > 150 AND C.distancia <= 225
 ORDER BY C.distancia ASC;
     
 -- Estado: Estável
@@ -74,7 +74,7 @@ SELECT C.distancia AS 'Nível do Resíduo (cm)',
 FROM ColetaDados AS C
 JOIN Sensor AS S ON C.fkSensor = S.idSensor
 JOIN Empresa AS E ON S.fkEmpresa = E.idEmpresa
-WHERE C.distancia > 75
+WHERE C.distancia > 225
 ORDER BY C.distancia ASC;
 
 
