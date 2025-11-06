@@ -217,9 +217,9 @@ new Chart(PizzaLixeiras, {
       legend: { display: true , // Mostra a legenda (nome do dataset)
         labels: {
           font: {
-            weight: "semi-bold",
+            weight: "bold",
           },
-          color: "black",
+          color: "gray",
         },
       },
       title: {
