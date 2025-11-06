@@ -180,6 +180,7 @@ tbody tr:hover {
 #div_erro{
   color: #D0312D;
   font-size: small;
+  font-weight: bold;
   text-align: justify;
   width: 80%;
 }
