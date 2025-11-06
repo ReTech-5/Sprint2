@@ -33,7 +33,7 @@ body {
 .partePrincipal {
   position: relative;
   text-align: center;
-  padding: 19.3%;
+  padding: 19.6%;
   background-color: var(--bg-hero);
   background-image: url(../asset/capa.jpeg);
   background-size: cover;
@@ -63,7 +63,7 @@ body {
 
 
 .principalTexto p {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-muted);
 }
 
@@ -100,17 +100,17 @@ body {
 .problemas {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+ background-color: var(--bg-deep);
 }
 
 .problemas h2 {
-  color: #000;
+  color: #ffffff;
   font-size: 36px;
   margin-bottom: 10px;
 }
 
 .problemas>p {
-  color: var(--bg-dark);
+  color: var(--text-light);
   margin-bottom: 40px;
 }
 
@@ -145,8 +145,8 @@ body {
 
 
 .sobre {
-  background-color: var(--bg-deep);
-  color: var(--text-light);
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  color: var(--text-dark);
   padding: 80px 60px;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
@@ -157,7 +157,7 @@ body {
   font-size: 36px;
   margin-bottom: 60px;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
 }
 
 
@@ -187,7 +187,7 @@ body {
 .empresa p {
   font-size: 15px;
   line-height: 1.6;
-  color: #ffffff;
+  color: #000000;
   text-align: justify;
 }
 
@@ -206,7 +206,7 @@ body {
 
 .info p {
   font-size: 15px;
-  color: var(--text-light);
+  color: #000;
   line-height: 1.6;
   margin-bottom: 25px;
 }
@@ -258,16 +258,16 @@ body {
 .beneficios {
   padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+  background-color:var(--bg-deep);
 }
 
 .beneficios h2 {
-  color: #000;
+  color: #ffffff;
   font-size: 36px;
 }
 
 .beneficios>p {
-  color: var(--bg-dark);
+  color: var(--text-light);
   margin-bottom: 40px;
 }
 
@@ -333,7 +333,7 @@ body {
 }
 
 .statMenor {
-  color: #909090;
+  color: #3b3b3b;
 }
 
 .statEficiencia {
@@ -341,7 +341,7 @@ body {
 }
 
 .servicos {
-  background-color: var(--bg-deep);
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
   color: var(--text-dark);
   padding: 80px 60px;
   text-align: center;
@@ -349,7 +349,7 @@ body {
 }
 
 .servicos h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -361,7 +361,7 @@ body {
 
 .servicos > p {
   font-size: 16px;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 60px;
 }
 
@@ -406,7 +406,7 @@ body {
 }
 
 .metricas {
-   background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
+   background-color: var(--bg-deep);
   padding: 80px 20px;
 }
 
@@ -470,7 +470,7 @@ body {
 }
 
 .metricas h2 span1 {
-  color: #000;
+  color: #ffffff;
   text-align: center;
   font-size: 1.3em;
 }
@@ -478,7 +478,7 @@ body {
 .metricas .subtitulo {
   text-align: center;
   margin-bottom: 60px;
-  color: var(--bg-dark);
+  color: var(--text-light);
 }
 
 .tecnologiaBanner {
@@ -500,12 +500,12 @@ body {
 
 .tecnologiaBanner p {
   font-size: 15px;
-  color: #e8f8f2;
+  color: #ffffff;
   line-height: 1.6;
 }
 
 .quemSomos {
-  background-color: var(--bg-deep);
+  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
   padding: 80px 60px;
   margin: auto;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -513,7 +513,7 @@ body {
 
 
 .quemSomos h2 {
-  color: #ffffff;
+  color: #000000;
   text-align: center;
   font-size: 36px;
   margin-bottom: 15px;
@@ -540,6 +540,8 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 .membro:hover {
   transform: translateY(-5px);
@@ -578,207 +580,6 @@ body {
   color: var(--primary);
   font-size: 14px;
   margin-top: 4px; 
-}
-
-
-
-.contato {
-  background: linear-gradient(90deg, #f7fffa 0%, #e8f8f2 100%);
-  color: var(--text-dark);
-  padding: 80px 60px;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-
-.contato h2 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.contato h2 span {
-  color: var(--primary);
-}
-
-.contato>p {
-  text-align: center;
-  color: #444;
-  font-size: 16px;
-  margin-bottom: 60px;
-
-}
-
-
-.contatoContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-
-.infoContato {
-  text-align: left;
-  color: var(--text-dark);
-}
-
-.infoContato h3 {
-  color: var(--primary);
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-.infoContato p {
-  margin: 10px 0;
-  font-size: 15px;
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-.infoContato a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.infoContato a:hover {
-  text-decoration: underline;
-}
-
-
-.conversaBox {
-  border-radius: 26px;
-  background: linear-gradient(90deg, #068158 0%, #04200D 100%);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  border-radius: 10px;
-  padding: 25px 30px;
-  margin-top: 40px;
-}
-
-.conversaBox h3 {
-  color: var(--text-light);
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.conversaBox p {
-  color: var(--gray-1);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-
-.formContato {
-  background-color: var(--white);
-  border-radius: 10px;
-  padding: 40px 45px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.formContato h3 {
-  font-size: 22px;
-  color: var(--primary);
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.formContato form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-
-.formContato input,
-.formContato textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid var(--primary);
-  border-radius: 6px;
-  font-size: 15px;
-  color: var(--text-dark);
-  background-color: #f9f9f9;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.formContato input:focus,
-.formContato textarea:focus {
-  border-color: var(--primary-2);
-  box-shadow: 0 0 6px rgba(30, 132, 73, 0.4);
-  background-color: var(--white);
-}
-
-.formContato textarea {
-  resize: none;
-  height: 120px;
-}
-
-
-.formContato button {
- background: linear-gradient(90deg, #10B77F 0%, #04200D 100%);
-  color: var(--text-light);
-  border: none;
-  padding: 14px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.formContato button:hover {
-  background-color: var(--primary-2);
-  transform: translateY(-2px);
-}
-.caixaValor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px; /* tamanho do texto */
-  text-align: center;
-  padding: 45%;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.caixaValor:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-}
-
-.caixaValor .emoji {
-  font-size: 25px; /* aumenta o emoji */
-  margin-bottom: -15px;
-}
-
-
-
-
-@media (max-width: 900px) {
-  .contatoContainer {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-
-
-
-
-  .infoContato,
-  .formContato {
-    text-align: center;
-  }
-
-  .conversaBox {
-    margin-top: 25px;
-  }
 }
 
 @media (max-width: 960px) {
