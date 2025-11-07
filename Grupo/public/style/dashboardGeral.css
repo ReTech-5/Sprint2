@@ -12,6 +12,12 @@ body {
 
 }
 
+canvas{
+
+  max-height: 100%;
+
+}
+
 /* Container principal do dashboard: organiza como fila e alinha itens ao topo */
 .dashboard_geral {
 
