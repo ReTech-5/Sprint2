@@ -54,182 +54,75 @@
 
         <ul>
 
-            <h4>Categoria: <span>Organico</span></h4>
-            <h4>Sensor: <span>T13789A</span></h4>
             <li class="sensor">
-                <div id="container_flex">
+
+                <div class="container_kpis">
+
+                    <div class="container kpi">
+                        <div class="card_title">Horário de maior preenchimento da lixeira <br> (Ultimos 90 dias) </div>
+                    </div>
+
+                    <div class="container kpi">
+                        <div class="card_title">Lotação media em que a lixeira é esvaziada <br> (Ultimos 30 dias)</div>
+                    </div>
+
+                    <div class="container kpi">
+                        <div class="card_title">Tempo em que a lixeira vai de estável para critica <br> (Ultimos 30 dias)</div>
+                    </div>
+
+                    <div class="container kpi">
+                        <div class="card_title">Maior Nivel de Preenchimento registrado <br> (Ultimos 7 dias)</div>
+                    </div>
+
+                </div>
+
+                <div class="container_graficos">
+
+                    <div class="container card_detalhes">
+                        <div class="card_title detalhes">Detalhes</div>
+
+                        <span>
+                            Sensor:
+                        </span>
+
+                        <span>
+                            Lixeira:
+                        </span>
+                        
+                        
+                        <span>
+                            Status:
+                        </span>
+                        
+                        <span>
+                            Categoria:
+                        </span>
+                        
+                        <span>
+                            Data de instalação:
+                        </span>
+                        
+                    </div>
+                    
+                    <div class="container linha">
+
+                        <canvas id="cvs_linhaReciclavel"></canvas>
+
+                    </div>
+
                     <div class="container rosquinha">
 
                         <canvas id="cvs_roscaReciclavel"></canvas>
 
                     </div>
 
-                    <div class="container_kpi">
-
-                        <div class="title_kpi">
-
-                            <span>Pico Preenchi.</span>
-                            <div class="info_icon">
-                                <img src="../asset/InfoIcon.png" alt="">
-                                <span class="tooltip">Maior nível de ocupação registrado</span>
-                            </div>
-
-                        </div>
-
-                        <div class="container kpi">
-
-                            <span>80%</span>
-
-                        </div>
-
-                        <div class="title_kpi meio">
-
-                            <span>Horário Pico</span>
-                            <div class="info_icon">
-                                <a href=""><img src="../asset/InfoIcon.png" alt=""></a>
-                                <span class="tooltip">Faixa de horário com maior índice de preenchimento</span>
-                            </div>
-
-                        </div>
-
-                        <div class="container kpi meio conteudo_kpi">
-
-                            <span>12:30</span>
-
-                        </div>
-
-                        <div class="title_kpi meio">
-
-                            <span>Preenchi. Médio</span>
-                            <div class="info_icon">
-                                <a href=""><img src="../asset/InfoIcon.png" alt=""></a>
-                                <span class="tooltip">Média de preenchimento no momento das coletas</span>
-                            </div>
-                        </div>
-
-                        <div class="container kpi meio conteudo_kpi">
-
-                            <span>62%</span>
-
-                        </div>
-
-                        <div class="title_kpi">
-
-                            <span>Temp. Médio</span> <a href="">
-                                <div class="info_icon">
-                                    <img src="../asset/InfoIcon.png" alt="">
-                            </a>
-                            <span class="tooltip">Tempo médio que uma lixeira leva para sair do status estável para o de
-                                alerta</span>
-                        </div>
-
-                    </div>
-
-                    <div class="container kpi">
-
-                        <span>9 Horas</span>
-
-                    </div>
-
                 </div>
 
-                </div>
-
-                <div class="container linha">
-
-                    <canvas id="cvs_linhaReciclavel"></canvas>
-
-                </div>
-
-            </li>
-
-            <h4>Categoria: <span>Reciclavel</span></h4>
-            <h4>Sensor: <span>T23158B</span></h4>
-            <li class="sensor">
                 <div id="container_flex">
-                    <div class="container rosquinha">
-
-                        <canvas id="cvs_roscaOrganico"></canvas>
-
-                    </div>
-
-                    <div class="container_kpi">
-
-                        <div class="title_kpi">
-
-                            <span>Pico Preenchi.</span>
-                            <div class="info_icon">
-                                <a href=""><img src="../asset/InfoIcon.png" alt=""></a>
-                                <span class="tooltip">Maior nível de ocupação registrado.</span>
-                            </div>
-
-                        </div>
 
 
-                        <div class="container kpi">
-
-                            <span>74%</span>
-
-                        </div>
-
-                        <div class="title_kpi meio">
-
-                            <span>Horário Pico</span>
-                            <div class="info_icon">
-                                <a href=""><img src="../asset/InfoIcon.png" alt=""></a>
-                                <span class="tooltip">Faixa de horario com maior preenchimento</span>
-                            </div>
-
-                        </div>
-
-                        <div class="container kpi meio conteudo_kpi">
-
-                            <span>12:00</span>
-
-                        </div>
-
-                        <div class="title_kpi meio">
-
-                            <span>Preenchi. Médio</span>
-                            <div class="info_icon">
-                                <a href=""><img src="../asset/InfoIcon.png" alt=""></a>
-                                <span class="tooltip">Media de preenchimento na hora das coletas</span>
-                            </div>
-
-                        </div>
-                        <div class="container kpi meio conteudo_kpi">
-
-                            <span>35%</span>
-
-                        </div>
-
-                        <div class="title_kpi">
-
-                            <span>Temp. Médio</span>
-                            <div class="info_icon">
-                                <a href=""><img src="../asset/InfoIcon.png" alt=""></a>
-                                <span class="tooltip">Tempo medio em que uma lixeira sair do staus estavel para
-                                    alerta</span>
-                            </div>
-
-                        </div>
-
-                        <div class="container kpi">
-
-                            <span>11 Horas</span>
-
-                        </div>
-
-                    </div>
 
                 </div>
-
-                <div class="container linha">
-
-                    <canvas id="cvs_linhaOrganico"></canvas>
-
-                </div>
-
             </li>
 
         </ul>

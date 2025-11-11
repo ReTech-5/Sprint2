@@ -1,8 +1,13 @@
+body, html {
+
+    height: 100%;
+
+}
+
 /* Define o fundo do body com gradiente e também define uma cor de fallback */
 body {
 
     background: linear-gradient(248deg, var(--bg-cinza) 0%, #FFF 100% );
-    background-color: black;
 
 }
 
@@ -14,7 +19,13 @@ body {
     align-items: center;
     margin: 2% 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
+
+}
+
+.dashboard_sensor h1{
+
+    margin-bottom: 1%;
 
 }
 
@@ -26,40 +37,87 @@ body {
 
 }
 
-/* Lista no dashboard_sensor ocupando largura total e metade da altura disponível */
 .dashboard_sensor ul{
 
     width: 100%;
-    height: 50%;
-    
-}
-
-/* Títulos dentro da lista: margem lateral para separar do conteúdo */
-.dashboard_sensor ul h4{
-
-    margin: 0 5%;
-    
+    height: 100%;
 
 }
 
-/* Linha que agrupa sensores em uma mesma linha: espaço uniforme entre eles */
 .sensor {
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     width: 100%;
     height: 100%;
 
 }
 
-
-/* Container flex interno: define largura relativa para agrupamentos */
-#container_flex {
+.container_kpis{
 
     display: flex;
-    width: 40%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+    margin-bottom: 2%;
+
+}
+
+.container_graficos{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70%;
+
+}
+
+.card_title {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: small;
+    font-weight: 500;
+    background-color: var(--bg-title-color);
+    color: var(--text-bg-escuro-color);
+    margin-bottom: 5%;
+    height: 45px;
+    min-height: 45px;
+
+}
+
+.kpi{
+
+    width: 20%;
     height: 100%;
+
+}
+
+.card_detalhes{
+
+    width: 18%;
+    height: 100%;
+
+}
+
+.card_detalhes span{
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    font-weight: 700;
+
+}
+
+.detalhes{
+
+    font-size: medium;
 
 }
 
@@ -69,81 +127,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 58%;
-    height: 100%;
-    margin-right: 5%;
     border-radius: 50%;
-   
-
-}
-
-/* Área de KPIs no sensor: coluna alinhada ao início para listar métricas verticalmente */
-.container_kpi{
-
-    display: flex;
-    width: 30%;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    
-
-}
-
-/* Imagens pequenas dentro do container_kpi — provavelmente ícones das métricas */
-.container_kpi img {
-
-    width: 12px;
-    margin-right: 5%;
-
-}
-
-/* Estilo do bloco kpi: centraliza texto, define tamanho de fonte e espaçamento inferior */
-.kpi {
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: 400;
-    width: 70%;
-    height: 12%;
-    margin-bottom: 10%;
-
-}
-
-/* Título de KPI: alinha ao início para que o nome da métrica fique à esquerda */
-.title_kpi {
-
-    display: flex;
-    justify-content: start;
-    width: 100%;
-
-}
-
-/* Ajuste da margem entre elementos de título (por ex. ícone + texto) */
-.title_kpi span {
-
-    margin-right: 3%;
-
-}
-
-/* Área central de layout para alinhar elementos à direita / meio do container */
-.meio{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-self: end;
-    
-}
-
-/* Conteúdo interno do KPI: usa propriedades de alinhamento para centralizar o conteúdo */
-.conteudo_kpi{
-
-    align-content: center;
-    justify-content: center;
-
+    min-width: 23%;
 
 }
 
@@ -154,48 +139,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1%;
-    width: 50%;
+    width: 45%;
     height: 100%;
 
-
 }
-
-.info_icon {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  /* Tooltip escondido */
-.info_icon .tooltip {
-    visibility: hidden;
-    width: 130px;
-    background-color: var(--bg-verde-escuro);
-    color: var(--text-bg-escuro-color);
-    text-align: center;
-    border-radius: 6px;
-    padding: 6px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 0.3s;
-    font-size: 12px;
-  }
-
-  .info_icon .tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%; 
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: var(--bg-verde-escuro) transparent transparent transparent;
-  }
-
-  .info_icon:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
