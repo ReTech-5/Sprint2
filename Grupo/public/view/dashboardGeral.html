@@ -54,7 +54,7 @@
                 <div class="container kpi">
                     <img src="../asset/InativoIcon.svg" alt="">
                     <span>Inativos: <span id="inativo">6</span></span>
-            
+
                 </div>
 
                 <div class="container kpi">
@@ -63,7 +63,7 @@
 
                 </div>
             </div>
-        
+
             <div class="container container_sensor">
 
                 <div class="title card_title">
@@ -72,26 +72,24 @@
 
                 </div>
 
-                    <div class="div_button">
+                <div class="div_button">
 
-                        <button class="btn_filtro" onclick="filtrarTodos()">Todos</button>
-                        <button class="btn_filtro" onclick="filtrarCritico()">Crítico</button>
-                        <button class="btn_filtro" onclick="filtrarAlerta()">Alerta</button>
-                        <button class="btn_filtro" onclick="filtrarModerado()">Moderado</button>
-                        <button class="btn_filtro" onclick="filtrarEstavel()">Estavel</button>
+                    <button class="btn_filtro" onclick="filtrarTodos()">Todos</button>
+                    <button class="btn_filtro" onclick="filtrarCritico()">Crítico</button>
+                    <button class="btn_filtro" onclick="filtrarAlerta()">Alerta</button>
+                    <button class="btn_filtro" onclick="filtrarModerado()">Moderado</button>
+                    <button class="btn_filtro" onclick="filtrarEstavel()">Estavel</button>
 
-                    </div> 
+                </div>
 
                 <br>
 
                 <div id="div_ListaSensores"></div>
 
             </div>
-            
+
 
         </div>
-
-        
 
         <div class="container_dash">
 
@@ -107,35 +105,55 @@
 
             </div>
 
-            <div class="container_flex">
-                <div class="container pizza">
+        </div>
 
-                    <canvas id="cvs_grafico_pizza"></canvas>
+        <div class="container_metrica">
 
+
+            <div class="container metricas">
+                <img src="../asset/LixeiraCriticaIcon.svg" alt="">
+                <span><span style="color: #bf4930;">Crítico:</span> 76% até 100%</span>
+            </div>
+
+            <div class="container metricas">
+                <img src="../asset/LixeiraAlertaIcon.svg" alt="">
+                <span><span style="color: #f29d38;">Alerta:</span> 51% até 75%</span>
+            </div>
+
+            <div class="container metricas">
+                <img src="../asset/LixeiraModeradaIcon.svg" alt="">
+                <span><span style="color: #f9d977;">Moderado:</span> 26% até 50%</span>
+            </div>
+
+            <div class="container metricas">
+                <img src="../asset/LixeiraEstavelIcon.svg" alt="">
+                <span><span style="color: #9DC284;">Estável:</span> 0% até 25%</span>
+            </div>
+
+
+            <div class="container alerta">
+
+                <div class="title card_title">
+                    <h4>Alerta</h4>
+                    <a href=""><img src="../asset/ConfigIcon.svg" alt=""></a>
                 </div>
 
-                <div class="container alerta">
-
-                    <div class="title card_title">
-                        <h4>Alerta</h4>
-                        <a href=""><img src="../asset/ConfigIcon.svg" alt=""></a>
-                    </div>
-
-                    <div class="notificacao container">
-                        <img src="../asset/ErroIcon.svg" alt="">
-                        <span>Erro 404 - sensor G29541A - <a href="dashboardSensorInativo.html">Av. Francisco Matarazzo</a> sem resposta </span>
-                    </div>
-
-                    <div class="notificacao container">
-                        <img src="../asset/LixeiraCriticaIcon.svg" alt="">
-                        <span>Lixeira T13789A - Av. Lins de Vasconcelos se encontra em estado crítico</span>
-                    </div>
-
-
+                <div class="notificacao container">
+                    <img src="../asset/ErroIcon.svg" alt="">
+                    <span>Sensor G29541A - <a href="dashboardSensorInativo.html">Av. Francisco Matarazzo</a>
+                        sem resposta </span>
                 </div>
+
+                <div class="notificacao container">
+                    <img src="../asset/LixeiraCriticaIcon.svg" alt="">
+                    <span>Lixeira T13789A - Av. Lins de Vasconcelos se encontra em estado crítico</span>
+                </div>
+
             </div>
 
         </div>
+
+
     </div>
     <!-- Fim da Dashboard-->
 
@@ -143,5 +161,4 @@
     <script src="../js/dashboardGeral.js"></script>
 
 </body>
-
 </html>

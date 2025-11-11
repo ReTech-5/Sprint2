@@ -147,11 +147,43 @@ canvas{
 
     display: flex;
     flex-direction: column;
-    margin: 2%;
-    width: 100%;
-    height: 100%;
-    gap: 4%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    width: 80%;
+    height: 106%;
 
+}
+
+.container_metrica {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    width: 30%;
+    height: 96%;
+
+}
+
+.metricas {
+    
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    width: 100%;
+    height: 20%;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: medium;
+    margin-bottom: 4%;
+
+}
+
+.metricas img {
+    width: 15%;
+    margin-right: 5%;
 }
 
 /* Área que agrupa KPIs: centraliza verticalmente e define altura percentual */
@@ -206,11 +238,12 @@ canvas{
 .barras {
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 40%;
-    margin-bottom: 1%;
+    height: 90%;
+    padding: 2%;
 
 }
 
@@ -220,18 +253,8 @@ canvas{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 47%;
+    width: 100%;
     height: 100%;
-
-}
-
-/* Container flex para alinhamentos entre elementos (por exemplo gráfico + legenda) */
-.container_flex {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 50%;
 
 }
 
@@ -253,8 +276,9 @@ canvas{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 37%;
-    height: 105%;
+    width: 100%;
+    height: 100%;
+    gap: 2%;
 
 }
 
@@ -293,7 +317,6 @@ canvas{
     font-size: small;
     background-color: var(--bg-cinza);
     padding: 2%;
-    margin-bottom: 5%;
     width: 90%;
     height: 20%;
 

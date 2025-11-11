@@ -80,15 +80,6 @@ new Chart(BarrasReciclavel, {
         },
         beginAtZero: true,
       },
-      x: {
-        title: {
-          // Título do eixo X
-          display: true,
-          text: "Status",
-          color: "rgb(4, 32, 13)",
-          font: { size: 13, weight: "bold" },
-        },
-      },
     },
   },
 });
@@ -170,15 +161,6 @@ new Chart(BarrasOrganico, {
           font: { size: 13, weight: "bold" },
         },
         beginAtZero: true,
-      },
-      x: {
-        title: {
-          // Título do eixo X
-          display: true,
-          text: "Status",
-          color: "rgb(4, 32, 13)",
-          font: { size: 13, weight: "bold" },
-        },
       },
     },
   },
