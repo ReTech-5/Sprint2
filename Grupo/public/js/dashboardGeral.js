@@ -1,4 +1,3 @@
-const PizzaLixeiras = document.getElementById("cvs_grafico_pizza");
 const BarrasReciclavel = document.getElementById("cvs_grafico_reciclavel");
 const BarrasOrganico = document.getElementById("cvs_grafico_organico");
 
@@ -167,63 +166,6 @@ new Chart(BarrasOrganico, {
 });
 
 // Gráfico de Pizza dos Status das Lixeiras
-new Chart(PizzaLixeiras, {
-  type: "pie",
-  data: {
-    labels: ["Estável", "Moderado", "Alerta", "Crítico"],
-    datasets: [
-      {
-        label: "Lixeiras",
-        data: [10, 20, 6, 8],
-        borderColor: [
-          "rgb(0, 128, 0)",
-          "rgb(204, 204, 0)",
-          "rgb(255, 140, 0)",
-          "rgb(255, 0, 0)",
-        ],
-        borderWidth: 0.5,
-        backgroundColor: [
-          "rgb(186, 255, 201)",
-          "rgb(255, 255, 186)",
-          "rgb(255, 223, 186)",
-          "rgb(255, 179, 186)",
-        ],
-        hoverOffset: 4,
-      },
-    ],
-  },
-  options: {
-    responsive: true, // Faz o gráfico redimensionar automaticamente com o container
-    plugins: {
-      // Configurações para plugins nativos (legend, title, tooltip, etc.)
-      legend: { display: true , // Mostra a legenda (nome do dataset)
-        labels: {
-          font: {
-            weight: "bold",
-          },
-          color: "gray",
-        },
-      },
-      title: {
-        display: true,
-        text: "Lixeiras por Status de Preenchimento",
-        color: "black",
-        font: { size: 15, weight: "bold", family: "Arial" },
-      }, // Título do gráfico
-      tooltip: {
-        // Personaliza o conteúdo do tooltip (o balão que aparece ao passar o mouse)
-        callbacks: {
-          label: function (context) {
-            // "label" recebe o contexto do ponto e retorna a string que aparecerá no tooltip
-            return context.dataset.label + ": " + context.parsed;
-            // context.dataset.label = nome do dataset
-            // context.parsed = valor do data da fatia
-          },
-        },
-      },
-    },
-  },
-});
 
 var listaEndereco = [
   {
@@ -369,7 +311,7 @@ function mostrarLista() {
 
   listaDivConteudo += "</ul>";
 
-  div_ListaSensores.innerHTML = listaDivConteudo;
+  div_ListaEndereco.innerHTML = listaDivConteudo;
 }
 
 function filtrarTodos() {

@@ -56,31 +56,18 @@
 
             <li class="sensor">
 
-                <div class="container_kpis">
+                <div class="container_flexSide">
+                    <div class="container card_lista">
+                        <div class="card_title lista">Lista de sensor</div>
 
-                    <div class="container kpi">
-                        <div class="card_title">Horário de maior preenchimento da lixeira <br> (Ultimos 90 dias) </div>
+                        
+
+                        
                     </div>
-
-                    <div class="container kpi">
-                        <div class="card_title">Lotação media em que a lixeira é esvaziada <br> (Ultimos 30 dias)</div>
-                    </div>
-
-                    <div class="container kpi">
-                        <div class="card_title">Tempo em que a lixeira vai de estável para critica <br> (Ultimos 30 dias)</div>
-                    </div>
-
-                    <div class="container kpi">
-                        <div class="card_title">Maior Nivel de Preenchimento registrado <br> (Ultimos 7 dias)</div>
-                    </div>
-
-                </div>
-
-                <div class="container_graficos">
 
                     <div class="container card_detalhes">
                         <div class="card_title detalhes">Detalhes</div>
-
+                        
                         <span>
                             Sensor:
                         </span>
@@ -88,7 +75,6 @@
                         <span>
                             Lixeira:
                         </span>
-                        
                         
                         <span>
                             Status:
@@ -103,24 +89,44 @@
                         </span>
                         
                     </div>
-                    
-                    <div class="container linha">
-
-                        <canvas id="cvs_linhaReciclavel"></canvas>
-
-                    </div>
-
-                    <div class="container rosquinha">
-
-                        <canvas id="cvs_roscaReciclavel"></canvas>
-
-                    </div>
-
                 </div>
 
-                <div id="container_flex">
+                <div class="container_flex">
+                    <div class="container_kpis">
 
+                        <div class="container kpi">
+                            <div class="card_title">Faixa de Pico de Preenchimento <br> (Ultimos 90 dias) </div>
+                        </div>
 
+                        <div class="container kpi">
+                            <div class="card_title">Padrão de Esvaziamento <br> (Ultimos 30 dias)</div>
+                        </div>
+
+                        <div class="container kpi">
+                            <div class="card_title">Tempo até Condição Crítica <br> (Ultimos 30 dias)</div>
+                        </div>
+
+                        <div class="container kpi">
+                            <div class="card_title">Maior Preenchimento <br> (Ultimos 7 dias)</div>
+                        </div>
+
+                    </div>
+
+                    <div class="container_graficos">
+                        
+                        <div class="container linha">
+
+                            <canvas id="cvs_linhaReciclavel"></canvas>
+
+                        </div>
+
+                        <div class="container rosquinha">
+
+                            <canvas id="cvs_roscaReciclavel"></canvas>
+
+                        </div>
+
+                    </div>
 
                 </div>
             </li>

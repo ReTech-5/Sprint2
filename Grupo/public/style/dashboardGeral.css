@@ -102,7 +102,7 @@ canvas{
 }
 
 /* Container lateral de sensores: define largura relativa e empilha itens em coluna */
-.container_sensor{
+.container_endereco{
     
     width: 99%;
     height: 90%;
@@ -114,16 +114,16 @@ canvas{
 
 }
 
-/* Ajuste do tamanho das imagens dentro do container_sensor e espaçamento lateral */
-.container_sensor img {
+/* Ajuste do tamanho das imagens dentro do container_endereco e espaçamento lateral */
+.container_endereco img {
 
     width: 15%;
     margin: 0 5%;
 
 }
 
-/* Lista dentro do container_sensor: organiza verticalmente e destaca com negrito */
-.container_sensor ul {
+/* Lista dentro do container_endereco: organiza verticalmente e destaca com negrito */
+.container_endereco ul {
 
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@ canvas{
 }
 
 /* Itens da lista: alinham conteúdo em linha e adicionam espaçamento inferior */
-.container_sensor li {
+.container_endereco li {
 
     display: flex;
     flex-direction: row;
